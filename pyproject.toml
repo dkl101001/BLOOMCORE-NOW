@@ -1,0 +1,9 @@
+# SPDX-License-Identifier: Apache-2.0
+
+[tool.pytest.ini_options]
+testpaths = ["releases/2026-W31-bloomcore-receipt/tests"]
+python_files = ["test_*.py"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"

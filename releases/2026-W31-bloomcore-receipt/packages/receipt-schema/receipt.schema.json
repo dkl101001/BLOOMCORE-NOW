@@ -1,0 +1,26 @@
+{
+  "$comment": "SPDX-License-Identifier: Apache-2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bloomcore.example/schemas/receipt-v1.json",
+  "title": "BLOOMCORE RECEIPT",
+  "type": "object",
+  "required": ["schema", "created_utc", "mode", "summary", "findings", "limitations"],
+  "properties": {
+    "schema": {"const": "BLOOMCORE.RECEIPT.v1"},
+    "created_utc": {"type": "string"},
+    "mode": {"enum": ["offline", "online"]},
+    "summary": {
+      "type": "object",
+      "required": ["claims", "references", "red_flags", "unresolved"],
+      "properties": {
+        "claims": {"type": "integer", "minimum": 0},
+        "references": {"type": "integer", "minimum": 0},
+        "red_flags": {"type": "integer", "minimum": 0},
+        "unresolved": {"type": "integer", "minimum": 0}
+      }
+    },
+    "findings": {"type": "array", "items": {"type": "object"}},
+    "limitations": {"type": "array", "items": {"type": "string"}},
+    "authority": {"const": "observational"}
+  }
+}

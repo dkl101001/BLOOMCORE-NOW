@@ -1,0 +1,23 @@
+# SPDX-License-Identifier: Apache-2.0
+name: Boundary and License Membrane
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  membrane:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check licenses
+        run: python forge_tools/check_licenses.py
+      - name: Check custody and public boundary
+        run: python forge_tools/check_boundaries.py
+

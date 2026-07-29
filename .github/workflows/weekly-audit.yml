@@ -1,0 +1,36 @@
+# SPDX-License-Identifier: Apache-2.0
+name: Weekly Foundry Audit
+
+on:
+  schedule:
+    - cron: "17 17 * * 5"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: weekly-foundry-audit
+  cancel-in-progress: false
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run every active release test
+        run: python forge_tools/run_all_tests.py
+      - name: Build Week One integrity receipt
+        run: >-
+          python forge_tools/build_release_receipt.py
+          releases/2026-W31-bloomcore-receipt
+          --output weekly-audit.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: weekly-foundry-audit
+          path: weekly-audit.json
+          if-no-files-found: error
+

@@ -1,0 +1,11 @@
+# SPDX-License-Identifier: Apache-2.0
+schema: BLOOMCORE_NOW.PUBLIC_BOUNDARY.v1
+public_safe: false
+private_logic_exposed: unknown
+tests_included: false
+docs_updated: false
+license_compatible: false
+phase36_37_custody_present: false
+authorship_preserved: false
+human_release_approved: false
+

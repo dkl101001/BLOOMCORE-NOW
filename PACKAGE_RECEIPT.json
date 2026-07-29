@@ -1,0 +1,284 @@
+{
+  "$comment": "SPDX-License-Identifier: Apache-2.0",
+  "schema": "BLOOMCORE_NOW.RELEASE_INTEGRITY_RECEIPT.v1",
+  "generated_utc": "2026-07-29T08:54:09.947312+00:00",
+  "release": ".",
+  "files": [
+    {
+      "path": ".github/ISSUE_TEMPLATE/current-problem.yml",
+      "sha256": "629aad9e97b9a70236c18a137239bb7592fa2a600fa749f8fe570f2d3d8d1fd8",
+      "bytes": 986
+    },
+    {
+      "path": ".github/pull_request_template.md",
+      "sha256": "8aa0650bd8b90c1927521e517b871b2b860eaadaeefcb286e07b4af8fdc3599a",
+      "bytes": 577
+    },
+    {
+      "path": ".github/workflows/boundary-check.yml",
+      "sha256": "50fbc68903c94f30a1bc33e2ffcde953b8772b623b43c8aef22daaacb4c405af",
+      "bytes": 503
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "sha256": "062355c7728da76802cb2424dba4699c974abfc277c6cf02e1bc76c3504ecf41",
+      "bytes": 722
+    },
+    {
+      "path": ".github/workflows/release.yml",
+      "sha256": "8e07ebe27dd02b3f6eb1f61f3cbeb59350a8fba8bed261c04e11b0832d7f1958",
+      "bytes": 2475
+    },
+    {
+      "path": ".github/workflows/weekly-audit.yml",
+      "sha256": "5a2b561ae6fce25bb36ebf25439fa649b5b06d006f08c0c3b2f1e1358f6109be",
+      "bytes": 860
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "e5242ae90b83292527f8f6c2ce3c3ce54294e14bfe2634a6809862db9e650e10",
+      "bytes": 189
+    },
+    {
+      "path": "BUILD_QUEUE.md",
+      "sha256": "cbdd2da4d4a6d2a1b70f9e2879f79d74cced0136d7493c48b06c4cc8faac2b81",
+      "bytes": 440
+    },
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "8c0d0b52dd3c75ea2c88e5ad7c82d81ff9d3c70e1c4ae6747960fdd9241f6a9a",
+      "bytes": 308
+    },
+    {
+      "path": "CODE_OF_CONDUCT.md",
+      "sha256": "9853a35358ea3e4739421c74ff9f54ad35d18732e69267b59baf16f4c81d781d",
+      "bytes": 470
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "sha256": "f2cd790bfe808ec9b0664544eb7fed9bdcca8ac93d56dbcef477cffab03ce665",
+      "bytes": 1149
+    },
+    {
+      "path": "COPYRIGHT.md",
+      "sha256": "4232436f0ddb7699f8353808383c261119c92793bf91db1880ac2be8116c7e07",
+      "bytes": 258
+    },
+    {
+      "path": "CUSTODY.md",
+      "sha256": "66f2684a6ace8e94e0f63a3b33c4ea5fdb40cad0c4810ab339a0c9f900615033",
+      "bytes": 1867
+    },
+    {
+      "path": "DISCLAIMER.md",
+      "sha256": "43df20e965ea88ac299150f5ca480bfa9ae615560a63c466df854ec5b0a191e8",
+      "bytes": 748
+    },
+    {
+      "path": "LICENSE.md",
+      "sha256": "b61d739a72e17724d35e6cd7bb3abac221cfa03741685adf64a78e7742b7696b",
+      "bytes": 1276
+    },
+    {
+      "path": "LICENSES/AGPL-3.0-only.txt",
+      "sha256": "8efd18c6e6527d9f853673c691ebbc0fc017b7a549c26b834f93bb0645b7093e",
+      "bytes": 33827
+    },
+    {
+      "path": "LICENSES/Apache-2.0.txt",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "bytes": 11358
+    },
+    {
+      "path": "LICENSES/MPL-2.0.txt",
+      "sha256": "fab3dd6bdab226f1c08630b1dd917e11fcb4ec5e1e020e2c16f83a0a13863e85",
+      "bytes": 16726
+    },
+    {
+      "path": "NOTICE",
+      "sha256": "2d1ebd7bc8c6e84d1250fe30a30a1709722a1fc0ab5d5482e3e9542dc2945b77",
+      "bytes": 347
+    },
+    {
+      "path": "README.md",
+      "sha256": "a5ac887cd3ce541e43b55d1c20589522ac624d4660812c4842073fbe876e6008",
+      "bytes": 3774
+    },
+    {
+      "path": "RELEASE_INDEX.md",
+      "sha256": "5ac586db9738ad42d52408f84144aa50938160004cbfb86ab644d23d6a7a3ef1",
+      "bytes": 377
+    },
+    {
+      "path": "SECURITY.md",
+      "sha256": "b5d8094bc98f44bafa5aa491a9228e9446ac11e5836b294fd731b4dd3099e68b",
+      "bytes": 615
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "sha256": "ca18049a3cfeaf9a0bc9a6d911532c1396ad7975398a877c037d18990677294b",
+      "bytes": 313
+    },
+    {
+      "path": "WEEKLY_WORKFLOW.md",
+      "sha256": "5f59cb1aabfe747195ad8a195f61eb73d356138de969a03e29a4646b827cd7f3",
+      "bytes": 1771
+    },
+    {
+      "path": "forge/CANDIDATES.md",
+      "sha256": "3556c6747e9405b2a78c45aecd02512815898f8e7f45ae8ae81fa5479d22b2c3",
+      "bytes": 434
+    },
+    {
+      "path": "forge/CURRENT_PROBLEM.md",
+      "sha256": "fc9c655f81d61062dfcdfdea313b1c420aac42a9cc82788c0992c60f7dfd73e3",
+      "bytes": 581
+    },
+    {
+      "path": "forge/PUBLIC_PRIVATE_BOUNDARY.md",
+      "sha256": "3e2452557ce8a3731ada7a64ebb0b94f852078975e659beb6563315718e30b12",
+      "bytes": 875
+    },
+    {
+      "path": "forge/SELECTION_RECEIPT.md",
+      "sha256": "72da3b5946e6208c75f1f66e95434c33eb2a470d6ad719496fdcca871fff1cc8",
+      "bytes": 594
+    },
+    {
+      "path": "forge/templates/BOUNDARY_TEMPLATE.yml",
+      "sha256": "1a6c4c767b5164aedf9314f81db2c3bd1d06bdd54bde66c8e87e920937ead6a5",
+      "bytes": 290
+    },
+    {
+      "path": "forge/templates/CODEX_WEEKLY_TASK_TEMPLATE.md",
+      "sha256": "6364888d2c4e7c27b69dd93e615817666b9abe1e3d7d7bf7a9d29186efdb7a1e",
+      "bytes": 693
+    },
+    {
+      "path": "forge/templates/RELEASE_README_TEMPLATE.md",
+      "sha256": "82221ec3623ce9ecddf7caa973871cdd7f1503d59af192aa7830c67bd018dfde",
+      "bytes": 491
+    },
+    {
+      "path": "forge/templates/SELECTION_TEMPLATE.md",
+      "sha256": "3a6004cfaa02e2eac03f4101aa0bedcd1240007b6f0b3d58d2726641fd820ef5",
+      "bytes": 338
+    },
+    {
+      "path": "forge_tools/build_release_receipt.py",
+      "sha256": "6d1c2e771eda4a31197261308204aae8ee1de3b9e7096e102866b78635c4f844",
+      "bytes": 2044
+    },
+    {
+      "path": "forge_tools/check_boundaries.py",
+      "sha256": "b3b17b206c60ec85d0527fa0e8360801d58f0277fb16fa6157d768f40852f822",
+      "bytes": 2209
+    },
+    {
+      "path": "forge_tools/check_licenses.py",
+      "sha256": "28b94099e9d2aa88eeb4eff2e22fd7c7b1266aaeef0900e960d4bb25322d769d",
+      "bytes": 2881
+    },
+    {
+      "path": "forge_tools/run_all_tests.py",
+      "sha256": "052153478c3986ee86e311ada571db02d6a1c1d588f9c991fa064ccb0b703058",
+      "bytes": 1265
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "94985c2006f7192a97b356f10a5b3d01dfa83e04005ee83e126626d8f5b94d9b",
+      "bytes": 208
+    },
+    {
+      "path": "releases/2026-W31-bloomcore-receipt/LICENSE_MAP.md",
+      "sha256": "43ea06c78bf960904ffa9e9b5d37bc2add0607c64d855c7e0db10ed59e618ac1",
+      "bytes": 409
+    },
+    {
+      "path": "releases/2026-W31-bloomcore-receipt/PUBLIC_BOUNDARY.yml",
+      "sha256": "84b1f0fba8e0a2608ac744f276f09fd3c19df2dcc6fea2a0c80cec5b122ec836",
+      "bytes": 357
+    },
+    {
+      "path": "releases/2026-W31-bloomcore-receipt/README.md",
+      "sha256": "8171c0ac461b62d44f991547e7efb9e7fa91dfe07596ea528dcedc7e90dd02a4",
+      "bytes": 2655
+    },
+    {
+      "path": "releases/2026-W31-bloomcore-receipt/RELEASE_RECEIPT.md",
+      "sha256": "5b67220bc5556d38654f08a485ea01275c8ab8e52fd9b0fbe1bf063818c3e133",
+      "bytes": 449
+    },
+    {
+      "path": "releases/2026-W31-bloomcore-receipt/apps/receipt-server/LICENSE",
+      "sha256": "81b21ba6e88e871b5f458acef2265d6f0fcf3e680cd2988004159bc9141af491",
+      "bytes": 138
+    },
+    {
+      "path": "releases/2026-W31-bloomcore-receipt/apps/receipt-server/server.py",
+      "sha256": "52f799727124f78253fd18fd2d80ba8fae0b1f0ea26f78853453cbb38a868c52",
+      "bytes": 8456
+    },
+    {
+      "path": "releases/2026-W31-bloomcore-receipt/examples/sample_ai_report.md",
+      "sha256": "e9700d62ce74a10383749763440f999e65ef60524f3787dece53ea2c645a85c4",
+      "bytes": 349
+    },
+    {
+      "path": "releases/2026-W31-bloomcore-receipt/packages/evidence-validator/LICENSE",
+      "sha256": "b43951386c21659ae9d69d5fad7aa951cc4c32b19c7872feff3f8ad3a0050138",
+      "bytes": 115
+    },
+    {
+      "path": "releases/2026-W31-bloomcore-receipt/packages/evidence-validator/bloomcore_receipt.py",
+      "sha256": "6077b8ca770553c16f39f0f4b4f0b185f08a7361744b1684338319a86db52ebe",
+      "bytes": 15758
+    },
+    {
+      "path": "releases/2026-W31-bloomcore-receipt/packages/evidence-validator/cli.py",
+      "sha256": "44637da81f6d44ea981f90d635b1001db0a9b90dfb9955b4664ff77339816ff6",
+      "bytes": 1530
+    },
+    {
+      "path": "releases/2026-W31-bloomcore-receipt/packages/receipt-schema/LICENSE",
+      "sha256": "56baa96d1f3956f1a763617f304c5fb6c450aa69d74c7bb91b019ea32171aeed",
+      "bytes": 110
+    },
+    {
+      "path": "releases/2026-W31-bloomcore-receipt/packages/receipt-schema/receipt.schema.json",
+      "sha256": "6b25bf7727fd10c800cf4069445c8614c029642123393926c5902fbc9e9066bc",
+      "bytes": 1020
+    },
+    {
+      "path": "releases/2026-W31-bloomcore-receipt/tests/test_receipt.py",
+      "sha256": "266fb21107c72b8cee6fbf36be87f8169cbac8589ff9f3da219d56d93f7c306b",
+      "bytes": 5048
+    },
+    {
+      "path": "releases/2026-W31-bloomcore-receipt/tests/test_server.py",
+      "sha256": "b5c335ce27271c8f4c1bed84f45d6811e836114c5dd8d38fa0093709762c50ac",
+      "bytes": 2057
+    },
+    {
+      "path": "shared/deterministic-tools/README.md",
+      "sha256": "dfb7b244b3846b79cd4b52b81cfa6387f201152968aa19cd130e1ea8721a87bb",
+      "bytes": 178
+    },
+    {
+      "path": "shared/runtime-contracts/README.md",
+      "sha256": "ed7ff94d564906b470c1f13b16826d996493542424aa069dd971456821ebd545",
+      "bytes": 217
+    },
+    {
+      "path": "shared/schemas/README.md",
+      "sha256": "aa861102a542bbe9201c0e730949b74d9a2240d42bb4f19552a7447f743710bd",
+      "bytes": 244
+    }
+  ],
+  "claims": {
+    "file_integrity_only": true,
+    "truth_certified": false,
+    "identity_certified": false,
+    "semantic_continuity_certified": false
+  }
+}

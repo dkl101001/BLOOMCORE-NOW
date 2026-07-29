@@ -1,0 +1,37 @@
+# SPDX-License-Identifier: Apache-2.0
+name: Current problem candidate
+description: Propose one bounded, demonstrable weekly software release.
+title: "[Candidate] "
+labels: ["weekly-candidate", "state-phi"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Current problem
+      description: What are people visibly struggling with now?
+    validations:
+      required: true
+  - type: textarea
+    id: proof
+    attributes:
+      label: Evidence of current demand
+      description: Link to primary evidence, current discussion, or measurable demand.
+    validations:
+      required: true
+  - type: textarea
+    id: demo
+    attributes:
+      label: One-minute demonstration
+      description: Describe the before-and-after demonstration.
+    validations:
+      required: true
+  - type: dropdown
+    id: state
+    attributes:
+      label: Initial ternary state
+      options:
+        - "Φ — LIMINAL"
+        - "0 — CLOSED"
+    validations:
+      required: true
+
