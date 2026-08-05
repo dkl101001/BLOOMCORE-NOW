@@ -50,6 +50,17 @@ NOW does not contain protected orchestration, private ECA synthesis, proprietary
 - [Custody](CUSTODY.md)
 - [Licensing](LICENSE.md)
 
+## BLOOMCORE constellation
+
+| Repository | Role |
+|---|---|
+| **[BLOOMCORE Public](https://github.com/dkl101001/BLOOMCORE-)** | Canonical public meaning, Phase 38 orientation, licensing, and evidence boundaries |
+| **[BLOOMCORE Basics](https://github.com/dkl101001/BLOOMCORE-Basics)** | Adoption-facing schemas, examples, validators, and technical grammar |
+| **BLOOMCORE NOW** | Bounded tested releases and foundry evidence |
+| **Access-controlled organismal surfaces** | Private custody, identity-continuity, integration, and release preparation |
+
+Use the canonical public [constellation map](https://github.com/dkl101001/BLOOMCORE-/blob/main/docs/architecture/CONSTELLATION.md). Private repositories are intentionally not linked from this public release surface.
+
 ## Weekly cadence
 
 | Day | Stage | Required output |
