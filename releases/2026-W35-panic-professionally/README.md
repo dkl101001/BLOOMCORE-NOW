@@ -4,6 +4,8 @@
 
 > Local-first incident coordination for situations already emitting smoke.
 
+**Release state:** `1 — ACTIVE` · **Version:** `0.1.0`
+
 Born from the **PANIC PROFESSIONALLY** button in Enterprise Potato™, this package
 takes the joke seriously enough to be useful. It records incidents, status
 transitions, actions and timeline events in SQLite; every event is linked into a

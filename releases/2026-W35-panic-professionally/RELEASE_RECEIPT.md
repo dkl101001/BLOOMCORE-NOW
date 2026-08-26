@@ -2,7 +2,7 @@
 
 # Release Receipt — Panic Professionally v0.1.0
 
-State: `Φ — LIMINAL`
+State: `1 — ACTIVE`
 
 | Check | Result |
 | --- | --- |
@@ -16,7 +16,8 @@ State: `Φ — LIMINAL`
 | Receipt regeneration | PASS — two consecutive generations independently verified |
 | Repository license audit | PASS — 76 text files inspected |
 | Repository boundary audit | PASS |
-| Human release approval | Not yet supplied |
+| Human release approval | PASS — pull request #3 merged into `main` at `47fc608` |
 
-This receipt will be updated from observed test results before publication. It
-does not certify that incident statements are true or that an operational system is safe.
+Human approval promotes this bounded package from liminal candidate to active
+release. This receipt does not certify that incident statements are true or
+that an operational system is safe.

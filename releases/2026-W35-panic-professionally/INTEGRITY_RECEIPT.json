@@ -1,7 +1,7 @@
 {
   "$comment": "SPDX-License-Identifier: Apache-2.0",
   "schema": "BLOOMCORE_NOW.RELEASE_INTEGRITY_RECEIPT.v1",
-  "generated_utc": "2026-08-26T14:32:23.412213+00:00",
+  "generated_utc": "2026-08-26T14:45:10.407644+00:00",
   "release": "releases/2026-W35-panic-professionally",
   "files": [
     {
@@ -21,18 +21,18 @@
     },
     {
       "path": "PUBLIC_BOUNDARY.yml",
-      "sha256": "df8765824a8e67a27811bcdde4f69feb8827ad3bf652f00b22804e3aee69085a",
-      "bytes": 444
+      "sha256": "766103bff538340697fca93906a13fe1123b0d2108042f8fb61c42bda5d59d79",
+      "bytes": 529
     },
     {
       "path": "README.md",
-      "sha256": "f774144bed54673c4367e94e15d7d100e03647eda612e2e5f4747f680c959e67",
-      "bytes": 3398
+      "sha256": "155d4250d1db8d41aa6bfaafdc84241118c7d83140a40978fb024405881355bc",
+      "bytes": 3457
     },
     {
       "path": "RELEASE_RECEIPT.md",
-      "sha256": "fbc4749c81535e236c721af623fceac3835d618836c10b202db46e50296c7f1f",
-      "bytes": 985
+      "sha256": "b064387aef1c7a735c2a35c2387bf47d2cae38bedfd80d20a65875c8215b9ed3",
+      "bytes": 1044
     },
     {
       "path": "apps/dashboard/LICENSE",
