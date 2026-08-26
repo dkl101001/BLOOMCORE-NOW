@@ -99,6 +99,17 @@ limitations_declared: true
 
 ## Current release
 
+[`2026-W35 — Panic Professionally`](releases/2026-W35-panic-professionally/)
+turns operational chaos into a local, receipt-bearing incident timeline.
+
+> Panic is optional. Documentation is not.
+
+It provides a zero-dependency CLI, durable SQLite state, action ownership,
+status transitions, Markdown and JSON exports, tamper-evident event receipts,
+and a read-only local dashboard. The premise is ridiculous. The package works.
+
+## Earlier release
+
 [`2026-W31 — BLOOMCORE RECEIPT`](releases/2026-W31-bloomcore-receipt/) audits the source surface of AI-generated text.
 
 > Paste an AI answer. Get receipts—or red flags.

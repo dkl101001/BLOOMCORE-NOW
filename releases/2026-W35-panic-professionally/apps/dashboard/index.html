@@ -1,0 +1,71 @@
+<!-- SPDX-License-Identifier: AGPL-3.0-only -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Panic Professionally</title>
+  <style>
+    :root { color-scheme: dark; --ink:#f5f2e8; --paper:#151417; --alarm:#ff5b45; --acid:#c9ff4a; --muted:#aaa4ad; }
+    * { box-sizing: border-box; }
+    body { margin:0; font:16px/1.45 ui-monospace,SFMono-Regular,Consolas,monospace; color:var(--ink); background:var(--paper); }
+    header { padding:32px max(5vw,24px); border-bottom:4px solid var(--alarm); background:linear-gradient(115deg,#28151b,#111 62%); }
+    h1 { margin:0; font-size:clamp(2.2rem,7vw,5rem); letter-spacing:-.07em; text-transform:uppercase; }
+    header p { margin:.4rem 0 0; color:var(--acid); }
+    .stamp { display:inline-block; margin-top:18px; padding:6px 10px; border:3px solid var(--alarm); color:var(--alarm); transform:rotate(-2deg); font-weight:900; }
+    main { padding:30px max(5vw,24px) 80px; }
+    .toolbar { display:flex; gap:12px; align-items:center; margin-bottom:22px; }
+    button { border:2px solid var(--acid); background:transparent; color:var(--acid); padding:10px 14px; font:inherit; cursor:pointer; }
+    button:hover { background:var(--acid); color:#111; }
+    #status { color:var(--muted); }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:18px; }
+    article { border:1px solid #4a464d; padding:20px; background:#1d1b20; box-shadow:7px 7px 0 #090909; cursor:pointer; }
+    article:hover { border-color:var(--acid); }
+    article h2 { margin:.35rem 0 1rem; font-size:1.15rem; }
+    .meta { display:flex; justify-content:space-between; color:var(--muted); }
+    .severity { color:var(--alarm); font-weight:900; }
+    dialog { width:min(900px,92vw); max-height:86vh; color:var(--ink); background:#171619; border:3px solid var(--acid); padding:26px; }
+    dialog::backdrop { background:#000c; }
+    .event { padding:10px 0; border-bottom:1px dashed #514d55; }
+    .receipt { color:var(--acid); font-size:.78rem; }
+    .empty { color:var(--muted); padding:40px 0; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Panic Professionally</h1>
+    <p>Operational clarity for situations already emitting smoke.</p>
+    <span class="stamp">CALM HAS BEEN ESCALATED</span>
+  </header>
+  <main>
+    <div class="toolbar"><button id="refresh">REFRESH THE CRISIS</button><span id="status"></span></div>
+    <section id="incidents" class="grid"></section>
+  </main>
+  <dialog id="detail"><button id="close">CLOSE PAPERWORK</button><div id="detailBody"></div></dialog>
+  <script>
+    const incidents = document.querySelector('#incidents');
+    const status = document.querySelector('#status');
+    const detail = document.querySelector('#detail');
+    const detailBody = document.querySelector('#detailBody');
+    const escapeHtml = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    async function load() {
+      status.textContent = 'Consulting the incident bureaucracy…';
+      const response = await fetch('/api/incidents');
+      const rows = await response.json();
+      incidents.innerHTML = rows.length ? rows.map(row => `<article data-id="${escapeHtml(row.id)}"><div class="meta"><span class="severity">${escapeHtml(row.severity)}</span><span>${escapeHtml(row.status)}</span></div><h2>${escapeHtml(row.title)}</h2><div class="meta"><span>${escapeHtml(row.id)}</span><span>${escapeHtml(row.commander)}</span></div></article>`).join('') : '<p class="empty">No active paperwork. Either nothing is broken or telemetry has achieved enlightenment.</p>';
+      status.textContent = `${rows.length} incident${rows.length === 1 ? '' : 's'} located`;
+    }
+    async function openIncident(id) {
+      const row = await (await fetch(`/api/incidents/${encodeURIComponent(id)}`)).json();
+      const verification = row.receipt_verification.valid ? 'VALID' : 'HAUNTED';
+      detailBody.innerHTML = `<h2>${escapeHtml(row.severity)} — ${escapeHtml(row.title)}</h2><p>Status: <strong>${escapeHtml(row.status)}</strong> · Commander: ${escapeHtml(row.commander)}</p><p>Receipt chain: <strong>${verification}</strong></p><h3>Timeline</h3>${row.events.map(event => `<div class="event"><strong>${escapeHtml(event.kind)}</strong> ${escapeHtml(event.message)}<br><span class="receipt">${escapeHtml(event.occurred_at)} · ${escapeHtml(event.receipt_hash.slice(0,16))}</span></div>`).join('')}<h3>Actions</h3>${row.actions.map(action => `<div class="event">${action.status === 'done' ? '☑' : '☐'} ${escapeHtml(action.title)} — ${escapeHtml(action.owner)}</div>`).join('') || '<p>Nothing assigned. Management remains weightless.</p>'}`;
+      detail.showModal();
+    }
+    incidents.addEventListener('click', event => { const card = event.target.closest('article'); if (card) openIncident(card.dataset.id); });
+    document.querySelector('#refresh').addEventListener('click', load);
+    document.querySelector('#close').addEventListener('click', () => detail.close());
+    load();
+    setInterval(load, 15000);
+  </script>
+</body>
+</html>

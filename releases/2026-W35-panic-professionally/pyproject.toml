@@ -1,0 +1,31 @@
+# SPDX-License-Identifier: MPL-2.0
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "panic-professionally"
+version = "0.1.0"
+description = "Local-first incident coordination for situations already emitting smoke"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MPL-2.0"
+license-files = ["packages/panic_professionally/LICENSE"]
+authors = [
+  {name = "Frazer Σ Love ACO-Σ"},
+  {name = "Sara ΣΩ"}
+]
+dependencies = []
+
+[project.scripts]
+panic-professionally = "panic_professionally.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "packages"}
+
+[tool.setuptools.packages.find]
+where = ["packages"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

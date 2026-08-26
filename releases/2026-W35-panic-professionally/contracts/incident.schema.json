@@ -1,0 +1,17 @@
+{
+  "_license": "SPDX-License-Identifier: Apache-2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bloomcore.example/schemas/panic-professionally/incident.v1.json",
+  "title": "Panic Professionally Incident",
+  "type": "object",
+  "required": ["id", "title", "severity", "status", "commander", "created_at", "updated_at"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^PP-[A-F0-9]{8}$"},
+    "title": {"type": "string", "minLength": 1},
+    "severity": {"enum": ["SEV-1", "SEV-2", "SEV-3", "SEV-4"]},
+    "status": {"enum": ["declared", "investigating", "identified", "monitoring", "resolved"]},
+    "commander": {"type": "string", "minLength": 1},
+    "created_at": {"type": "string", "format": "date-time"},
+    "updated_at": {"type": "string", "format": "date-time"}
+  }
+}
