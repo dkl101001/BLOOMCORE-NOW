@@ -1,0 +1,124 @@
+{
+  "$comment": "SPDX-License-Identifier: Apache-2.0",
+  "schema": "BLOOMCORE_NOW.RELEASE_INTEGRITY_RECEIPT.v1",
+  "generated_utc": "2026-08-26T14:32:23.412213+00:00",
+  "release": "releases/2026-W35-panic-professionally",
+  "files": [
+    {
+      "path": "LICENSE_MAP.md",
+      "sha256": "25aa39479d697dd086b8a832e0376008eb7a2c9f20f76c1378201eee19ee6b52",
+      "bytes": 655
+    },
+    {
+      "path": "MANIFEST.md",
+      "sha256": "258d21e9c198f4f2d06402cc1cf3cc251e86036e7cbd6c09aa72f20cf43a54fc",
+      "bytes": 1027
+    },
+    {
+      "path": "NOTICE",
+      "sha256": "4cfa40e8b3deee49da7ab2a6bb202427f4d1a495b70ec5dadcc4e07726acf721",
+      "bytes": 473
+    },
+    {
+      "path": "PUBLIC_BOUNDARY.yml",
+      "sha256": "df8765824a8e67a27811bcdde4f69feb8827ad3bf652f00b22804e3aee69085a",
+      "bytes": 444
+    },
+    {
+      "path": "README.md",
+      "sha256": "f774144bed54673c4367e94e15d7d100e03647eda612e2e5f4747f680c959e67",
+      "bytes": 3398
+    },
+    {
+      "path": "RELEASE_RECEIPT.md",
+      "sha256": "fbc4749c81535e236c721af623fceac3835d618836c10b202db46e50296c7f1f",
+      "bytes": 985
+    },
+    {
+      "path": "apps/dashboard/LICENSE",
+      "sha256": "37d523927d8ec6506308fbb16ccdafe2e202c149db33ed960cd588c46db4a394",
+      "bytes": 192
+    },
+    {
+      "path": "apps/dashboard/index.html",
+      "sha256": "f86327e0acc1441b238edfda24e6d9dc23857922e42fa897d7124f427d0d7df2",
+      "bytes": 5154
+    },
+    {
+      "path": "apps/dashboard/server.py",
+      "sha256": "1938b156f5caa56e48553573b53626f4a1fda006b90cdd1a794985f6d8ab6482",
+      "bytes": 3240
+    },
+    {
+      "path": "contracts/incident.schema.json",
+      "sha256": "b5b3b2bb5989325540ba3110332d194a03d62c5ead236544d074b8f49ead2f00",
+      "bytes": 825
+    },
+    {
+      "path": "docs/OPERATIONS.md",
+      "sha256": "2f0671f23ea451b5145c7989997430072c76058ba1f2270348cf068a9a76c3e0",
+      "bytes": 1585
+    },
+    {
+      "path": "docs/SECURITY_MODEL.md",
+      "sha256": "26b24228b1a55c47bfadd93e9f0587962b36f049119512921ddfc72e9bd1350c",
+      "bytes": 1220
+    },
+    {
+      "path": "examples/demo.sh",
+      "sha256": "b3a2a7e5818442c029892794dfdeafc2696ae4b306b673e3fdb8c688972bdfdc",
+      "bytes": 1099
+    },
+    {
+      "path": "packages/panic_professionally/LICENSE",
+      "sha256": "d2e189ecc652f0e4663c68c7533e6e73f1ef697372dda665e301f28ce2b680b5",
+      "bytes": 163
+    },
+    {
+      "path": "packages/panic_professionally/__init__.py",
+      "sha256": "ad7bc8eb3bdb1eae7746d3d9552a12de5de7bd4dd4e8cfd1a97d289522e145de",
+      "bytes": 317
+    },
+    {
+      "path": "packages/panic_professionally/__main__.py",
+      "sha256": "fa35d29cb79b21b10f3019069ada69f0adb88563aa49103c4aa5a3bf63610b50",
+      "bytes": 137
+    },
+    {
+      "path": "packages/panic_professionally/cli.py",
+      "sha256": "163916925746d1e837812bc425903567c324f5a29b11bf30550a2e12287ffd90",
+      "bytes": 6653
+    },
+    {
+      "path": "packages/panic_professionally/core.py",
+      "sha256": "3386bf3d3d672038ee16fa6a152038fe88df6d8a88fdc100050fb67b4bce453e",
+      "bytes": 1971
+    },
+    {
+      "path": "packages/panic_professionally/store.py",
+      "sha256": "bb62540ecee8e125f60f9b6daf03bcf6ad6cb5e887212308b0acae01d21310f8",
+      "bytes": 14057
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "bff32268a8872bf13f09e88c3799f730c9cd3bd0e5e576fb850eec735cad69bf",
+      "bytes": 713
+    },
+    {
+      "path": "tests/test_dashboard.py",
+      "sha256": "627e68d168d0ede5c3bb595d58c0db8bcbeca37c0c08e9fff98b06e1559aa0f5",
+      "bytes": 2346
+    },
+    {
+      "path": "tests/test_panic_professionally.py",
+      "sha256": "cd1773e122d90cd5104564e54cc6ca4d7b76d0178be776fdc76611b44d6c84c8",
+      "bytes": 2842
+    }
+  ],
+  "claims": {
+    "file_integrity_only": true,
+    "truth_certified": false,
+    "identity_certified": false,
+    "semantic_continuity_certified": false
+  }
+}

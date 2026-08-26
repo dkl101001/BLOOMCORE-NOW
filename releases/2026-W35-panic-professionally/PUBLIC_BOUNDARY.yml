@@ -1,0 +1,13 @@
+# SPDX-License-Identifier: Apache-2.0
+schema: BLOOMCORE_NOW.PUBLIC_BOUNDARY.v1
+release: 2026-W35-panic-professionally
+public_safe: true
+private_logic_exposed: false
+tests_included: true
+docs_updated: true
+license_compatible: true
+phase38_lineage_present: true
+authorship_preserved: true
+human_release_approved: false
+protected_surfaces_imported: []
+boundary_note: "Standalone incident utility; no protected organismal assembly paths included."

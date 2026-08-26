@@ -31,9 +31,13 @@ def main() -> int:
     if (release != ROOT and ROOT not in release.parents) or not release.is_dir():
         raise SystemExit("release must be an existing directory inside the repository")
 
+    output = (ROOT / args.output).resolve()
+    if output != ROOT and ROOT not in output.parents:
+        raise SystemExit("output must remain inside the repository")
+
     files = []
     for path in sorted(release.rglob("*")):
-        if path.is_file() and "__pycache__" not in path.parts:
+        if path.is_file() and path.resolve() != output and "__pycache__" not in path.parts:
             files.append({
                 "path": path.relative_to(release).as_posix(),
                 "sha256": digest(path),
@@ -53,7 +57,6 @@ def main() -> int:
             "semantic_continuity_certified": False,
         },
     }
-    output = ROOT / args.output
     output.write_text(json.dumps(receipt, indent=2) + "\n", encoding="utf-8")
     print(output)
     return 0
