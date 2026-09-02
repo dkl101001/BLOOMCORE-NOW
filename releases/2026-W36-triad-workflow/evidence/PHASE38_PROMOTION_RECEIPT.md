@@ -13,7 +13,8 @@ Requested transition: `Φ — RELEASE_CANDIDATE_NOT_SHIPPED` → `1 — ACTIVE`.
 - Candidate acceptance: pull request #6, exact reviewed head
   `b664ed1594e3daae017e50cdef0625a1eb9d8bdf`.
 - Promotion branch: `release/triad-workflow-v0.1.0`.
-- Promotion review: pending creation.
+- Promotion review: [pull request #7](https://github.com/dkl101001/BLOOMCORE-NOW/pull/7).
+- First promotion commit: `57a89de5ed7178999fccaa98aeee3a30dba1e199`.
 
 ## Transition boundary
 
@@ -35,5 +36,5 @@ truth, identity, or native-system witnesses.
 - Structural MANTIS promotion disposition:
   `PASS_FOR_HUMAN_APPROVED_ACTIVE_MERGE`.
 
-Until the dedicated promotion pull request is merged, the active-state change
-is proposed but not effective on `main`.
+The active-state change becomes effective when promotion pull request #7 merges
+after its GitHub checks pass.

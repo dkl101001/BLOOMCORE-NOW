@@ -427,7 +427,7 @@
     },
     {
       "path": "releases/2026-W36-triad-workflow/INTEGRITY_RECEIPT.json",
-      "sha256": "7ae27a8046430372aedb17a3c84859174909314ec99b0a4052b1808d89418942",
+      "sha256": "88c3dd37a0b26f25cdb4c10e7fae4e37e523c3900b34744c0137e94ed4a3d79d",
       "bytes": 5883
     },
     {
@@ -457,8 +457,8 @@
     },
     {
       "path": "releases/2026-W36-triad-workflow/RELEASE_RECEIPT.md",
-      "sha256": "177daefedb45281612fc5b5aa23cd5dbb2feccaca8a43a35d72b13df6ffbeb3f",
-      "bytes": 1528
+      "sha256": "2f94fa6f31ce7f92177d8edc6129b833d53d718162644638f6f9de6367993f59",
+      "bytes": 1584
     },
     {
       "path": "releases/2026-W36-triad-workflow/contracts/triad-workflow.schema.json",
@@ -512,8 +512,8 @@
     },
     {
       "path": "releases/2026-W36-triad-workflow/evidence/PHASE38_PROMOTION_RECEIPT.md",
-      "sha256": "1345cbadb875be05d74c4a525ef2aa71dd39aa6d6c276a0af33a461eef218991",
-      "bytes": 1448
+      "sha256": "5c7690f3020b5bce749c393a06c6ae2296487739adc2ed81a4872935bfc44e08",
+      "bytes": 1561
     },
     {
       "path": "releases/2026-W36-triad-workflow/evidence/PREFLIGHT_SOURCE_BINDING_LEDGER.md",
