@@ -3,7 +3,7 @@
   "schema": "BLOOMCORE_NOW.RELEASE_INTEGRITY_RECEIPT.v2",
   "generation": "DETERMINISTIC_CONTENT_MANIFEST",
   "release": "releases/2026-W36-triad-workflow",
-  "file_count": 33,
+  "file_count": 34,
   "files": [
     {
       "path": "LICENSE_MAP.md",
@@ -32,8 +32,8 @@
     },
     {
       "path": "RELEASE_RECEIPT.md",
-      "sha256": "2f94fa6f31ce7f92177d8edc6129b833d53d718162644638f6f9de6367993f59",
-      "bytes": 1584
+      "sha256": "fda2424ab83faa9e01b9c9ef101e17b303c176f64f5af3bb1673d1443dacc23a",
+      "bytes": 1575
     },
     {
       "path": "contracts/triad-workflow.schema.json",
@@ -87,8 +87,13 @@
     },
     {
       "path": "evidence/PHASE38_PROMOTION_RECEIPT.md",
-      "sha256": "5c7690f3020b5bce749c393a06c6ae2296487739adc2ed81a4872935bfc44e08",
-      "bytes": 1561
+      "sha256": "f5eece5282bd6f09e25f7db9c8375a7ce316a49f09ff41c664cc08ec1867a093",
+      "bytes": 1668
+    },
+    {
+      "path": "evidence/POSTMERGE_VERIFICATION.md",
+      "sha256": "d7ed7f5b672d809798c7ff45f56d236e8d19908555aa67c7995949929a881fbf",
+      "bytes": 712
     },
     {
       "path": "evidence/PREFLIGHT_SOURCE_BINDING_LEDGER.md",
