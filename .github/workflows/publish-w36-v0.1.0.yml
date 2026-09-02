@@ -1,0 +1,68 @@
+# SPDX-License-Identifier: Apache-2.0
+name: Publish W36 Triad Workflow v0.1.0
+
+on:
+  push:
+    branches:
+      - release/2026-W36-triad-workflow-v0.1.0
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish-w36-triad-workflow-v0.1.0
+  cancel-in-progress: false
+
+jobs:
+  verify-package-publish:
+    runs-on: ubuntu-latest
+    env:
+      SOURCE_SHA: 410fa8251ec7d9b825d5ff82597f1e8458d35f81
+      RELEASE_DIRECTORY: 2026-W36-triad-workflow
+      TAG: 2026-W36-triad-workflow-v0.1.0
+      ASSET: bloomcore-triad-workflow-v0.1.0.zip
+      EXPECTED_SHA256: 1720b49e8769d9cf7cc097ec89cd57ab04fec58c7bd93cedd440ceab50c465c9
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Bind publisher to active main
+        run: |
+          test "$(git rev-parse HEAD^)" = "$SOURCE_SHA"
+          test "$(git rev-parse origin/main)" = "$SOURCE_SHA"
+      - name: Run foundry validation
+        run: |
+          git worktree add --detach /tmp/w36-source "$SOURCE_SHA"
+          cd /tmp/w36-source
+          python -m compileall -q forge_tools releases
+          python forge_tools/run_all_tests.py
+      - name: Build and verify the single ZIP
+        run: |
+          git archive --format=zip -0             --prefix=bloomcore-triad-workflow-v0.1.0/             -o "$ASSET"             "$SOURCE_SHA:releases/$RELEASE_DIRECTORY"
+          printf '%s  %s\n' "$EXPECTED_SHA256" "$ASSET" | sha256sum -c -
+          unzip -t "$ASSET"
+          test "$(unzip -Z1 "$ASSET" | wc -l)" -eq 46
+          if unzip -Z1 "$ASSET" | grep -E '(^|/)(\.git|__pycache__|dist|build)(/|$)|2026-W37|bloomcore-scar'; then
+            echo "unexpected archive member"
+            exit 1
+          fi
+      - name: Publish immutable GitHub Release
+        run: |
+          cat > release-notes.md <<'NOTES'
+          Preserve the source. Bound the claim. Prove the work.
+
+          BLOOMCORE NOW W36 is **1 — ACTIVE**. This release turns the Triad pattern into a bounded, deterministic workflow package with explicit source roles, semantic authority, execution permissions, evidence gates, receipts, verification, and replay.
+
+          - Source commit: `410fa8251ec7d9b825d5ff82597f1e8458d35f81`
+          - ZIP SHA-256: `1720b49e8769d9cf7cc097ec89cd57ab04fec58c7bd93cedd440ceab50c465c9`
+          - Validation: 33/33 foundry tests; 17/17 W36 tests; license and boundary checks passed
+          - Contents: exactly 46 archive members under `bloomcore-triad-workflow-v0.1.0/`
+          - Boundary: no private Triad sources, private hashes, inventories, custody metadata, W37 work, or workspace residue
+          - License lanes: code MPL-2.0; documentation CC BY-SA 4.0; repository tooling Apache-2.0
+
+          Promotion: [PR #7](https://github.com/dkl101001/BLOOMCORE-NOW/pull/7)  
+          Post-merge receipt correction: [PR #8](https://github.com/dkl101001/BLOOMCORE-NOW/pull/8)
+
+          This package does not claim native organism-wide truth, identity, custody, MANTIS, MIRRORSEED, or Unity Nexus authority.
+          NOTES
+          gh release create "$TAG" "$ASSET"             --target "$SOURCE_SHA"             --title "BLOOMCORE Triad-Derived Workflow v0.1.0"             --notes-file release-notes.md
