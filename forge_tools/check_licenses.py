@@ -37,6 +37,13 @@ PATH_RULES = (
     ("releases/2026-W35-panic-professionally/examples/", "Apache-2.0"),
     ("releases/2026-W35-panic-professionally/contracts/", "Apache-2.0"),
     ("releases/2026-W35-panic-professionally/docs/", "Apache-2.0"),
+    ("releases/2026-W36-triad-workflow/packages/triad_workflow/", "MPL-2.0"),
+    ("releases/2026-W36-triad-workflow/tests/", "MPL-2.0"),
+    ("releases/2026-W36-triad-workflow/contracts/", "Apache-2.0"),
+    ("releases/2026-W36-triad-workflow/docs/", "Apache-2.0"),
+    ("releases/2026-W36-triad-workflow/examples/", "Apache-2.0"),
+    ("releases/2026-W36-triad-workflow/templates/", "Apache-2.0"),
+    ("releases/2026-W36-triad-workflow/evidence/", "Apache-2.0"),
 )
 
 

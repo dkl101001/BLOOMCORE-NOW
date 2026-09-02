@@ -1,0 +1,14 @@
+{
+  "$comment": "SPDX-License-Identifier: Apache-2.0",
+  "schema": "BLOOMCORE_NOW.DEPENDENCY_ENVIRONMENT_MANIFEST.v1",
+  "runtime": "Python >=3.11",
+  "production_dependencies": [],
+  "test_targets": ["Python 3.11", "Python 3.12", "Python 3.13"],
+  "external_services_required": [],
+  "network_required": false,
+  "build_tools": ["python", "unittest", "setuptools.build_meta", "git", "tar", "unzip", "zipinfo"],
+  "claims_not_proven": [
+    "dependency absence implies security",
+    "supported Python versions imply every platform is verified"
+  ]
+}

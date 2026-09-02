@@ -4,6 +4,12 @@
 
 ## Unreleased
 
+- Added the W36 Triad-Derived Workflow v0.1.0 release candidate with strict
+  three-role source binding, five epistemic claim classes, eight execution
+  axes, contradiction preservation, deterministic receipts, verification and
+  replay. It remains `Φ — RELEASE_CANDIDATE_NOT_SHIPPED`.
+- Extended foundry license and boundary checks to the W36 surfaces, made
+  integrity receipts content-deterministic, and updated CI release discovery.
 - Promoted Panic Professionally v0.1.0 to `1 — ACTIVE` after human approval
   through merged pull request #3 (`47fc608`).
 - Added Panic Professionally v0.1.0, a local-first incident CLI and dashboard

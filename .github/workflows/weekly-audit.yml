@@ -23,14 +23,17 @@ jobs:
           python-version: "3.12"
       - name: Run every active release test
         run: python forge_tools/run_all_tests.py
-      - name: Build Week One integrity receipt
-        run: >-
-          python forge_tools/build_release_receipt.py
-          releases/2026-W31-bloomcore-receipt
-          --output weekly-audit.json
+      - name: Build every release integrity receipt
+        run: |
+          mkdir -p weekly-audit
+          for release in releases/*; do
+            test -d "$release" || continue
+            name="${release##*/}"
+            python forge_tools/build_release_receipt.py "$release" \
+              --output "weekly-audit/${name}.json"
+          done
       - uses: actions/upload-artifact@v4
         with:
           name: weekly-foundry-audit
-          path: weekly-audit.json
+          path: weekly-audit/
           if-no-files-found: error
-

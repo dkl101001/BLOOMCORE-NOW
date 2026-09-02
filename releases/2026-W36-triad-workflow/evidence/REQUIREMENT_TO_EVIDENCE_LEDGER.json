@@ -1,0 +1,26 @@
+{
+  "$comment": "SPDX-License-Identifier: Apache-2.0",
+  "schema": "BLOOMCORE_NOW.REQUIREMENT_TO_EVIDENCE_LEDGER.v1",
+  "requirements": [
+    {"id":"TW-001","requirement":"Ship a public derivative, never the private Triad corpus","state":"CLOSED_WITH_EVIDENCE","evidence":["PUBLIC_BOUNDARY.yml","MANIFEST.md"]},
+    {"id":"TW-002","requirement":"Preserve exactly three differentiated Triad roles","state":"CLOSED_WITH_EVIDENCE","evidence":["packages/triad_workflow/core.py","tests/test_triad_workflow.py"]},
+    {"id":"TW-003","requirement":"Require explicit source hashes and authority declarations","state":"CLOSED_WITH_EVIDENCE","evidence":["contracts/triad-workflow.schema.json","tests/test_triad_workflow.py"]},
+    {"id":"TW-004","requirement":"Keep Keystone optional and aperture-bound","state":"CLOSED_WITH_EVIDENCE","evidence":["packages/triad_workflow/core.py","docs/LINEAGE.md"]},
+    {"id":"TW-005","requirement":"Keep adapter and workflow semantically nonauthoritative","state":"CLOSED_WITH_EVIDENCE","evidence":["docs/BOUNDARY_AND_LIMITATIONS.md","tests/test_triad_workflow.py"]},
+    {"id":"TW-006","requirement":"Implement five epistemic claim classes without automatic uplift","state":"CLOSED_WITH_EVIDENCE","evidence":["packages/triad_workflow/core.py","examples/source-bound-workflow/workflow.json"]},
+    {"id":"TW-007","requirement":"Implement all eight explicit execution-profile axes","state":"CLOSED_WITH_EVIDENCE","evidence":["docs/WORKFLOW_SPEC.md","tests/test_triad_workflow.py"]},
+    {"id":"TW-008","requirement":"Preserve contradiction, exact references, rejected interpretations, and remainder","state":"CLOSED_WITH_EVIDENCE","evidence":["packages/triad_workflow/core.py","examples/source-bound-workflow/workflow.json"]},
+    {"id":"TW-009","requirement":"Keep structural inspection distinct from native MANTIS and MIRRORSEED","state":"CLOSED_WITH_EVIDENCE","evidence":["evidence/MANTIS_POSTBUILD_AUDIT.md","docs/BOUNDARY_AND_LIMITATIONS.md"]},
+    {"id":"TW-010","requirement":"Prevent source overwrite, native mutation, canon promotion, and external action","state":"CLOSED_WITH_EVIDENCE","evidence":["docs/THREAT_MODEL.md","tests/test_triad_workflow.py"]},
+    {"id":"TW-011","requirement":"Bind every acceptance criterion to evidence and exactly one state","state":"CLOSED_WITH_EVIDENCE","evidence":["packages/triad_workflow/core.py","tests/test_triad_workflow.py"]},
+    {"id":"TW-012","requirement":"Reject completion claims broader than verified evidence","state":"CLOSED_WITH_EVIDENCE","evidence":["packages/triad_workflow/core.py","tests/test_triad_workflow.py"]},
+    {"id":"TW-013","requirement":"Produce deterministic canonical receipts and replay verification","state":"CLOSED_WITH_EVIDENCE","evidence":["packages/triad_workflow/core.py","RELEASE_RECEIPT.md"]},
+    {"id":"TW-014","requirement":"Provide a useful CLI and human-readable workflow report","state":"CLOSED_WITH_EVIDENCE","evidence":["packages/triad_workflow/cli.py","README.md"]},
+    {"id":"TW-015","requirement":"Provide synthetic one-minute and adversarial fixtures","state":"CLOSED_WITH_EVIDENCE","evidence":["examples/source-bound-workflow/workflow.json","tests/test_triad_workflow.py"]},
+    {"id":"TW-016","requirement":"Run on Python 3.11 through 3.13 without dependencies","state":"CLOSED_WITH_EVIDENCE","evidence":["pyproject.toml",".github/workflows/ci.yml","evidence/DEPENDENCY_ENVIRONMENT_MANIFEST.json"]},
+    {"id":"TW-017","requirement":"Enforce release-specific public/private and license boundaries","state":"CLOSED_WITH_EVIDENCE","evidence":["forge_tools/check_boundaries.py","forge_tools/check_licenses.py","PUBLIC_BOUNDARY.yml"]},
+    {"id":"TW-018","requirement":"Repair required foundry discovery and receipt drift","state":"CLOSED_WITH_EVIDENCE","evidence":["forge_tools/build_release_receipt.py",".github/workflows/weekly-audit.yml","README.md","RELEASE_INDEX.md"]},
+    {"id":"TW-019","requirement":"Pass full regression and clean-extraction verification","state":"CLOSED_WITH_EVIDENCE","evidence":["RELEASE_RECEIPT.md","evidence/MANTIS_POSTBUILD_AUDIT.md"]},
+    {"id":"TW-020","requirement":"Open a draft Φ pull request without merge, tag, or activation","state":"CLOSED_WITH_EVIDENCE","evidence":["https://github.com/dkl101001/BLOOMCORE-NOW/pull/5","PUBLIC_BOUNDARY.yml","evidence/PHASE38_POSTFLIGHT_RECEIPT.md"]}
+  ]
+}

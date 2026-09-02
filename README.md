@@ -97,7 +97,19 @@ authorship_preserved: true
 limitations_declared: true
 ```
 
-## Current release
+## Current release candidate
+
+[`2026-W36 — Triad-Derived Workflow`](releases/2026-W36-triad-workflow/)
+turns source-bound work into a deterministic, replayable structural witness.
+
+> Preserve the source. Bound the claim. Prove the work.
+
+It preserves three differentiated authority roles, five epistemic classes,
+eight execution axes, contradiction residue, evidence-bound completion, and
+tamper/replay receipts. It remains `Φ — RELEASE_CANDIDATE_NOT_SHIPPED` pending
+human review.
+
+## Current active release
 
 [`2026-W35 — Panic Professionally`](releases/2026-W35-panic-professionally/)
 turns operational chaos into a local, receipt-bearing incident timeline.
@@ -131,19 +143,11 @@ python3 forge_tools/check_boundaries.py
 ## Run the current release
 
 ```bash
-cd releases/2026-W31-bloomcore-receipt
-python3 -m packages.evidence_validator.bloomcore_receipt \
-  examples/sample_ai_report.md \
-  --offline \
-  --json-out receipt.json \
-  --markdown-out receipt.md
-```
-
-The hosted demonstration is intentionally AGPL-covered:
-
-```bash
-cd releases/2026-W31-bloomcore-receipt
-python3 apps/receipt-server/server.py --port 8080
+cd releases/2026-W36-triad-workflow
+export PYTHONPATH="$PWD/packages"
+python3 -m triad_workflow validate examples/source-bound-workflow/workflow.json
+python3 -m triad_workflow run examples/source-bound-workflow/workflow.json --out /tmp/triad-workflow-run
+python3 -m triad_workflow verify /tmp/triad-workflow-run
 ```
 
 ## Licensing
