@@ -1,0 +1,2 @@
+SPDX-License-Identifier: Apache-2.0
+Synthetic DSK companion fixture. It informs only the explicitly selected research aperture.

@@ -1,18 +1,19 @@
 <!-- SPDX-License-Identifier: Apache-2.0 -->
 
-# Current Problem — 2026-W31
+# Current Problem — 2026-W36
 
-AI-generated reports and answers can present citations that are unreachable,
-nonexistent, malformed, reused inconsistently, or only weakly related to the
-claim they appear to support.
+Complex source-bound work can look complete while silently collapsing which
+source governs, where research is allowed to inform, what remains uncertain,
+which interpretations were rejected, and whether the final claim is actually
+supported by evidence.
 
-Users need a fast inspection surface that distinguishes:
+Users need a small workflow surface that:
 
-- source existence and reachability;
-- deterministic claim/source lexical alignment;
-- unresolved claims;
-- contradictory or duplicate citation patterns;
-- truth claims that remain outside the tool's authority.
+- binds authority to exact source hashes;
+- preserves differentiated roles and epistemic classes;
+- makes transition, recursion, exploration, scheduling, replay, persistence,
+  mutation, and authority choices explicit;
+- refuses evidence-free completion and output overwrite;
+- emits deterministic, replayable receipts without private infrastructure.
 
-Selected release: **BLOOMCORE RECEIPT v0.1.0**
-
+Selected release candidate: **BLOOMCORE Triad-Derived Workflow v0.1.0**

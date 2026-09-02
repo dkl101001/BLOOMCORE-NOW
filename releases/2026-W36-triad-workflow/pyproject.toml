@@ -1,0 +1,23 @@
+# SPDX-License-Identifier: Apache-2.0
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bloomcore-triad-workflow"
+version = "0.1.0"
+description = "A bounded, deterministic workflow derived from the BLOOMCORE Triad"
+requires-python = ">=3.11"
+license = "MPL-2.0"
+
+[project.scripts]
+triad-workflow = "triad_workflow.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "packages"}
+
+[tool.setuptools.packages.find]
+where = ["packages"]
+
+[tool.setuptools.exclude-package-data]
+"*" = ["__pycache__/*", "*.pyc"]

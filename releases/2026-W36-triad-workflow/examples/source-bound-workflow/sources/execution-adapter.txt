@@ -1,0 +1,2 @@
+SPDX-License-Identifier: Apache-2.0
+Synthetic adapter fixture. It supports discovery and execution but has no semantic authority.

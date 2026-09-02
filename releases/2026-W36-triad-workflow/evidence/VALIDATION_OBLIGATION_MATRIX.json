@@ -1,0 +1,22 @@
+{
+  "$comment": "SPDX-License-Identifier: Apache-2.0",
+  "schema": "BLOOMCORE_NOW.VALIDATION_OBLIGATION_MATRIX.v1",
+  "obligations": [
+    {"id":"VAL-001","class":"IN_SCOPE","test":"triad topology and authority ceilings"},
+    {"id":"VAL-002","class":"IN_SCOPE","test":"source hashing, strict JSON, and no-clobber"},
+    {"id":"VAL-003","class":"IN_SCOPE","test":"optional companion aperture binding"},
+    {"id":"VAL-004","class":"IN_SCOPE","test":"five epistemic classes remain orthogonal"},
+    {"id":"VAL-005","class":"IN_SCOPE","test":"eight execution axes and hybrid boundaries"},
+    {"id":"VAL-006","class":"IN_SCOPE","test":"contradiction and remainder preservation"},
+    {"id":"VAL-007","class":"IN_SCOPE","test":"structural proposal cannot claim native metabolism"},
+    {"id":"VAL-008","class":"IN_SCOPE","test":"requirement evidence and bounded completion claims"},
+    {"id":"VAL-009","class":"IN_SCOPE","test":"canonical receipt replay and tamper detection"},
+    {"id":"VAL-010","class":"IN_SCOPE","test":"private-content, provenance, and license scan"},
+    {"id":"VAL-011","class":"IN_SCOPE","test":"full foundry regression"},
+    {"id":"VAL-012","class":"IN_SCOPE","test":"wheel and isolated archive execution"},
+    {"id":"VAL-013","class":"INTERFACE_ONLY","test":"native MANTIS and MIRRORSEED reachability"},
+    {"id":"VAL-014","class":"FUTURE_PHASE_NOT_APPLICABLE","test":"full Phase 151 atomic organism transaction"},
+    {"id":"VAL-015","class":"FUTURE_PHASE_NOT_APPLICABLE","test":"Phase 152 ecology and external coupling"},
+    {"id":"VAL-016","class":"NOT_APPLICABLE_WITH_EVIDENCE","test":"hosted application and AGPL runtime","reason":"No networked application is included in v0.1.0"}
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "$comment": "SPDX-License-Identifier: Apache-2.0",
+  "schema": "BLOOMCORE_NOW.PUBLIC_SOURCE_DISPOSITION_LEDGER.v1",
+  "closure_state": "SEALED_LOCAL_SOURCE_UNIVERSE",
+  "sources": [
+    {
+      "source_id": "PRIVATE_TRIAD_REFERENCE_SET",
+      "role": "REFERENCE_ONLY",
+      "relation": "DIFFERENTIATED_TRIAD",
+      "disposition": "LOCALLY_VERIFIED_NOT_PUBLICLY_IDENTIFIED_OR_INCLUDED",
+      "evidence": "nonpublished Operator custody ledger"
+    },
+    {
+      "source_id": "BLOOMCORE_NOW_PUBLIC_BASE",
+      "role": "ACTIVE",
+      "relation": "GIT_ANCESTRY",
+      "disposition": "PUBLIC_REPOSITORY_BASE",
+      "evidence": "Git commit ancestry"
+    },
+    {
+      "source_id": "OPERATOR_DIRECTION",
+      "role": "ACTIVE",
+      "relation": "VISIBLE_INSTRUCTION",
+      "disposition": "BOUNDED_BUILD_AND_DRAFT_PR_AUTHORIZATION",
+      "evidence": "Operator instruction, 2026-09-02"
+    }
+  ],
+  "private_hashes_published": false,
+  "private_inventory_published": false,
+  "private_source_content_published": false,
+  "unclassified_public_descendants": 0
+}

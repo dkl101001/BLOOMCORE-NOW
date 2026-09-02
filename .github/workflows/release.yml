@@ -7,12 +7,12 @@ on:
       release_directory:
         description: "Release directory beneath releases/"
         required: true
-        default: "2026-W31-bloomcore-receipt"
+        default: "2026-W36-triad-workflow"
         type: string
       tag:
         description: "Git tag to create"
         required: true
-        default: "2026-W31-v0.1.0-rc1"
+        default: "2026-W36-triad-workflow-v0.1.0-rc1"
         type: string
       publish:
         description: "Publish the GitHub Release after validation"
@@ -41,7 +41,7 @@ jobs:
           RELEASE_DIRECTORY: ${{ inputs.release_directory }}
         run: |
           case "$RELEASE_DIRECTORY" in
-            *..*|/*|*\\*) echo "unsafe release directory"; exit 1 ;;
+            ""|.*|*/*|*\\*|*..*) echo "unsafe release directory"; exit 1 ;;
           esac
           test -d "releases/$RELEASE_DIRECTORY"
       - name: Run foundry tests
@@ -78,4 +78,3 @@ jobs:
           --target "$GITHUB_SHA"
           --title "$RELEASE_DIRECTORY"
           --notes "Human-triggered BLOOMCORE NOW release. See RELEASE_RECEIPT.md and release-receipt.json."
-

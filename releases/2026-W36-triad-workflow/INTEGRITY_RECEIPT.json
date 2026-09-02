@@ -1,0 +1,160 @@
+{
+  "$comment": "SPDX-License-Identifier: Apache-2.0",
+  "schema": "BLOOMCORE_NOW.RELEASE_INTEGRITY_RECEIPT.v2",
+  "generation": "DETERMINISTIC_CONTENT_MANIFEST",
+  "release": "releases/2026-W36-triad-workflow",
+  "file_count": 29,
+  "files": [
+    {
+      "path": "LICENSE_MAP.md",
+      "sha256": "f864a12232b14b93e0917e9e39cd4a3363e8ca2961bc20bfd7069a1d8881f44d",
+      "bytes": 369
+    },
+    {
+      "path": "MANIFEST.md",
+      "sha256": "0fb049508a35e2b91e2dc7d4aa93e9b2058adb3c86ba31269adac59840445eae",
+      "bytes": 946
+    },
+    {
+      "path": "NOTICE",
+      "sha256": "803d9f6efece17e0314ce4c091cc367d8740f20d6344d1db583deaf46b845f38",
+      "bytes": 394
+    },
+    {
+      "path": "PUBLIC_BOUNDARY.yml",
+      "sha256": "7f571a0237bc6f3da6048209a4d85981effed9624a4effe6ce5cbe259ceb1f35",
+      "bytes": 638
+    },
+    {
+      "path": "README.md",
+      "sha256": "5afc5bcaee713874165d5cca4ad6116a22fcc2d6b727d371c1dea7f404e8623e",
+      "bytes": 2380
+    },
+    {
+      "path": "RELEASE_RECEIPT.md",
+      "sha256": "10d63d811d0f30bef8de3af60593d9f3e350978a7df510356615408d56b05658",
+      "bytes": 1252
+    },
+    {
+      "path": "contracts/triad-workflow.schema.json",
+      "sha256": "be9f35850805aafd9b4db44e37b5a86411876cf79e6441e9ee563f0a304d31b4",
+      "bytes": 5533
+    },
+    {
+      "path": "docs/BOUNDARY_AND_LIMITATIONS.md",
+      "sha256": "303b562701f8ab2f0d335c8e9237d804e6edbf07200cc21e33af2d79d8241d5f",
+      "bytes": 915
+    },
+    {
+      "path": "docs/LINEAGE.md",
+      "sha256": "4cc7b1caa311f6dff3af09fccc71bb9cd82e859ea06750ab985f61cd5932a82f",
+      "bytes": 730
+    },
+    {
+      "path": "docs/THREAT_MODEL.md",
+      "sha256": "960b5214c458f0fc3e00f5b9337165cd6a2815644153e6dd3eaa95b61a052c0c",
+      "bytes": 1327
+    },
+    {
+      "path": "docs/WORKFLOW_SPEC.md",
+      "sha256": "7ba19faaed09986196895671524d5d03a20fe98254acaa1636a5c944ae5dce0a",
+      "bytes": 1569
+    },
+    {
+      "path": "evidence/CONTINUATION_CHECKPOINT.md",
+      "sha256": "c6097500fbf9a9c5b60ae199dfe2665ba849c1518fc3f438db5f4dbe8b01f7fa",
+      "bytes": 1254
+    },
+    {
+      "path": "evidence/DEPENDENCY_ENVIRONMENT_MANIFEST.json",
+      "sha256": "bb4a90603da2588f65e3766d1ffd763fdf4b95f0764445c77537c009aa837792",
+      "bytes": 551
+    },
+    {
+      "path": "evidence/MANTIS_POSTBUILD_AUDIT.md",
+      "sha256": "955529c0680e5d0085af5911f2d05289216f43159e2d9a53571fbc291b3c6150",
+      "bytes": 3394
+    },
+    {
+      "path": "evidence/PREFLIGHT_SOURCE_BINDING_LEDGER.md",
+      "sha256": "fb13c458854ea42e8bf630541abb35a2912033a9edc13c637509a6618554ce6f",
+      "bytes": 3970
+    },
+    {
+      "path": "evidence/REQUIREMENT_TO_EVIDENCE_LEDGER.json",
+      "sha256": "a5e1d7f658e757b3c719554ef9dc8af399a9fd02eada12fd23973bc62c77fb86",
+      "bytes": 4227
+    },
+    {
+      "path": "evidence/SOURCE_DISPOSITION_LEDGER.json",
+      "sha256": "fc5803e3444483928a55dc1cf22f1c4b9a036b87cc53ed0414d39062346a2bb9",
+      "bytes": 1067
+    },
+    {
+      "path": "evidence/VALIDATION_OBLIGATION_MATRIX.json",
+      "sha256": "6e191d6b55e1784f018651365373e7ee2b30a6e8e6d7b3864c8b829875d36c8f",
+      "bytes": 1721
+    },
+    {
+      "path": "examples/source-bound-workflow/sources/dsk-companion.txt",
+      "sha256": "2ea4800b37488f032d356a56b63bb9c34e2700bc312741b94decf4c0f67423c2",
+      "bytes": 128
+    },
+    {
+      "path": "examples/source-bound-workflow/sources/execution-adapter.txt",
+      "sha256": "243b2b8adf0d820b86ffdbe306a5f123a89bdb91e58b9cb8bba04ee6c2a02494",
+      "bytes": 130
+    },
+    {
+      "path": "examples/source-bound-workflow/sources/governing-master.txt",
+      "sha256": "6cba014c10d3947e3304df16db87777691ab6ac4ded89334cc5eabc48d43b133",
+      "bytes": 121
+    },
+    {
+      "path": "examples/source-bound-workflow/workflow.json",
+      "sha256": "5983042d65868331b3c2def18bf773e2363e1ecb376e6d4b08c7c72a3f4dc1a8",
+      "bytes": 4796
+    },
+    {
+      "path": "packages/triad_workflow/__init__.py",
+      "sha256": "04daa23aca40f5ad78d2963e5611ba12129b2b3805576aafc89aeb5ade6b2f0a",
+      "bytes": 245
+    },
+    {
+      "path": "packages/triad_workflow/__main__.py",
+      "sha256": "d0c043fcfebebf341409e657c28f96c0edde8a8b10392b6849e3e696ea3de841",
+      "bytes": 83
+    },
+    {
+      "path": "packages/triad_workflow/cli.py",
+      "sha256": "0d76219a0a04f60aca98593879e3d0dcec5eddeca75e34af80d56b8e50611b10",
+      "bytes": 2174
+    },
+    {
+      "path": "packages/triad_workflow/core.py",
+      "sha256": "0b13dc297222719689547b1e6bb65106feb4e8301ebb68bd50fce951030abe99",
+      "bytes": 19069
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "67ba92f391aeabfa909cd6e8d67b1475b863877fd39ec3f61d7e3b32efabe912",
+      "bytes": 556
+    },
+    {
+      "path": "templates/README.md",
+      "sha256": "a2db4444f40902243764c09944e84b0b6e1bc1fee666d98cf321e454f9b8e052",
+      "bytes": 415
+    },
+    {
+      "path": "tests/test_triad_workflow.py",
+      "sha256": "e4dc567c5a87bf020730e016be8f203169c74158497f502c9b5dca5f3f2a59df",
+      "bytes": 9851
+    }
+  ],
+  "claims": {
+    "file_integrity_only": true,
+    "truth_certified": false,
+    "identity_certified": false,
+    "semantic_continuity_certified": false
+  }
+}

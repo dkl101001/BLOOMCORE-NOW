@@ -5,12 +5,13 @@
 from __future__ import annotations
 
 import argparse
-import datetime as dt
 import hashlib
 import json
 import pathlib
+import subprocess
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
+SKIP_DIRS = {".git", "__pycache__", ".pytest_cache", ".ruff_cache", "dist", "build"}
 
 
 def digest(path: pathlib.Path) -> str:
@@ -19,6 +20,19 @@ def digest(path: pathlib.Path) -> str:
         for block in iter(lambda: handle.read(1024 * 1024), b""):
             value.update(block)
     return value.hexdigest()
+
+
+def candidate_paths(release: pathlib.Path) -> list[pathlib.Path]:
+    """Use Git custody for a root receipt; release receipts remain archive-capable."""
+    if release == ROOT and (ROOT / ".git").is_dir():
+        result = subprocess.run(
+            ["git", "ls-files", "-z"],
+            cwd=ROOT,
+            check=True,
+            capture_output=True,
+        )
+        return [ROOT / item.decode() for item in result.stdout.split(b"\0") if item]
+    return list(release.rglob("*"))
 
 
 def main() -> int:
@@ -36,8 +50,12 @@ def main() -> int:
         raise SystemExit("output must remain inside the repository")
 
     files = []
-    for path in sorted(release.rglob("*")):
-        if path.is_file() and path.resolve() != output and "__pycache__" not in path.parts:
+    for path in sorted(candidate_paths(release)):
+        if (
+            path.is_file()
+            and path.resolve() != output
+            and not any(part in SKIP_DIRS or part.endswith(".egg-info") for part in path.parts)
+        ):
             files.append({
                 "path": path.relative_to(release).as_posix(),
                 "sha256": digest(path),
@@ -46,9 +64,10 @@ def main() -> int:
 
     receipt = {
         "$comment": "SPDX-License-Identifier: Apache-2.0",
-        "schema": "BLOOMCORE_NOW.RELEASE_INTEGRITY_RECEIPT.v1",
-        "generated_utc": dt.datetime.now(dt.timezone.utc).isoformat(),
+        "schema": "BLOOMCORE_NOW.RELEASE_INTEGRITY_RECEIPT.v2",
+        "generation": "DETERMINISTIC_CONTENT_MANIFEST",
         "release": release.relative_to(ROOT).as_posix(),
+        "file_count": len(files),
         "files": files,
         "claims": {
             "file_integrity_only": True,

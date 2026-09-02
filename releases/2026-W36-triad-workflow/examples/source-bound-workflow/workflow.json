@@ -1,0 +1,126 @@
+{
+  "$comment": "SPDX-License-Identifier: Apache-2.0",
+  "schema": "BLOOMCORE_NOW.TRIAD_WORKFLOW_PACKET.v1",
+  "task_id": "SYNTHETIC-STALE-BINDING-001",
+  "goal": "Detect a stale derived binding while preserving authority, uncertainty, and replay evidence.",
+  "mode": "STRICT",
+  "route_id": "RESEARCH_APERTURE",
+  "triad": {
+    "roles": [
+      {
+        "role": "SOLE_GOVERNING_MASTER",
+        "source_id": "synthetic-master",
+        "sha256": "6cba014c10d3947e3304df16db87777691ab6ac4ded89334cc5eabc48d43b133",
+        "authority": "GOVERNS"
+      },
+      {
+        "role": "BOUNDED_DSK_RESEARCH_COMPANION",
+        "source_id": "synthetic-dsk",
+        "sha256": "2ea4800b37488f032d356a56b63bb9c34e2700bc312741b94decf4c0f67423c2",
+        "authority": "INFORMS_ONLY_WITHIN_SELECTED_APERTURE"
+      },
+      {
+        "role": "NON_AUTHORITATIVE_DISCOVERY_AND_EXECUTION_ADAPTER",
+        "source_id": "synthetic-adapter",
+        "sha256": "243b2b8adf0d820b86ffdbe306a5f123a89bdb91e58b9cb8bba04ee6c2a02494",
+        "authority": "DISCOVERY_AND_EXECUTION_ONLY"
+      }
+    ]
+  },
+  "selected_aperture": "PHASE38_SECTION_33_17_DYNAMIC_SCHRODINGER_KERNELS",
+  "sources": [
+    {
+      "source_id": "synthetic-master",
+      "path": "sources/governing-master.txt",
+      "sha256": "6cba014c10d3947e3304df16db87777691ab6ac4ded89334cc5eabc48d43b133",
+      "custody": "PUBLIC_SYNTHETIC_FIXTURE"
+    },
+    {
+      "source_id": "synthetic-dsk",
+      "path": "sources/dsk-companion.txt",
+      "sha256": "2ea4800b37488f032d356a56b63bb9c34e2700bc312741b94decf4c0f67423c2",
+      "custody": "PUBLIC_SYNTHETIC_FIXTURE"
+    },
+    {
+      "source_id": "synthetic-adapter",
+      "path": "sources/execution-adapter.txt",
+      "sha256": "243b2b8adf0d820b86ffdbe306a5f123a89bdb91e58b9cb8bba04ee6c2a02494",
+      "custody": "PUBLIC_SYNTHETIC_FIXTURE"
+    }
+  ],
+  "epistemic_claims": [
+    {
+      "claim_id": "C-001",
+      "class": "OBSERVED_DOCUMENTED",
+      "statement": "The synthetic master declares sole governing authority.",
+      "source_refs": ["synthetic-master"]
+    },
+    {
+      "claim_id": "C-002",
+      "class": "RECONSTRUCTED_HISTORICAL_MEANING",
+      "statement": "The stale binding likely came from a formerly current snapshot.",
+      "source_refs": ["synthetic-master", "synthetic-adapter"]
+    },
+    {
+      "claim_id": "C-003",
+      "class": "TECHNICAL_INTERPRETATION",
+      "statement": "Hash comparison is sufficient to expose the synthetic binding mismatch.",
+      "source_refs": ["synthetic-master", "synthetic-adapter"]
+    },
+    {
+      "claim_id": "C-004",
+      "class": "RESEARCH_HYPOTHESIS",
+      "statement": "Eight-axis exploration may make future mismatch localization more efficient.",
+      "source_refs": ["synthetic-dsk"]
+    },
+    {
+      "claim_id": "C-005",
+      "class": "UNRESOLVED_ONTOLOGY",
+      "statement": "This structural witness does not establish organism-level native execution.",
+      "source_refs": ["synthetic-master", "synthetic-dsk", "synthetic-adapter"]
+    }
+  ],
+  "execution_profile": {
+    "transition": ["compare declared and observed source digests"],
+    "recursion": ["inspect one derived reference layer, then stop"],
+    "exploration": ["enumerate authority-preserving repair candidates"],
+    "scheduling": ["validate authority before evidence closure"],
+    "replay": ["rebuild canonical artifacts byte-for-byte"],
+    "persistence": ["store only the public synthetic receipt"],
+    "mutation": ["write to a new output directory only"],
+    "authority": ["master governs; companion informs; adapter executes" ]
+  },
+  "contradictions": [
+    {
+      "contradiction_id": "K-001",
+      "source_refs": ["synthetic-master", "synthetic-adapter"],
+      "pre_transform": "The adapter fixture is useful for execution while remaining unable to promote its own interpretation.",
+      "rejected_interpretations": [
+        "Treat adapter convenience as governing truth",
+        "Silently rewrite the master to match the adapter"
+      ],
+      "unresolved_remainder": "The fixture demonstrates structural handling, not the private system's semantic correctness."
+    }
+  ],
+  "requirements": [
+    {
+      "id": "R-001",
+      "criterion": "All three role-bound fixture files match their declared hashes.",
+      "state": "CLOSED_WITH_EVIDENCE",
+      "evidence": ["source-manifest.json"]
+    },
+    {
+      "id": "R-002",
+      "criterion": "The output states the bounded claim and explicit nonclaims.",
+      "state": "CLOSED_WITH_EVIDENCE",
+      "evidence": ["TRIAD_REPORT.md", "workflow-receipt.json"]
+    }
+  ],
+  "requested_claim": "BOUNDED_WORKFLOW_PACKET_VERIFIED",
+  "permissions": {
+    "source_mutation": false,
+    "native_mutation": false,
+    "canonical_promotion": false,
+    "external_action": false
+  }
+}

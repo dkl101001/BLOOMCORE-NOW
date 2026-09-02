@@ -1,0 +1,17 @@
+# SPDX-License-Identifier: Apache-2.0
+schema: BLOOMCORE_NOW.PUBLIC_BOUNDARY.v2
+release: 2026-W36-triad-workflow
+derivation_class: DERIVED_NONAUTHORITATIVE
+public_safe: true
+private_logic_exposed: false
+tests_included: true
+docs_updated: true
+license_compatible: true
+phase36_37_custody_present: true
+phase38_lineage_present: true
+authorship_preserved: true
+human_release_approved: false
+release_state: PHI_RELEASE_CANDIDATE_NOT_SHIPPED
+protected_surfaces_imported: []
+native_systems_claimed: []
+boundary_note: "Structural workflow and synthetic fixtures only; no private Triad corpus, protected assembly path, or native execution claim."
