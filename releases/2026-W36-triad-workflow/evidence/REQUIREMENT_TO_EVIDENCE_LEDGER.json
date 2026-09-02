@@ -21,6 +21,6 @@
     {"id":"TW-017","requirement":"Enforce release-specific public/private and license boundaries","state":"CLOSED_WITH_EVIDENCE","evidence":["forge_tools/check_boundaries.py","forge_tools/check_licenses.py","PUBLIC_BOUNDARY.yml"]},
     {"id":"TW-018","requirement":"Repair required foundry discovery and receipt drift","state":"CLOSED_WITH_EVIDENCE","evidence":["forge_tools/build_release_receipt.py",".github/workflows/weekly-audit.yml","README.md","RELEASE_INDEX.md"]},
     {"id":"TW-019","requirement":"Pass full regression and clean-extraction verification","state":"CLOSED_WITH_EVIDENCE","evidence":["RELEASE_RECEIPT.md","evidence/MANTIS_POSTBUILD_AUDIT.md"]},
-    {"id":"TW-020","requirement":"Open a draft Φ pull request without merge, tag, or activation","state":"OPEN","evidence":[]}
+    {"id":"TW-020","requirement":"Open a draft Φ pull request without merge, tag, or activation","state":"CLOSED_WITH_EVIDENCE","evidence":["https://github.com/dkl101001/BLOOMCORE-NOW/pull/5","PUBLIC_BOUNDARY.yml","evidence/PHASE38_POSTFLIGHT_RECEIPT.md"]}
   ]
 }

@@ -22,6 +22,16 @@ def digest(path: pathlib.Path) -> str:
     return value.hexdigest()
 
 
+def indexed_bytes(path: pathlib.Path) -> bytes:
+    relative = path.relative_to(ROOT).as_posix()
+    return subprocess.run(
+        ["git", "show", f":{relative}"],
+        cwd=ROOT,
+        check=True,
+        capture_output=True,
+    ).stdout
+
+
 def candidate_paths(release: pathlib.Path) -> list[pathlib.Path]:
     """Use Git custody for a root receipt; release receipts remain archive-capable."""
     if release == ROOT and (ROOT / ".git").is_dir():
@@ -39,6 +49,11 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("release", help="Release directory relative to repository root")
     parser.add_argument("--output", default="release-receipt.json")
+    parser.add_argument(
+        "--git-index",
+        action="store_true",
+        help="Hash staged Git content; valid only for a repository-root receipt",
+    )
     args = parser.parse_args()
 
     release = (ROOT / args.release).resolve()
@@ -48,6 +63,8 @@ def main() -> int:
     output = (ROOT / args.output).resolve()
     if output != ROOT and ROOT not in output.parents:
         raise SystemExit("output must remain inside the repository")
+    if args.git_index and release != ROOT:
+        raise SystemExit("--git-index is valid only when release is the repository root")
 
     files = []
     for path in sorted(candidate_paths(release)):
@@ -56,10 +73,11 @@ def main() -> int:
             and path.resolve() != output
             and not any(part in SKIP_DIRS or part.endswith(".egg-info") for part in path.parts)
         ):
+            content = indexed_bytes(path) if args.git_index else None
             files.append({
                 "path": path.relative_to(release).as_posix(),
-                "sha256": digest(path),
-                "bytes": path.stat().st_size,
+                "sha256": hashlib.sha256(content).hexdigest() if content is not None else digest(path),
+                "bytes": len(content) if content is not None else path.stat().st_size,
             })
 
     receipt = {

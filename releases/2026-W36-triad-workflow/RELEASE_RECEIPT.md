@@ -19,6 +19,7 @@ State: `Φ — RELEASE_CANDIDATE_NOT_SHIPPED`
 | Repository license audit | PASS — 100 text files |
 | Repository and release-boundary audit | PASS |
 | Structural MANTIS review | PASS_FOR_DRAFT_REVIEW_AT_PHI |
+| Draft review surface | PASS — [pull request #5](https://github.com/dkl101001/BLOOMCORE-NOW/pull/5) |
 | Human release approval | ABSENT |
 
 The draft pull-request handoff is recorded separately in the Phase 38

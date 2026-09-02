@@ -3,7 +3,7 @@
   "schema": "BLOOMCORE_NOW.RELEASE_INTEGRITY_RECEIPT.v2",
   "generation": "DETERMINISTIC_CONTENT_MANIFEST",
   "release": ".",
-  "file_count": 117,
+  "file_count": 118,
   "files": [
     {
       "path": ".github/ISSUE_TEMPLATE/current-problem.yml",
@@ -217,8 +217,8 @@
     },
     {
       "path": "forge_tools/build_release_receipt.py",
-      "sha256": "067a27f692a55bc5cf95c8851786a44ab8d54f5015c6c1345ef5324577a002c5",
-      "bytes": 2901
+      "sha256": "543c1fe78e2f6487f46bb06ef1ecbe4cea55df68907b7e2ca11806f013f65838",
+      "bytes": 3621
     },
     {
       "path": "forge_tools/check_boundaries.py",
@@ -427,8 +427,8 @@
     },
     {
       "path": "releases/2026-W36-triad-workflow/INTEGRITY_RECEIPT.json",
-      "sha256": "3b6260c1b8e0baee9d243279e29a1e018063135285d9d9f9c366240e8c0d7a2b",
-      "bytes": 5203
+      "sha256": "706982636cbc4b319a6141663b16e3c755faff53a85ef1ba7549fc839c58e92b",
+      "bytes": 5376
     },
     {
       "path": "releases/2026-W36-triad-workflow/LICENSE_MAP.md",
@@ -457,8 +457,8 @@
     },
     {
       "path": "releases/2026-W36-triad-workflow/RELEASE_RECEIPT.md",
-      "sha256": "10d63d811d0f30bef8de3af60593d9f3e350978a7df510356615408d56b05658",
-      "bytes": 1252
+      "sha256": "cb84b62b8f354f568151afe73634ab4bad418243c229fdb0d5656b08f709683c",
+      "bytes": 1357
     },
     {
       "path": "releases/2026-W36-triad-workflow/contracts/triad-workflow.schema.json",
@@ -501,14 +501,19 @@
       "bytes": 3394
     },
     {
+      "path": "releases/2026-W36-triad-workflow/evidence/PHASE38_POSTFLIGHT_RECEIPT.md",
+      "sha256": "18371b9e9ee1c753c4800558751ac0da2084f3f8f3a702f3be395f41d2258c39",
+      "bytes": 2680
+    },
+    {
       "path": "releases/2026-W36-triad-workflow/evidence/PREFLIGHT_SOURCE_BINDING_LEDGER.md",
       "sha256": "fb13c458854ea42e8bf630541abb35a2912033a9edc13c637509a6618554ce6f",
       "bytes": 3970
     },
     {
       "path": "releases/2026-W36-triad-workflow/evidence/REQUIREMENT_TO_EVIDENCE_LEDGER.json",
-      "sha256": "a5e1d7f658e757b3c719554ef9dc8af399a9fd02eada12fd23973bc62c77fb86",
-      "bytes": 4227
+      "sha256": "8e035f4ce5feab375f116a666f48d289d65d0dea40f0e2b4b404f1098063f4e7",
+      "bytes": 4357
     },
     {
       "path": "releases/2026-W36-triad-workflow/evidence/SOURCE_DISPOSITION_LEDGER.json",
