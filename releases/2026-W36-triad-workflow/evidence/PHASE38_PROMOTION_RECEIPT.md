@@ -29,12 +29,13 @@ truth, identity, or native-system witnesses.
 - Prior-release regressions: PASS — 16/16.
 - Full foundry suite: PASS — 33/33.
 - Compilation and validate/run/verify/replay demo: PASS.
-- License audit: PASS — 106 text files.
+- License audit: PASS — 107 text files after final post-merge evidence.
 - Root and release boundary audit: PASS.
 - Deterministic W36 and repository receipt regeneration: PASS.
 - Clean archive and wheel import: PASS.
 - Structural MANTIS promotion disposition:
   `PASS_FOR_HUMAN_APPROVED_ACTIVE_MERGE`.
 
-The active-state change becomes effective when promotion pull request #7 merges
-after its GitHub checks pass.
+Promotion pull request #7 passed GitHub CI and the Boundary/License Membrane,
+then merged at `22bbe52db1bcca206f8390fa699cbcc7f2690b49`. The active-state
+change is effective on `main`.
