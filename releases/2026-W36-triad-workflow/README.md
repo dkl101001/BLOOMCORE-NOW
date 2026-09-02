@@ -4,7 +4,7 @@
 
 > Preserve the source. Bound the claim. Prove the work.
 
-State: **Φ — RELEASE_CANDIDATE_NOT_SHIPPED**
+State: **1 — ACTIVE**
 
 This small, dependency-free Python tool turns a source-bound task packet into
 a deterministic workflow report and receipt. It preserves the Triad's three

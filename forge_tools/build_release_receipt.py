@@ -34,7 +34,7 @@ def indexed_bytes(path: pathlib.Path) -> bytes:
 
 def candidate_paths(release: pathlib.Path) -> list[pathlib.Path]:
     """Use Git custody for a root receipt; release receipts remain archive-capable."""
-    if release == ROOT and (ROOT / ".git").is_dir():
+    if release == ROOT and (ROOT / ".git").exists():
         result = subprocess.run(
             ["git", "ls-files", "-z"],
             cwd=ROOT,

@@ -3,7 +3,7 @@
   "schema": "BLOOMCORE_NOW.RELEASE_INTEGRITY_RECEIPT.v2",
   "generation": "DETERMINISTIC_CONTENT_MANIFEST",
   "release": "releases/2026-W36-triad-workflow",
-  "file_count": 30,
+  "file_count": 33,
   "files": [
     {
       "path": "LICENSE_MAP.md",
@@ -22,18 +22,18 @@
     },
     {
       "path": "PUBLIC_BOUNDARY.yml",
-      "sha256": "7f571a0237bc6f3da6048209a4d85981effed9624a4effe6ce5cbe259ceb1f35",
-      "bytes": 638
+      "sha256": "8b7e5cb9dbafde9e1d3436810c79d610ecca0f81674f25d3be9c6374b77c3931",
+      "bytes": 733
     },
     {
       "path": "README.md",
-      "sha256": "5afc5bcaee713874165d5cca4ad6116a22fcc2d6b727d371c1dea7f404e8623e",
-      "bytes": 2380
+      "sha256": "39aa14f904e9199643e56d5f7be19709af3d42cfdd34ddc4f600426115f9ff3a",
+      "bytes": 2356
     },
     {
       "path": "RELEASE_RECEIPT.md",
-      "sha256": "cb84b62b8f354f568151afe73634ab4bad418243c229fdb0d5656b08f709683c",
-      "bytes": 1357
+      "sha256": "177daefedb45281612fc5b5aa23cd5dbb2feccaca8a43a35d72b13df6ffbeb3f",
+      "bytes": 1528
     },
     {
       "path": "contracts/triad-workflow.schema.json",
@@ -76,14 +76,29 @@
       "bytes": 3394
     },
     {
+      "path": "evidence/MANTIS_PROMOTION_AUDIT.md",
+      "sha256": "9943a03cb08412fd430ef96eb4fcca0c461d53feadd18b2c09d74c04784f680e",
+      "bytes": 1342
+    },
+    {
       "path": "evidence/PHASE38_POSTFLIGHT_RECEIPT.md",
-      "sha256": "18371b9e9ee1c753c4800558751ac0da2084f3f8f3a702f3be395f41d2258c39",
-      "bytes": 2680
+      "sha256": "50262ec193e08c1ad4275e5067d25e1f1634cc1fa1d0943fe9e1b9b6af66715b",
+      "bytes": 2976
+    },
+    {
+      "path": "evidence/PHASE38_PROMOTION_RECEIPT.md",
+      "sha256": "1345cbadb875be05d74c4a525ef2aa71dd39aa6d6c276a0af33a461eef218991",
+      "bytes": 1448
     },
     {
       "path": "evidence/PREFLIGHT_SOURCE_BINDING_LEDGER.md",
       "sha256": "fb13c458854ea42e8bf630541abb35a2912033a9edc13c637509a6618554ce6f",
       "bytes": 3970
+    },
+    {
+      "path": "evidence/PROMOTION_PREFLIGHT.md",
+      "sha256": "85cea74161504e178f58bf1528f8e0fec59d568d1244eb072ab97238de54458d",
+      "bytes": 1922
     },
     {
       "path": "evidence/REQUIREMENT_TO_EVIDENCE_LEDGER.json",

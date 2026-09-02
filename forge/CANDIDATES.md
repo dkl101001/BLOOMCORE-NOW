@@ -4,7 +4,7 @@
 
 | Candidate | Pain | Legibility | Demo | Build | BLOOMCORE fit | Boundary | State |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |
-| Triad-Derived Workflow | 5 | 5 | 5 | 5 | 5 | 5 | Φ |
+| Triad-Derived Workflow | 5 | 5 | 5 | 5 | 5 | 5 | 1 |
 | Dependency Receipt | 4 | 4 | 4 | 4 | 4 | 5 | Φ |
 | Local Secret Inspector | 5 | 5 | 5 | 4 | 4 | 4 | Φ |
 
