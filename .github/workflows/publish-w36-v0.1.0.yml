@@ -27,8 +27,8 @@ jobs:
           fetch-depth: 0
       - name: Bind publisher to active main
         run: |
-          test "$(git rev-parse HEAD^^)" = "$SOURCE_SHA"
           test "$(git rev-parse origin/main)" = "$SOURCE_SHA"
+          test "$(git diff --name-only "$SOURCE_SHA" HEAD)" = ".github/workflows/publish-w36-v0.1.0.yml"
       - name: Run foundry validation
         run: |
           git worktree add --detach /tmp/w36-source "$SOURCE_SHA"
@@ -51,6 +51,8 @@ jobs:
             exit 1
           fi
       - name: Publish immutable GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           {
             echo "Preserve the source. Bound the claim. Prove the work."
