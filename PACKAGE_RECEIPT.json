@@ -3,7 +3,7 @@
   "schema": "BLOOMCORE_NOW.RELEASE_INTEGRITY_RECEIPT.v2",
   "generation": "DETERMINISTIC_CONTENT_MANIFEST",
   "release": ".",
-  "file_count": 118,
+  "file_count": 121,
   "files": [
     {
       "path": ".github/ISSUE_TEMPLATE/current-problem.yml",
@@ -42,13 +42,13 @@
     },
     {
       "path": "BUILD_QUEUE.md",
-      "sha256": "3c4025cb39d5b08ae9fee0d1edf69ab2ac4724fe65893b4197fd5960ba163628",
-      "bytes": 935
+      "sha256": "7f069845a8eb9341d5c3a7991774cdb45d4ed350953f03e9db693df1e649bd25",
+      "bytes": 865
     },
     {
       "path": "CHANGELOG.md",
-      "sha256": "0791068901a1c1de1a1f47b4a648886cdf42943004270a4d5dc544ee2788f87e",
-      "bytes": 1108
+      "sha256": "0bf0a3d3498d147e9748459fd9554b4d63a7de4b7d1a4f7ac4e51d4636ddbc30",
+      "bytes": 1202
     },
     {
       "path": "CODE_OF_CONDUCT.md",
@@ -102,13 +102,13 @@
     },
     {
       "path": "README.md",
-      "sha256": "ce06cd6f00372f720d76294b731410ce769c039666f053d22f96c86d0a2e1825",
-      "bytes": 6930
+      "sha256": "d9c7cc1556787556836cbab045463b38bc6d5faa6a844f63ce7e1c161e902140",
+      "bytes": 6941
     },
     {
       "path": "RELEASE_INDEX.md",
-      "sha256": "34c8e7ea88559385ebac9d8d8ef17f607f95faeca6a96c255157387857e0d9d1",
-      "bytes": 787
+      "sha256": "3a1039751984abe8c54eabbddb47d69871ae8087fe9c8c1c5f714067883f1e40",
+      "bytes": 763
     },
     {
       "path": "SECURITY.md",
@@ -177,8 +177,8 @@
     },
     {
       "path": "forge/CANDIDATES.md",
-      "sha256": "1a1b4e9fec9188e1e13a00ec9c9570dcfc7045323a9e17cfa219574aba357f11",
-      "bytes": 449
+      "sha256": "3bceb5f927db2de89363d9c9e6fe879ad4fdd960f46acca46165dcd11dd97dec",
+      "bytes": 448
     },
     {
       "path": "forge/CURRENT_PROBLEM.md",
@@ -192,8 +192,8 @@
     },
     {
       "path": "forge/SELECTION_RECEIPT.md",
-      "sha256": "7bf5816e37a19e1286c44d19329d155643b6fa55c02a4c0e8717d4da23249dcb",
-      "bytes": 684
+      "sha256": "468a89c94e5d1107e96f1d62cfeea169c9b1afdbe4b0cb5ed4097b1b1b45a434",
+      "bytes": 803
     },
     {
       "path": "forge/templates/BOUNDARY_TEMPLATE.yml",
@@ -217,7 +217,7 @@
     },
     {
       "path": "forge_tools/build_release_receipt.py",
-      "sha256": "543c1fe78e2f6487f46bb06ef1ecbe4cea55df68907b7e2ca11806f013f65838",
+      "sha256": "f7752a0b223653b600bb0aa2a4b575de0ae7233d79fa8d4dcd83e96d21b46da9",
       "bytes": 3621
     },
     {
@@ -427,8 +427,8 @@
     },
     {
       "path": "releases/2026-W36-triad-workflow/INTEGRITY_RECEIPT.json",
-      "sha256": "706982636cbc4b319a6141663b16e3c755faff53a85ef1ba7549fc839c58e92b",
-      "bytes": 5376
+      "sha256": "88c3dd37a0b26f25cdb4c10e7fae4e37e523c3900b34744c0137e94ed4a3d79d",
+      "bytes": 5883
     },
     {
       "path": "releases/2026-W36-triad-workflow/LICENSE_MAP.md",
@@ -447,18 +447,18 @@
     },
     {
       "path": "releases/2026-W36-triad-workflow/PUBLIC_BOUNDARY.yml",
-      "sha256": "7f571a0237bc6f3da6048209a4d85981effed9624a4effe6ce5cbe259ceb1f35",
-      "bytes": 638
+      "sha256": "8b7e5cb9dbafde9e1d3436810c79d610ecca0f81674f25d3be9c6374b77c3931",
+      "bytes": 733
     },
     {
       "path": "releases/2026-W36-triad-workflow/README.md",
-      "sha256": "5afc5bcaee713874165d5cca4ad6116a22fcc2d6b727d371c1dea7f404e8623e",
-      "bytes": 2380
+      "sha256": "39aa14f904e9199643e56d5f7be19709af3d42cfdd34ddc4f600426115f9ff3a",
+      "bytes": 2356
     },
     {
       "path": "releases/2026-W36-triad-workflow/RELEASE_RECEIPT.md",
-      "sha256": "cb84b62b8f354f568151afe73634ab4bad418243c229fdb0d5656b08f709683c",
-      "bytes": 1357
+      "sha256": "2f94fa6f31ce7f92177d8edc6129b833d53d718162644638f6f9de6367993f59",
+      "bytes": 1584
     },
     {
       "path": "releases/2026-W36-triad-workflow/contracts/triad-workflow.schema.json",
@@ -501,14 +501,29 @@
       "bytes": 3394
     },
     {
+      "path": "releases/2026-W36-triad-workflow/evidence/MANTIS_PROMOTION_AUDIT.md",
+      "sha256": "9943a03cb08412fd430ef96eb4fcca0c461d53feadd18b2c09d74c04784f680e",
+      "bytes": 1342
+    },
+    {
       "path": "releases/2026-W36-triad-workflow/evidence/PHASE38_POSTFLIGHT_RECEIPT.md",
-      "sha256": "18371b9e9ee1c753c4800558751ac0da2084f3f8f3a702f3be395f41d2258c39",
-      "bytes": 2680
+      "sha256": "50262ec193e08c1ad4275e5067d25e1f1634cc1fa1d0943fe9e1b9b6af66715b",
+      "bytes": 2976
+    },
+    {
+      "path": "releases/2026-W36-triad-workflow/evidence/PHASE38_PROMOTION_RECEIPT.md",
+      "sha256": "5c7690f3020b5bce749c393a06c6ae2296487739adc2ed81a4872935bfc44e08",
+      "bytes": 1561
     },
     {
       "path": "releases/2026-W36-triad-workflow/evidence/PREFLIGHT_SOURCE_BINDING_LEDGER.md",
       "sha256": "fb13c458854ea42e8bf630541abb35a2912033a9edc13c637509a6618554ce6f",
       "bytes": 3970
+    },
+    {
+      "path": "releases/2026-W36-triad-workflow/evidence/PROMOTION_PREFLIGHT.md",
+      "sha256": "85cea74161504e178f58bf1528f8e0fec59d568d1244eb072ab97238de54458d",
+      "bytes": 1922
     },
     {
       "path": "releases/2026-W36-triad-workflow/evidence/REQUIREMENT_TO_EVIDENCE_LEDGER.json",

@@ -97,7 +97,7 @@ authorship_preserved: true
 limitations_declared: true
 ```
 
-## Current release candidate
+## Current active release
 
 [`2026-W36 — Triad-Derived Workflow`](releases/2026-W36-triad-workflow/)
 turns source-bound work into a deterministic, replayable structural witness.
@@ -106,10 +106,10 @@ turns source-bound work into a deterministic, replayable structural witness.
 
 It preserves three differentiated authority roles, five epistemic classes,
 eight execution axes, contradiction residue, evidence-bound completion, and
-tamper/replay receipts. It remains `Φ — RELEASE_CANDIDATE_NOT_SHIPPED` pending
-human review.
+tamper/replay receipts. It is `1 — ACTIVE` following deterministic validation
+and explicit human approval.
 
-## Current active release
+## Previous active release
 
 [`2026-W35 — Panic Professionally`](releases/2026-W35-panic-professionally/)
 turns operational chaos into a local, receipt-bearing incident timeline.

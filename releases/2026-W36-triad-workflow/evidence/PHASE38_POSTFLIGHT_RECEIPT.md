@@ -60,3 +60,8 @@ continuity, canonical promotion, human release approval, or shipment.
 The next authorized transition is human review of pull request #5. Promotion,
 if desired, requires a separate explicit decision bound to the reviewed commit
 and regenerated receipts.
+
+Historical closure: pull request #5 was superseded by the equivalent non-draft
+pull request #6 because of a connector schema failure. PR #6 merged the exact
+candidate tree at `8207e90`. The subsequent Operator approval and active-state
+transition are recorded in `PHASE38_PROMOTION_RECEIPT.md`.

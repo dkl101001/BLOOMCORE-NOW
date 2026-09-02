@@ -2,7 +2,7 @@
 
 # Release Receipt — Triad-Derived Workflow v0.1.0
 
-State: `Φ — RELEASE_CANDIDATE_NOT_SHIPPED`
+State: `1 — ACTIVE`
 
 | Check | Result |
 |---|---|
@@ -16,16 +16,17 @@ State: `Φ — RELEASE_CANDIDATE_NOT_SHIPPED`
 | Offline wheel build, content inspection, and import | PASS |
 | Isolated archive execution | PASS |
 | Deterministic receipt regeneration | PASS |
-| Repository license audit | PASS — 100 text files |
+| Repository license audit | PASS — 106 text files |
 | Repository and release-boundary audit | PASS |
 | Structural MANTIS review | PASS_FOR_DRAFT_REVIEW_AT_PHI |
-| Draft review surface | PASS — [pull request #5](https://github.com/dkl101001/BLOOMCORE-NOW/pull/5) |
-| Human release approval | ABSENT |
+| Candidate review | PASS — [pull request #6](https://github.com/dkl101001/BLOOMCORE-NOW/pull/6), merged at `8207e90` |
+| Human release approval | PASS — Operator instruction, 2026-09-02 |
+| Promotion review | PASS — [pull request #7](https://github.com/dkl101001/BLOOMCORE-NOW/pull/7), awaiting green GitHub checks and merge |
 
-The draft pull-request handoff is recorded separately in the Phase 38
-postflight evidence. Human approval is absent; this candidate is not active,
-shipped, merged, or tagged.
+The candidate was merged unchanged after green GitHub checks. Explicit human
+approval authorizes this separate metadata-and-receipt promotion to
+`1 — ACTIVE`. No tag or GitHub Release is created by this promotion.
 
-The eventual receipt can witness deterministic structural checks only. It will
-not certify semantic truth, scientific validity, native MANTIS/MIRRORSEED
-execution, canonical promotion, or full BLOOMCORE embodiment.
+This receipt witnesses deterministic structural checks and human release
+approval only. It does not certify semantic truth, scientific validity, native
+MANTIS/MIRRORSEED execution, canonical promotion, or full BLOOMCORE embodiment.

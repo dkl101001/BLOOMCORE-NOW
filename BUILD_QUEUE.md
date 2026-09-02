@@ -4,14 +4,11 @@
 
 ## Active
 
-- `2026-W35`: Panic Professionally — local-first incident coordination with
-  receipt-bearing timelines and the legally required amount of screaming.
-
-## Release candidate
-
 - `2026-W36`: Triad-Derived Workflow — source-bound workflow packets with
   differentiated authority, explicit uncertainty, deterministic receipts and
-  byte-for-byte replay. State: `Φ — RELEASE_CANDIDATE_NOT_SHIPPED`.
+  byte-for-byte replay.
+- `2026-W35`: Panic Professionally — local-first incident coordination with
+  receipt-bearing timelines and the legally required amount of screaming.
 
 ## Liminal releases
 

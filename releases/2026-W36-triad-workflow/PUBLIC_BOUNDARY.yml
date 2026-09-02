@@ -10,8 +10,9 @@ license_compatible: true
 phase36_37_custody_present: true
 phase38_lineage_present: true
 authorship_preserved: true
-human_release_approved: false
-release_state: PHI_RELEASE_CANDIDATE_NOT_SHIPPED
+human_release_approved: true
+human_release_approval_evidence: "Operator instruction 'Hell yea promote to 1', 2026-09-02; green candidate merge 8207e90"
+release_state: ACTIVE
 protected_surfaces_imported: []
 native_systems_claimed: []
 boundary_note: "Structural workflow and synthetic fixtures only; no private Triad corpus, protected assembly path, or native execution claim."
