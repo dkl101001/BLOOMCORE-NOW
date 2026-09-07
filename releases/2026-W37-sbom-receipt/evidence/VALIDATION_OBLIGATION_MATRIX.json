@@ -1,0 +1,13 @@
+{
+  "$comment": "SPDX-License-Identifier: Apache-2.0",
+  "schema": "BLOOMCORE_NOW.VALIDATION_OBLIGATION_MATRIX.v1",
+  "release": "2026-W37-sbom-receipt",
+  "obligations": [
+    {"id": "V1", "claim": "CycloneDX JSON is parsed without network access", "test": "unit:valid_and_invalid_input", "status": "passed"},
+    {"id": "V2", "claim": "field states distinguish present, explicit unknown, missing and not machine-verifiable", "test": "unit:status_classification", "status": "passed"},
+    {"id": "V3", "claim": "receipt identity is deterministic and tamper-evident", "test": "unit:determinism_and_verify", "status": "passed"},
+    {"id": "V4", "claim": "no existing release regresses", "test": "forge_tools/run_all_tests.py", "status": "passed"},
+    {"id": "V5", "claim": "license and public/private boundaries hold", "test": "forge_tools/check_licenses.py plus check_boundaries.py", "status": "passed"},
+    {"id": "V6", "claim": "package builds and runs in isolation", "test": "offline wheel plus archive smoke", "status": "passed"}
+  ]
+}

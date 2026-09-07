@@ -97,6 +97,17 @@ authorship_preserved: true
 limitations_declared: true
 ```
 
+## Current release candidate
+
+[`2026-W37 — BLOOMCORE SBOM RECEIPT`](releases/2026-W37-sbom-receipt/)
+turns CycloneDX JSON into a deterministic CISA 2026 structural receipt.
+
+> Present, absent, explicitly unknown—or impossible to prove from one file.
+
+It inspects document and component fields, preserves explicit unknowns, refuses
+to certify organizational practices from a document, and makes no compliance
+claim. It is `Φ — RELEASE_CANDIDATE_NOT_SHIPPED` pending Operator review.
+
 ## Current active release
 
 [`2026-W36 — Triad-Derived Workflow`](releases/2026-W36-triad-workflow/)
@@ -140,14 +151,12 @@ python3 forge_tools/check_licenses.py
 python3 forge_tools/check_boundaries.py
 ```
 
-## Run the current release
+## Run the current release candidate
 
 ```bash
-cd releases/2026-W36-triad-workflow
+cd releases/2026-W37-sbom-receipt
 export PYTHONPATH="$PWD/packages"
-python3 -m triad_workflow validate examples/source-bound-workflow/workflow.json
-python3 -m triad_workflow run examples/source-bound-workflow/workflow.json --out /tmp/triad-workflow-run
-python3 -m triad_workflow verify /tmp/triad-workflow-run
+sh examples/demo.sh
 ```
 
 ## Licensing

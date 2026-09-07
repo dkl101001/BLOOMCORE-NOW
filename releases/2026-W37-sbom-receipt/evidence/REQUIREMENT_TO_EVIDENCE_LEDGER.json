@@ -1,0 +1,13 @@
+{
+  "$comment": "SPDX-License-Identifier: Apache-2.0",
+  "schema": "BLOOMCORE_NOW.REQUIREMENT_TO_EVIDENCE.v1",
+  "release": "2026-W37-sbom-receipt",
+  "requirements": [
+    {"id": "R1", "requirement": "exactly three candidates with independent Forge and commercial states", "evidence": ["forge/CANDIDATES.md", "forge/COMMERCIAL_CANDIDATE_BANK.md", "issue-9"]},
+    {"id": "R2", "requirement": "additive minimum-useful tested build", "evidence": ["packages/sbom_receipt", "tests/test_sbom_receipt.py"]},
+    {"id": "R3", "requirement": "deterministic sub-minute before/after demo", "evidence": ["examples", "tests/test_sbom_receipt.py"]},
+    {"id": "R4", "requirement": "structural receipt without compliance or truth certification", "evidence": ["docs/SCOPE_AND_LIMITATIONS.md", "PUBLIC_BOUNDARY.yml"]},
+    {"id": "R5", "requirement": "license and custody membrane", "evidence": ["LICENSE_MAP.md", "PUBLIC_BOUNDARY.yml", "forge_tools/check_licenses.py"]},
+    {"id": "R6", "requirement": "release-candidate-only handoff", "evidence": ["RELEASE_RECEIPT.md", "draft-pull-request"]}
+  ]
+}

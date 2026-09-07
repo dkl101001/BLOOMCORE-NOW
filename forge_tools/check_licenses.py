@@ -44,6 +44,12 @@ PATH_RULES = (
     ("releases/2026-W36-triad-workflow/examples/", "Apache-2.0"),
     ("releases/2026-W36-triad-workflow/templates/", "Apache-2.0"),
     ("releases/2026-W36-triad-workflow/evidence/", "Apache-2.0"),
+    ("releases/2026-W37-sbom-receipt/packages/sbom_receipt/", "MPL-2.0"),
+    ("releases/2026-W37-sbom-receipt/tests/", "MPL-2.0"),
+    ("releases/2026-W37-sbom-receipt/contracts/", "Apache-2.0"),
+    ("releases/2026-W37-sbom-receipt/docs/", "Apache-2.0"),
+    ("releases/2026-W37-sbom-receipt/examples/", "Apache-2.0"),
+    ("releases/2026-W37-sbom-receipt/evidence/", "Apache-2.0"),
 )
 
 

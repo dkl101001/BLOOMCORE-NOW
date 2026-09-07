@@ -1,0 +1,61 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "properties": [
+    {"name": "bloomcore:license", "value": "SPDX-License-Identifier: Apache-2.0"}
+  ],
+  "serialNumber": "urn:uuid:00000000-0000-4000-8000-000000000037",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-09-07T14:00:00Z",
+    "authors": [
+      {"name": "Example Build System"}
+    ],
+    "lifecycles": [
+      {"phase": "build"}
+    ],
+    "tools": {
+      "components": [
+        {"type": "application", "name": "example-sbom-generator", "version": "2.4.0"}
+      ]
+    },
+    "component": {
+      "type": "application",
+      "bom-ref": "pkg:generic/example-app@1.0.0",
+      "name": "example-app",
+      "version": "1.0.0",
+      "supplier": {"name": "Example Org"},
+      "purl": "pkg:generic/example-app@1.0.0",
+      "hashes": [
+        {"alg": "SHA-256", "content": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"}
+      ],
+      "licenses": [
+        {"license": {"id": "Apache-2.0"}}
+      ]
+    }
+  },
+  "components": [
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/example-lib@3.2.1",
+      "name": "example-lib",
+      "version": "3.2.1",
+      "manufacturer": {"name": "Example Maintainers"},
+      "purl": "pkg:pypi/example-lib@3.2.1",
+      "hashes": [
+        {"alg": "SHA-256", "content": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"}
+      ],
+      "licenses": [
+        {"expression": "MIT"}
+      ]
+    }
+  ],
+  "dependencies": [
+    {"ref": "pkg:generic/example-app@1.0.0", "dependsOn": ["pkg:pypi/example-lib@3.2.1"]},
+    {"ref": "pkg:pypi/example-lib@3.2.1", "dependsOn": []}
+  ],
+  "signature": {
+    "algorithm": "ES256",
+    "value": "synthetic-demo-signature-not-cryptographically-verified"
+  }
+}

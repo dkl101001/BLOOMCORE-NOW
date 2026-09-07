@@ -1,0 +1,46 @@
+{
+  "$comment": "SPDX-License-Identifier: Apache-2.0",
+  "schema": "BLOOMCORE_NOW.SBOM_STRUCTURAL_PROFILE.v1",
+  "profile": "CISA-2026-Minimum-Elements-Structural-Profile",
+  "published": "2026-07-29",
+  "authority": "bounded-implementation-interpretation",
+  "statuses": ["present", "explicit_unknown", "missing", "not_machine_verifiable"],
+  "document_elements": [
+    "sbom_author",
+    "sbom_author_signature",
+    "timestamp",
+    "data_format_name",
+    "data_format_version",
+    "generation_context",
+    "tool_name",
+    "tool_version",
+    "sbom_version"
+  ],
+  "component_elements": [
+    "component_name",
+    "component_version",
+    "component_producer",
+    "component_identifier",
+    "component_hash_value",
+    "component_hash_algorithm",
+    "component_license",
+    "component_dependency_relationship"
+  ],
+  "process_practices": [
+    "generation_frequency",
+    "generation_depth",
+    "known_unknowns_process",
+    "distribution_and_delivery",
+    "access_control",
+    "accommodation_of_updates"
+  ],
+  "claims_not_made": [
+    "official_cisa_conformance",
+    "legal_compliance",
+    "semantic_truth",
+    "signature_validity",
+    "artifact_hash_correspondence",
+    "process_practice_satisfaction"
+  ]
+}
+

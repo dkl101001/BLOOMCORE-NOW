@@ -1,0 +1,30 @@
+{
+  "$comment": "SPDX-License-Identifier: Apache-2.0",
+  "schema": "BLOOMCORE_NOW.SOURCE_DISPOSITION_LEDGER.v1",
+  "release": "2026-W37-sbom-receipt",
+  "sources": [
+    {
+      "class": "governing_master",
+      "identity": "protected-current-promotion",
+      "disposition": "governing",
+      "public_export": "role-and-verification-status-only"
+    },
+    {
+      "class": "bounded_research_companion",
+      "identity": "protected-current-promotion",
+      "disposition": "methods-only",
+      "public_export": "role-and-verification-status-only"
+    },
+    {
+      "class": "execution_adapter",
+      "identity": "repository-contracts",
+      "disposition": "nonauthoritative"
+    },
+    {
+      "class": "external_primary_evidence",
+      "identity": "CISA-2026-SBOM-Minimum-Elements",
+      "disposition": "bounded-profile-input",
+      "canonical": false
+    }
+  ]
+}
