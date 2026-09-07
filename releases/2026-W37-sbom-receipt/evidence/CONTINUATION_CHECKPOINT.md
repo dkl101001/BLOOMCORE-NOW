@@ -12,10 +12,15 @@
 - Release ceiling: `Phi — RELEASE_CANDIDATE_NOT_SHIPPED`.
 - Shipping, merge, tag and promotion remain Operator-controlled.
 
+## Candidate handoff
+
+- Public candidate commit: `b83a7251ca20d47116ae3e44ca5ad9444b042a18`.
+- Draft review: [pull request #10](https://github.com/dkl101001/BLOOMCORE-NOW/pull/10).
+- Local and full-foundry validation: passed.
+- Human release approval: not granted.
+
 ## Next safe action
 
-Implement the dependency-free CycloneDX JSON structural inspector, fixtures,
-documentation and tests inside this additive release directory. Then run the
-full foundry membrane and record the postflight result. No existing release may
-be rewritten.
-
+Operator review of pull request #10. Merge, tag, GitHub Release, active-state
+promotion and any commercial-thread selection require separate Operator choice.
+No existing release may be rewritten.

@@ -16,12 +16,16 @@ State: `Φ — RELEASE_CANDIDATE_NOT_SHIPPED`
 | Python compilation | PASS |
 | Offline package build and isolated import | PASS |
 | Isolated archive execution | PASS |
-| Repository license audit | PASS — pre-integrity 135 text files |
+| Repository license audit | PASS — 137 text files |
 | Repository and release-boundary audit | PASS |
 | Structural MANTIS review | PASS_FOR_DRAFT_REVIEW_AT_PHI |
+| Draft review surface | PASS — [pull request #10](https://github.com/dkl101001/BLOOMCORE-NOW/pull/10) |
 | Human release approval | NOT GRANTED |
 
 This receipt will witness structural checks only. It cannot certify semantic
 truth, CISA compliance, signature validity, artifact-hash correspondence,
 native MANTIS/MIRRORSEED execution, canonical promotion or full BLOOMCORE
 embodiment.
+
+The candidate commit is `b83a7251ca20d47116ae3e44ca5ad9444b042a18`.
+No merge, tag, GitHub Release or promotion was performed.
