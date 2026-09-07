@@ -1,0 +1,13 @@
+{
+  "$comment": "SPDX-License-Identifier: Apache-2.0",
+  "schema": "BLOOMCORE_NOW.DEPENDENCY_ENVIRONMENT.v1",
+  "release": "2026-W37-sbom-receipt",
+  "runtime": {
+    "language": "Python",
+    "supported": ["3.11", "3.12", "3.13"],
+    "third_party_dependencies": []
+  },
+  "network_required": false,
+  "input_formats": ["CycloneDX JSON 1.4 through 1.7"],
+  "output_formats": ["canonical JSON", "Markdown"]
+}

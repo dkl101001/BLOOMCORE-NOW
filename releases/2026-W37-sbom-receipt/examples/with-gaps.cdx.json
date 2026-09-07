@@ -1,0 +1,42 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "properties": [
+    {"name": "bloomcore:license", "value": "SPDX-License-Identifier: Apache-2.0"}
+  ],
+  "metadata": {
+    "timestamp": "2026-09-07T14:00:00Z",
+    "authors": [
+      {"name": "UNKNOWN"}
+    ],
+    "tools": {
+      "components": [
+        {"type": "application", "name": "mystery-generator"}
+      ]
+    }
+  },
+  "components": [
+    {
+      "type": "library",
+      "bom-ref": "component-a",
+      "name": "left-pad-shaped-object",
+      "version": "NOASSERTION",
+      "supplier": {"name": "UNKNOWN"},
+      "purl": "NOASSERTION",
+      "hashes": [
+        {"alg": "SHA-256", "content": "UNKNOWN"}
+      ],
+      "licenses": [
+        {"expression": "NOASSERTION"}
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "component-b",
+      "name": "dependency-with-no-details"
+    }
+  ],
+  "dependencies": [
+    {"ref": "component-a", "dependsOn": ["component-b"]}
+  ]
+}
