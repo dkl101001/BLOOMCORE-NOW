@@ -24,6 +24,9 @@ TEXT_SUFFIXES = {
 SPECIAL_TEXT = {".gitignore"}
 
 PATH_RULES = (
+    ("EDP-01/runner/", "MPL-2.0"),
+    ("EDP-01/analysis/", "MPL-2.0"),
+    ("EDP-01/tests/", "MPL-2.0"),
     ("forge_tools/", "MPL-2.0"),
     ("shared/deterministic-tools/", "MPL-2.0"),
     ("shared/runtime-contracts/", "AGPL-3.0-only"),
@@ -48,6 +51,8 @@ PATH_RULES = (
 
 
 def expected_license(relative: str) -> str | None:
+    if relative.startswith("EDP-01/") and relative.endswith(".md"):
+        return "Apache-2.0"
     for prefix, license_id in PATH_RULES:
         if relative.startswith(prefix):
             return license_id

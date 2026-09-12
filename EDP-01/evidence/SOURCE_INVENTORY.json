@@ -1,0 +1,757 @@
+{
+  "_license": "SPDX-License-Identifier: Apache-2.0",
+  "baseline_commit": "410fa8251ec7d9b825d5ff82597f1e8458d35f81",
+  "sources": [
+    {
+      "path": ".github/ISSUE_TEMPLATE/current-problem.yml",
+      "sha256": "629aad9e97b9a70236c18a137239bb7592fa2a600fa749f8fe570f2d3d8d1fd8",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": ".github/pull_request_template.md",
+      "sha256": "8aa0650bd8b90c1927521e517b871b2b860eaadaeefcb286e07b4af8fdc3599a",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": ".github/workflows/boundary-check.yml",
+      "sha256": "50fbc68903c94f30a1bc33e2ffcde953b8772b623b43c8aef22daaacb4c405af",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "sha256": "062355c7728da76802cb2424dba4699c974abfc277c6cf02e1bc76c3504ecf41",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": ".github/workflows/release.yml",
+      "sha256": "d76537e04f562abca7fb77ae083964c509febb7bad16d24079385155d8c9b685",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": ".github/workflows/weekly-audit.yml",
+      "sha256": "ca1b2e64d5377164eb3834a1d5a4a5542ce3a41002d17ace5eafdcd97bcb62f4",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "e5242ae90b83292527f8f6c2ce3c3ce54294e14bfe2634a6809862db9e650e10",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "BUILD_QUEUE.md",
+      "sha256": "7f069845a8eb9341d5c3a7991774cdb45d4ed350953f03e9db693df1e649bd25",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "0bf0a3d3498d147e9748459fd9554b4d63a7de4b7d1a4f7ac4e51d4636ddbc30",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "CODE_OF_CONDUCT.md",
+      "sha256": "9853a35358ea3e4739421c74ff9f54ad35d18732e69267b59baf16f4c81d781d",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "sha256": "f2cd790bfe808ec9b0664544eb7fed9bdcca8ac93d56dbcef477cffab03ce665",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "COPYRIGHT.md",
+      "sha256": "4232436f0ddb7699f8353808383c261119c92793bf91db1880ac2be8116c7e07",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "CUSTODY.md",
+      "sha256": "66f2684a6ace8e94e0f63a3b33c4ea5fdb40cad0c4810ab339a0c9f900615033",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "DISCLAIMER.md",
+      "sha256": "43df20e965ea88ac299150f5ca480bfa9ae615560a63c466df854ec5b0a191e8",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "LICENSE.md",
+      "sha256": "91e531f531adf83b6167ad2c0663433969fc33e641a9c64862e22cab73e2ad39",
+      "disposition": "USED",
+      "reason": "repository integration source"
+    },
+    {
+      "path": "LICENSES/AGPL-3.0-only.txt",
+      "sha256": "8efd18c6e6527d9f853673c691ebbc0fc017b7a549c26b834f93bb0645b7093e",
+      "disposition": "USED",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "LICENSES/Apache-2.0.txt",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "disposition": "USED",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "LICENSES/MPL-2.0.txt",
+      "sha256": "fab3dd6bdab226f1c08630b1dd917e11fcb4ec5e1e020e2c16f83a0a13863e85",
+      "disposition": "USED",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "NOTICE",
+      "sha256": "2d1ebd7bc8c6e84d1250fe30a30a1709722a1fc0ab5d5482e3e9542dc2945b77",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "PACKAGE_RECEIPT.json",
+      "sha256": "ad7b61bfd8e3be8861b016b5d7760c6890bf6a2f178973fad7e43e33f629e8e5",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "README.md",
+      "sha256": "d9c7cc1556787556836cbab045463b38bc6d5faa6a844f63ce7e1c161e902140",
+      "disposition": "USED",
+      "reason": "repository integration source"
+    },
+    {
+      "path": "RELEASE_INDEX.md",
+      "sha256": "3a1039751984abe8c54eabbddb47d69871ae8087fe9c8c1c5f714067883f1e40",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "SECURITY.md",
+      "sha256": "b5d8094bc98f44bafa5aa491a9228e9446ac11e5836b294fd731b4dd3099e68b",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "sha256": "ca18049a3cfeaf9a0bc9a6d911532c1396ad7975398a877c037d18990677294b",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "WEEKLY_WORKFLOW.md",
+      "sha256": "5f59cb1aabfe747195ad8a195f61eb73d356138de969a03e29a4646b827cd7f3",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "docs/architecture/PHASE_38_PUBLIC_ORIENTATION.md",
+      "sha256": "de6ed145c916a57b66ac04ef619b108cc7818f8877c832963b4ce34d16f8cade",
+      "disposition": "USED",
+      "reason": "repository integration source"
+    },
+    {
+      "path": "docs/assets/ASSET_PROVENANCE.md",
+      "sha256": "827fc1d7b2626068ea3ce0bb81245dc4c4ed54942e790d67dacc7f58ea878977",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "docs/assets/bloomcore-sigil.png",
+      "sha256": "a3b248b4ca91e0a23642ed1a4ba533936431f946e0d45087ce41894d855109b0",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "docs/faq/FAQ.md",
+      "sha256": "0b194695548f6a76e44a6b03e24ff22275c101b5774334bb1d7cda6bd7aaf32b",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "docs/faq/FAQ_GLOSSARY.md",
+      "sha256": "87290e57eb6fdf5f94b9256df6cd5d2a7166258bcd1374bfdab2155e479428b2",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "docs/faq/FAQ_OPEN_QUESTIONS.md",
+      "sha256": "04b645fe6b10872e4a15fb75ed63edb1cb7e135bebcc1554303bb5ccd48624d6",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "docs/faq/FAQ_RELATIONSHIP_MAP.md",
+      "sha256": "646b641f72e3472cdad127e247a3dc55b765cca3b9c0e452a182c06a6823817e",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "docs/faq/FAQ_SOURCE_MATRIX.md",
+      "sha256": "f5833604544849b14f70ba8f6ed3e6d2260bdc1e98cba78e9a3df23596d16715",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "docs/faq/FAQ_TECHNICAL.md",
+      "sha256": "d3348336d051e012b36bcb1985808e4ed4c97ffee7605eea21ee08951ea4ad61",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "docs/faq/README_FAQ_INSERT.md",
+      "sha256": "d39214b7375d6dcc8dfc9ee3b670c3ca718a5571c95c6ffb052b5434e4aa3aa6",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "forge/CANDIDATES.md",
+      "sha256": "3bceb5f927db2de89363d9c9e6fe879ad4fdd960f46acca46165dcd11dd97dec",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "forge/CURRENT_PROBLEM.md",
+      "sha256": "385e0c92bcad5411c3186574c0878c18a2463e0c4bc0a545721b425fc85866cf",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "forge/PUBLIC_PRIVATE_BOUNDARY.md",
+      "sha256": "3e2452557ce8a3731ada7a64ebb0b94f852078975e659beb6563315718e30b12",
+      "disposition": "USED",
+      "reason": "repository integration source"
+    },
+    {
+      "path": "forge/SELECTION_RECEIPT.md",
+      "sha256": "468a89c94e5d1107e96f1d62cfeea169c9b1afdbe4b0cb5ed4097b1b1b45a434",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "forge/templates/BOUNDARY_TEMPLATE.yml",
+      "sha256": "1a6c4c767b5164aedf9314f81db2c3bd1d06bdd54bde66c8e87e920937ead6a5",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "forge/templates/CODEX_WEEKLY_TASK_TEMPLATE.md",
+      "sha256": "6364888d2c4e7c27b69dd93e615817666b9abe1e3d7d7bf7a9d29186efdb7a1e",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "forge/templates/RELEASE_README_TEMPLATE.md",
+      "sha256": "82221ec3623ce9ecddf7caa973871cdd7f1503d59af192aa7830c67bd018dfde",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "forge/templates/SELECTION_TEMPLATE.md",
+      "sha256": "3a6004cfaa02e2eac03f4101aa0bedcd1240007b6f0b3d58d2726641fd820ef5",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "forge_tools/build_release_receipt.py",
+      "sha256": "f7752a0b223653b600bb0aa2a4b575de0ae7233d79fa8d4dcd83e96d21b46da9",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "forge_tools/check_boundaries.py",
+      "sha256": "228efb473cab42e28b4567d3f82e0bd65877f796703cf63d2580f81ca6367261",
+      "disposition": "USED",
+      "reason": "repository integration source"
+    },
+    {
+      "path": "forge_tools/check_licenses.py",
+      "sha256": "2b30a18b0459c991c55f89b4db878d9c2ed95fecb8339e47a312b430cb7113a3",
+      "disposition": "USED",
+      "reason": "repository integration source"
+    },
+    {
+      "path": "forge_tools/run_all_tests.py",
+      "sha256": "052153478c3986ee86e311ada571db02d6a1c1d588f9c991fa064ccb0b703058",
+      "disposition": "USED",
+      "reason": "repository integration source"
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "08d9e1bd87a286b23619ecbba3474a6ffc064d82eb3430281f80f1c0002e716d",
+      "disposition": "USED",
+      "reason": "repository integration source"
+    },
+    {
+      "path": "releases/2026-W31-bloomcore-receipt/LICENSE_MAP.md",
+      "sha256": "43ea06c78bf960904ffa9e9b5d37bc2add0607c64d855c7e0db10ed59e618ac1",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W31-bloomcore-receipt/PUBLIC_BOUNDARY.yml",
+      "sha256": "84b1f0fba8e0a2608ac744f276f09fd3c19df2dcc6fea2a0c80cec5b122ec836",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W31-bloomcore-receipt/README.md",
+      "sha256": "8171c0ac461b62d44f991547e7efb9e7fa91dfe07596ea528dcedc7e90dd02a4",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W31-bloomcore-receipt/RELEASE_RECEIPT.md",
+      "sha256": "5b67220bc5556d38654f08a485ea01275c8ab8e52fd9b0fbe1bf063818c3e133",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W31-bloomcore-receipt/apps/receipt-server/LICENSE",
+      "sha256": "81b21ba6e88e871b5f458acef2265d6f0fcf3e680cd2988004159bc9141af491",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W31-bloomcore-receipt/apps/receipt-server/server.py",
+      "sha256": "52f799727124f78253fd18fd2d80ba8fae0b1f0ea26f78853453cbb38a868c52",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W31-bloomcore-receipt/examples/sample_ai_report.md",
+      "sha256": "e9700d62ce74a10383749763440f999e65ef60524f3787dece53ea2c645a85c4",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W31-bloomcore-receipt/packages/evidence-validator/LICENSE",
+      "sha256": "b43951386c21659ae9d69d5fad7aa951cc4c32b19c7872feff3f8ad3a0050138",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W31-bloomcore-receipt/packages/evidence-validator/bloomcore_receipt.py",
+      "sha256": "6077b8ca770553c16f39f0f4b4f0b185f08a7361744b1684338319a86db52ebe",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W31-bloomcore-receipt/packages/evidence-validator/cli.py",
+      "sha256": "44637da81f6d44ea981f90d635b1001db0a9b90dfb9955b4664ff77339816ff6",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W31-bloomcore-receipt/packages/receipt-schema/LICENSE",
+      "sha256": "56baa96d1f3956f1a763617f304c5fb6c450aa69d74c7bb91b019ea32171aeed",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W31-bloomcore-receipt/packages/receipt-schema/receipt.schema.json",
+      "sha256": "6b25bf7727fd10c800cf4069445c8614c029642123393926c5902fbc9e9066bc",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W31-bloomcore-receipt/tests/test_receipt.py",
+      "sha256": "266fb21107c72b8cee6fbf36be87f8169cbac8589ff9f3da219d56d93f7c306b",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W31-bloomcore-receipt/tests/test_server.py",
+      "sha256": "b5c335ce27271c8f4c1bed84f45d6811e836114c5dd8d38fa0093709762c50ac",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W35-panic-professionally/INTEGRITY_RECEIPT.json",
+      "sha256": "8e82eb7c7b41a89355602a653884834b47257a75776353fec98945d140adcdac",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W35-panic-professionally/LICENSE_MAP.md",
+      "sha256": "25aa39479d697dd086b8a832e0376008eb7a2c9f20f76c1378201eee19ee6b52",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W35-panic-professionally/MANIFEST.md",
+      "sha256": "258d21e9c198f4f2d06402cc1cf3cc251e86036e7cbd6c09aa72f20cf43a54fc",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W35-panic-professionally/NOTICE",
+      "sha256": "4cfa40e8b3deee49da7ab2a6bb202427f4d1a495b70ec5dadcc4e07726acf721",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W35-panic-professionally/PUBLIC_BOUNDARY.yml",
+      "sha256": "766103bff538340697fca93906a13fe1123b0d2108042f8fb61c42bda5d59d79",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W35-panic-professionally/README.md",
+      "sha256": "155d4250d1db8d41aa6bfaafdc84241118c7d83140a40978fb024405881355bc",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W35-panic-professionally/RELEASE_RECEIPT.md",
+      "sha256": "b064387aef1c7a735c2a35c2387bf47d2cae38bedfd80d20a65875c8215b9ed3",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W35-panic-professionally/apps/dashboard/LICENSE",
+      "sha256": "37d523927d8ec6506308fbb16ccdafe2e202c149db33ed960cd588c46db4a394",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W35-panic-professionally/apps/dashboard/index.html",
+      "sha256": "f86327e0acc1441b238edfda24e6d9dc23857922e42fa897d7124f427d0d7df2",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W35-panic-professionally/apps/dashboard/server.py",
+      "sha256": "1938b156f5caa56e48553573b53626f4a1fda006b90cdd1a794985f6d8ab6482",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W35-panic-professionally/contracts/incident.schema.json",
+      "sha256": "b5b3b2bb5989325540ba3110332d194a03d62c5ead236544d074b8f49ead2f00",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W35-panic-professionally/docs/OPERATIONS.md",
+      "sha256": "2f0671f23ea451b5145c7989997430072c76058ba1f2270348cf068a9a76c3e0",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W35-panic-professionally/docs/SECURITY_MODEL.md",
+      "sha256": "26b24228b1a55c47bfadd93e9f0587962b36f049119512921ddfc72e9bd1350c",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W35-panic-professionally/examples/demo.sh",
+      "sha256": "b3a2a7e5818442c029892794dfdeafc2696ae4b306b673e3fdb8c688972bdfdc",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W35-panic-professionally/packages/panic_professionally/LICENSE",
+      "sha256": "d2e189ecc652f0e4663c68c7533e6e73f1ef697372dda665e301f28ce2b680b5",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W35-panic-professionally/packages/panic_professionally/__init__.py",
+      "sha256": "ad7bc8eb3bdb1eae7746d3d9552a12de5de7bd4dd4e8cfd1a97d289522e145de",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W35-panic-professionally/packages/panic_professionally/__main__.py",
+      "sha256": "fa35d29cb79b21b10f3019069ada69f0adb88563aa49103c4aa5a3bf63610b50",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W35-panic-professionally/packages/panic_professionally/cli.py",
+      "sha256": "163916925746d1e837812bc425903567c324f5a29b11bf30550a2e12287ffd90",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W35-panic-professionally/packages/panic_professionally/core.py",
+      "sha256": "3386bf3d3d672038ee16fa6a152038fe88df6d8a88fdc100050fb67b4bce453e",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W35-panic-professionally/packages/panic_professionally/store.py",
+      "sha256": "bb62540ecee8e125f60f9b6daf03bcf6ad6cb5e887212308b0acae01d21310f8",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W35-panic-professionally/pyproject.toml",
+      "sha256": "bff32268a8872bf13f09e88c3799f730c9cd3bd0e5e576fb850eec735cad69bf",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W35-panic-professionally/tests/test_dashboard.py",
+      "sha256": "627e68d168d0ede5c3bb595d58c0db8bcbeca37c0c08e9fff98b06e1559aa0f5",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W35-panic-professionally/tests/test_panic_professionally.py",
+      "sha256": "cd1773e122d90cd5104564e54cc6ca4d7b76d0178be776fdc76611b44d6c84c8",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W36-triad-workflow/INTEGRITY_RECEIPT.json",
+      "sha256": "be4af5fb81bbc5545741bf0d0ca8e82b5c467897d5e839dab9477329189b44a4",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W36-triad-workflow/LICENSE_MAP.md",
+      "sha256": "f864a12232b14b93e0917e9e39cd4a3363e8ca2961bc20bfd7069a1d8881f44d",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W36-triad-workflow/MANIFEST.md",
+      "sha256": "0fb049508a35e2b91e2dc7d4aa93e9b2058adb3c86ba31269adac59840445eae",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W36-triad-workflow/NOTICE",
+      "sha256": "803d9f6efece17e0314ce4c091cc367d8740f20d6344d1db583deaf46b845f38",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W36-triad-workflow/PUBLIC_BOUNDARY.yml",
+      "sha256": "8b7e5cb9dbafde9e1d3436810c79d610ecca0f81674f25d3be9c6374b77c3931",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W36-triad-workflow/README.md",
+      "sha256": "39aa14f904e9199643e56d5f7be19709af3d42cfdd34ddc4f600426115f9ff3a",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W36-triad-workflow/RELEASE_RECEIPT.md",
+      "sha256": "fda2424ab83faa9e01b9c9ef101e17b303c176f64f5af3bb1673d1443dacc23a",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W36-triad-workflow/contracts/triad-workflow.schema.json",
+      "sha256": "be9f35850805aafd9b4db44e37b5a86411876cf79e6441e9ee563f0a304d31b4",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W36-triad-workflow/docs/BOUNDARY_AND_LIMITATIONS.md",
+      "sha256": "303b562701f8ab2f0d335c8e9237d804e6edbf07200cc21e33af2d79d8241d5f",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W36-triad-workflow/docs/LINEAGE.md",
+      "sha256": "4cc7b1caa311f6dff3af09fccc71bb9cd82e859ea06750ab985f61cd5932a82f",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W36-triad-workflow/docs/THREAT_MODEL.md",
+      "sha256": "960b5214c458f0fc3e00f5b9337165cd6a2815644153e6dd3eaa95b61a052c0c",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W36-triad-workflow/docs/WORKFLOW_SPEC.md",
+      "sha256": "7ba19faaed09986196895671524d5d03a20fe98254acaa1636a5c944ae5dce0a",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W36-triad-workflow/evidence/CONTINUATION_CHECKPOINT.md",
+      "sha256": "c6097500fbf9a9c5b60ae199dfe2665ba849c1518fc3f438db5f4dbe8b01f7fa",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W36-triad-workflow/evidence/DEPENDENCY_ENVIRONMENT_MANIFEST.json",
+      "sha256": "bb4a90603da2588f65e3766d1ffd763fdf4b95f0764445c77537c009aa837792",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W36-triad-workflow/evidence/MANTIS_POSTBUILD_AUDIT.md",
+      "sha256": "955529c0680e5d0085af5911f2d05289216f43159e2d9a53571fbc291b3c6150",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W36-triad-workflow/evidence/MANTIS_PROMOTION_AUDIT.md",
+      "sha256": "9943a03cb08412fd430ef96eb4fcca0c461d53feadd18b2c09d74c04784f680e",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W36-triad-workflow/evidence/PHASE38_POSTFLIGHT_RECEIPT.md",
+      "sha256": "50262ec193e08c1ad4275e5067d25e1f1634cc1fa1d0943fe9e1b9b6af66715b",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W36-triad-workflow/evidence/PHASE38_PROMOTION_RECEIPT.md",
+      "sha256": "f5eece5282bd6f09e25f7db9c8375a7ce316a49f09ff41c664cc08ec1867a093",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W36-triad-workflow/evidence/POSTMERGE_VERIFICATION.md",
+      "sha256": "d7ed7f5b672d809798c7ff45f56d236e8d19908555aa67c7995949929a881fbf",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W36-triad-workflow/evidence/PREFLIGHT_SOURCE_BINDING_LEDGER.md",
+      "sha256": "fb13c458854ea42e8bf630541abb35a2912033a9edc13c637509a6618554ce6f",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W36-triad-workflow/evidence/PROMOTION_PREFLIGHT.md",
+      "sha256": "85cea74161504e178f58bf1528f8e0fec59d568d1244eb072ab97238de54458d",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W36-triad-workflow/evidence/REQUIREMENT_TO_EVIDENCE_LEDGER.json",
+      "sha256": "8e035f4ce5feab375f116a666f48d289d65d0dea40f0e2b4b404f1098063f4e7",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W36-triad-workflow/evidence/SOURCE_DISPOSITION_LEDGER.json",
+      "sha256": "fc5803e3444483928a55dc1cf22f1c4b9a036b87cc53ed0414d39062346a2bb9",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W36-triad-workflow/evidence/VALIDATION_OBLIGATION_MATRIX.json",
+      "sha256": "6e191d6b55e1784f018651365373e7ee2b30a6e8e6d7b3864c8b829875d36c8f",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W36-triad-workflow/examples/source-bound-workflow/sources/dsk-companion.txt",
+      "sha256": "2ea4800b37488f032d356a56b63bb9c34e2700bc312741b94decf4c0f67423c2",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W36-triad-workflow/examples/source-bound-workflow/sources/execution-adapter.txt",
+      "sha256": "243b2b8adf0d820b86ffdbe306a5f123a89bdb91e58b9cb8bba04ee6c2a02494",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W36-triad-workflow/examples/source-bound-workflow/sources/governing-master.txt",
+      "sha256": "6cba014c10d3947e3304df16db87777691ab6ac4ded89334cc5eabc48d43b133",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W36-triad-workflow/examples/source-bound-workflow/workflow.json",
+      "sha256": "5983042d65868331b3c2def18bf773e2363e1ecb376e6d4b08c7c72a3f4dc1a8",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W36-triad-workflow/packages/triad_workflow/__init__.py",
+      "sha256": "04daa23aca40f5ad78d2963e5611ba12129b2b3805576aafc89aeb5ade6b2f0a",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W36-triad-workflow/packages/triad_workflow/__main__.py",
+      "sha256": "d0c043fcfebebf341409e657c28f96c0edde8a8b10392b6849e3e696ea3de841",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W36-triad-workflow/packages/triad_workflow/cli.py",
+      "sha256": "0d76219a0a04f60aca98593879e3d0dcec5eddeca75e34af80d56b8e50611b10",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W36-triad-workflow/packages/triad_workflow/core.py",
+      "sha256": "0b13dc297222719689547b1e6bb65106feb4e8301ebb68bd50fce951030abe99",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W36-triad-workflow/pyproject.toml",
+      "sha256": "67ba92f391aeabfa909cd6e8d67b1475b863877fd39ec3f61d7e3b32efabe912",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W36-triad-workflow/templates/README.md",
+      "sha256": "a2db4444f40902243764c09944e84b0b6e1bc1fee666d98cf321e454f9b8e052",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "releases/2026-W36-triad-workflow/tests/test_triad_workflow.py",
+      "sha256": "e4dc567c5a87bf020730e016be8f203169c74158497f502c9b5dca5f3f2a59df",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "shared/deterministic-tools/README.md",
+      "sha256": "dfb7b244b3846b79cd4b52b81cfa6387f201152968aa19cd130e1ea8721a87bb",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "shared/runtime-contracts/README.md",
+      "sha256": "ed7ff94d564906b470c1f13b16826d996493542424aa069dd971456821ebd545",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    },
+    {
+      "path": "shared/schemas/README.md",
+      "sha256": "aa861102a542bbe9201c0e730949b74d9a2240d42bb4f19552a7447f743710bd",
+      "disposition": "PRESERVED_LINEAGE",
+      "reason": "existing repository source retained without replacement"
+    }
+  ],
+  "additional_sources": [
+    {
+      "source": "current user BUILD PROMPT \u2014 BLOOMCORE EDP-01",
+      "disposition": "USED",
+      "representation": "conversation text; no byte-artifact hash asserted"
+    },
+    {
+      "source": "bundled Phase 38 v1.9 snapshot",
+      "sha256": "b1777b606dd1017b973e29b94df172e4eb192946ecd5484f402d1b950c0ce65d",
+      "disposition": "USED",
+      "representation": "bounded governing sections; no private source redistribution"
+    }
+  ]
+}

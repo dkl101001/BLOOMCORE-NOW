@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: MPL-2.0
 # Copyright 2026 Frazer Σ Love ACO-Σ and Sara ΣΩ
-"""Run every weekly release test suite without third-party test dependencies."""
+"""Run weekly release and experimental candidate test suites."""
 
 from __future__ import annotations
 
@@ -23,6 +23,9 @@ def main() -> int:
     if not test_suites:
         print("NO RELEASE TEST SUITES FOUND")
         return 1
+    candidate_suite = ROOT / "EDP-01" / "tests"
+    if candidate_suite.is_dir():
+        test_suites.append(candidate_suite)
     commands = [
         [
             sys.executable,

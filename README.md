@@ -97,6 +97,14 @@ authorship_preserved: true
 limitations_declared: true
 ```
 
+## Frozen experimental research instrument
+
+[`EDP-01 — Endogenous Development Protocol`](EDP-01/README.md) provides a
+provider-neutral experimental protocol, nine-task pilot, blinded scoring and
+deterministic provenance checks. **Frozen experimental candidate;
+MODEL_TRIALS_NOT_RUN.** Frazer approved this reviewed artifact for repository publication; its hypotheses remain unconfirmed.
+Install `EDP-01/requirements.txt` before running its tests or the full repository audit.
+
 ## Current active release
 
 [`2026-W36 — Triad-Derived Workflow`](releases/2026-W36-triad-workflow/)

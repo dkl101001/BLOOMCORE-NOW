@@ -1,0 +1,250 @@
+{
+  "$comment": "SPDX-License-Identifier: Apache-2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EDP-01 immutable raw trial record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "record_id",
+    "provider",
+    "model",
+    "family",
+    "task_id",
+    "replicate_id",
+    "experiment_version",
+    "date",
+    "model_version",
+    "model_version_availability",
+    "variant",
+    "inference_parameters",
+    "condition",
+    "messages",
+    "prompt_sha256",
+    "context_sha256",
+    "receipt_sha256",
+    "raw_response",
+    "evaluator_scores",
+    "evaluator_disagreement",
+    "provenance"
+  ],
+  "properties": {
+    "record_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "provider": {
+      "type": "string",
+      "minLength": 1
+    },
+    "model": {
+      "type": "string",
+      "minLength": 1
+    },
+    "family": {
+      "type": "string",
+      "minLength": 1
+    },
+    "task_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "replicate_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "experiment_version": {
+      "const": "0.1.1-experimental"
+    },
+    "date": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "model_version": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "model_version_availability": {
+      "enum": [
+        "exact",
+        "unavailable"
+      ]
+    },
+    "variant": {
+      "enum": [
+        "E_A",
+        "E_B",
+        "E_0"
+      ]
+    },
+    "inference_parameters": {
+      "type": "object"
+    },
+    "condition": {
+      "type": "object",
+      "required": [
+        "training_stratum",
+        "exposure"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "training_stratum": {
+          "enum": [
+            "base",
+            "posttrained",
+            "unknown"
+          ]
+        },
+        "exposure": {
+          "enum": [
+            "none",
+            "developmental_context",
+            "instruction",
+            "sham"
+          ]
+        }
+      }
+    },
+    "messages": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "role",
+          "content"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "role": {
+            "enum": [
+              "user",
+              "assistant"
+            ]
+          },
+          "content": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "prompt_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "context_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "receipt_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "raw_response": {
+      "type": "string"
+    },
+    "evaluator_scores": {
+      "type": "array",
+      "maxItems": 0,
+      "description": "Raw records remain immutable; scores are joined in the analysis report."
+    },
+    "evaluator_disagreement": {
+      "type": "null",
+      "description": "Not yet rated; joined report supplies disagreement."
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "adapter",
+        "registration_sha256",
+        "tasks_sha256",
+        "exposure_sha256",
+        "training_provenance",
+        "hidden_context_disclosure",
+        "persistence_scope",
+        "inference_replay",
+        "source_manifest_sha256"
+      ],
+      "properties": {
+        "adapter": {
+          "type": "object",
+          "minProperties": 1
+        },
+        "registration_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "tasks_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "exposure_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "training_provenance": {
+          "type": "string",
+          "minLength": 1
+        },
+        "hidden_context_disclosure": {
+          "type": "string",
+          "minLength": 1
+        },
+        "persistence_scope": {
+          "const": "explicit_context_only"
+        },
+        "inference_replay": {
+          "const": "not_guaranteed"
+        },
+        "source_manifest_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "model_version_availability": {
+            "const": "exact"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "model_version": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "model_version": {
+            "type": "null"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "task_id": {
+            "const": "T09"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "variant": {
+            "const": "E_0"
+          }
+        }
+      }
+    }
+  ]
+}

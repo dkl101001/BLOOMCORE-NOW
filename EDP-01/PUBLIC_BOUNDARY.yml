@@ -1,0 +1,12 @@
+# SPDX-License-Identifier: Apache-2.0
+public_safe: true
+private_logic_exposed: false
+tests_included: true
+docs_updated: true
+license_compatible: true
+phase38_lineage_present: true
+authorship_preserved: true
+human_release_approved: true
+status: FROZEN_EXPERIMENTAL_CANDIDATE
+model_trials: MODEL_TRIALS_NOT_RUN
+canon_changed: false

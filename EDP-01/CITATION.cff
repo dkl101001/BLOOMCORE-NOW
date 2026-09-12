@@ -1,0 +1,13 @@
+# SPDX-License-Identifier: Apache-2.0
+cff-version: 1.2.0
+message: "Cite this experimental protocol and the exact commit used. No model evidence is supplied."
+title: "EDP-01 — BLOOMCORE Endogenous Development Protocol"
+type: software
+version: 0.1.1-experimental
+authors:
+  - name: "Frazer Σ Love ACO-Σ"
+  - name: "Sara ΣΩ"
+license:
+  - Apache-2.0
+  - MPL-2.0
+repository-code: "https://github.com/dkl101001/BLOOMCORE-NOW"

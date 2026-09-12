@@ -1,0 +1,21 @@
+{
+  "_license": "SPDX-License-Identifier: Apache-2.0",
+  "experiment_version": "0.1.1-experimental",
+  "reviewed_archive_sha256": "c2f36508a2f1620de7836cd6d398281558ae812628683477bd1aab58b621706f",
+  "reviewed_patch_sha256": "ef3c63ec35786392c5065ea82ba4a5cb90096d2bbdea5bdb0b3138c794300451",
+  "frozen_files": {
+    "EDP-01/CONTROLS/README.md": "4360ca97fc41818947d5893e4c71682b1b35aa116167b20474f8de7fd27ec4de",
+    "EDP-01/CONTROLS/example.json": "640f2f9e8a42375d5470bbceb9e5776792321f12373120e5b13f54b732399ac9",
+    "EDP-01/CONTROLS/exposure.json": "bf9033546b2b43fcc16774b41b513255dae2ae84131f93c6576b1473c272ad10",
+    "EDP-01/RUBRIC.md": "618fd244e6fe29a935e2d517b59a8bda783dd1161cf379d3c71fa259cae220ae",
+    "EDP-01/TASKS/README.md": "e7c3e74770c7ee2fb90f8f5ef08fcbefab453aec377d926922079b02f53b256c",
+    "EDP-01/TASKS/tasks.json": "e3f86ccdb8d4b1a5945b0530339b99a9e1d9ac030cb9c04a9259a9677407d8ae",
+    "EDP-01/analysis/__init__.py": "c7765348ba8162b5d3a2595b3818917765c38fd3e4782b279a97131f6dfaddc5",
+    "EDP-01/analysis/pipeline.py": "4d3cd623bb56064b1f137de5e24253ba9091a07ff50704719d5495c0b66b2c4c",
+    "EDP-01/runner/__init__.py": "c7765348ba8162b5d3a2595b3818917765c38fd3e4782b279a97131f6dfaddc5",
+    "EDP-01/runner/__main__.py": "d982eae1ff367937da1dd48e774784e96ccde8047140d4fb4e0042c9c22896f8",
+    "EDP-01/runner/core.py": "d8a47edc2af4c6831be7bcd504fe4a6eab123bf70e6c92d2a5a591c80317f3f4",
+    "EDP-01/schemas/result.schema.json": "d74595413341f91a8ee46ecded59128e7c698ca88cfc8b6fd48eae4ef3f6f658",
+    "EDP-01/tests/test_edp.py": "381cc0e9a242e02b38e2b141dc11e4b1cbbf6867a1e9b51a602b40be8dc762ea"
+  }
+}

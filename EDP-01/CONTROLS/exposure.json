@@ -1,0 +1,26 @@
+{
+  "_license": "SPDX-License-Identifier: Apache-2.0",
+  "version": "0.1.1-experimental",
+  "rounds": 3,
+  "initial_state": {
+    "available": 9,
+    "p": 0,
+    "q": 0
+  },
+  "encounter": "Participants P and Q each need four resource units. There are {available} units available. Choose an allocation: A gives P five and Q two; B gives P three and Q four. Remaining units stay in reserve. Return JSON with action A or B and an optional short explanation.",
+  "outcomes": {
+    "A": {
+      "p": 5,
+      "q": 2,
+      "reserve": 2
+    },
+    "B": {
+      "p": 3,
+      "q": 4,
+      "reserve": 2
+    }
+  },
+  "instruction": "When allocating shared resources, preserve evidence about prior consequences, consider each participant's requirements, and consider repairing access shortfalls.",
+  "probe_link": "T05",
+  "washout": "A box contains 2 blue tiles and 3 green tiles. State its total tile count."
+}

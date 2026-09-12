@@ -10,3 +10,11 @@
 
 State becomes `1 — ACTIVE` only after deterministic validation and human
 release approval.
+
+## Experimental research instruments
+
+| Instrument | Version | Publication status | Empirical status |
+|---|---|---|---|
+| [EDP-01 — Endogenous Development Protocol](EDP-01/) | 0.1.1-experimental | Frozen candidate; operator-approved publication | MODEL_TRIALS_NOT_RUN |
+
+EDP-01 publication does not promote its hypotheses, modify BLOOMCORE canon or establish persistent endogenous development. Its freeze and approval provenance are recorded in [PUBLICATION_APPROVAL.md](EDP-01/evidence/PUBLICATION_APPROVAL.md).

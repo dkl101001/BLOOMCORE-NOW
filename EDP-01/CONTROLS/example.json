@@ -1,0 +1,36 @@
+{
+  "_license": "SPDX-License-Identifier: Apache-2.0",
+  "experiment_version": "0.1.1-experimental",
+  "seed": 71,
+  "replicates": 1,
+  "task_ids": [
+    "T01",
+    "T02",
+    "T03",
+    "T04",
+    "T05",
+    "T06",
+    "T07",
+    "T08",
+    "T09"
+  ],
+  "variants": [
+    "E_A",
+    "E_B",
+    "E_0"
+  ],
+  "training_stratum": "unknown",
+  "exposure": "none",
+  "inference_parameters": {
+    "temperature": 0.0,
+    "max_output_tokens": 512
+  },
+  "provider": "REPLACE_WITH_ACTUAL_PROVIDER",
+  "model": "REPLACE_WITH_ACTUAL_MODEL",
+  "model_version": null,
+  "model_version_availability": "unavailable",
+  "family": "REPLACE_WITH_MODEL_FAMILY",
+  "training_provenance": "unknown; do not label as base",
+  "hidden_context_disclosure": "unknown",
+  "adapter_command": null
+}
