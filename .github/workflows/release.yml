@@ -44,6 +44,8 @@ jobs:
             ""|.*|*/*|*\\*|*..*) echo "unsafe release directory"; exit 1 ;;
           esac
           test -d "releases/$RELEASE_DIRECTORY"
+      - name: Install research instrument dependencies
+        run: python -m pip install -r EDP-01/requirements.txt
       - name: Run foundry tests
         run: python forge_tools/run_all_tests.py
       - name: Build integrity receipt

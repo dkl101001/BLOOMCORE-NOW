@@ -21,6 +21,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Install research instrument dependencies
+        run: python -m pip install -r EDP-01/requirements.txt
       - name: Run every active release test
         run: python forge_tools/run_all_tests.py
       - name: Build every release integrity receipt
