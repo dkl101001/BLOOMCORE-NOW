@@ -1,0 +1,63 @@
+# SPDX-License-Identifier: Apache-2.0
+name: EDP-01 Frozen Candidate Release
+
+on:
+  push:
+    branches: ["main"]
+    paths: [".github/workflows/edp-release.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: edp-01-v0.1.1-release
+  cancel-in-progress: false
+
+env:
+  RELEASE_REF: 43577e33109f4c0e1724a32f3288120e2b009504
+  RELEASE_TAG: edp-01-v0.1.1-experimental
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    environment: release
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Package and verify frozen instrument
+        run: |
+          mkdir -p release-assets
+          git archive --format=zip --output=release-assets/EDP-01-v0.1.1-experimental.zip "$RELEASE_REF" EDP-01
+          python - <<'PY'
+          import hashlib
+          import json
+          import zipfile
+          from pathlib import Path
+          archive = Path('release-assets/EDP-01-v0.1.1-experimental.zip')
+          with zipfile.ZipFile(archive) as z:
+              manifest = json.loads(z.read('EDP-01/evidence/FROZEN_INSTRUMENT_MANIFEST.json'))
+              for name, expected in manifest['frozen_files'].items():
+                  if hashlib.sha256(z.read(name)).hexdigest() != expected:
+                      raise SystemExit(f'Frozen source mismatch: {name}')
+          checksum = hashlib.sha256(archive.read_bytes()).hexdigest()
+          Path('release-assets/SHA256SUMS').write_text(f'{checksum}  {archive.name}\n')
+          PY
+      - name: Publish experimental prerelease
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh release view "$RELEASE_TAG" > /dev/null 2>&1; then
+            echo "Release already exists; preserving its frozen assets and notes."
+            exit 0
+          fi
+          gh release create "$RELEASE_TAG" \
+            release-assets/EDP-01-v0.1.1-experimental.zip release-assets/SHA256SUMS \
+            --target "$RELEASE_REF" \
+            --title "EDP-01 — Endogenous Development Protocol v0.1.1" \
+            --notes-file docs/releases/EDP-01-v0.1.1.md \
+            --prerelease
