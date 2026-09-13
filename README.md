@@ -38,6 +38,10 @@ human-approved release receipt
 
 NOW does not contain protected orchestration, private ECA synthesis, proprietary scoring, identity-bearing substrate memory, hidden routing, or complete organismal assembly paths.
 
+## Experimental research instruments
+
+[EDP-02 — Architectural Causality & Recursive Internalization Protocol](EDP-02/README.md) follows matched checkpoints through architectural regimes, removal probes and reversal. Version 0.2.0-experimental is frozen and approved for experimental publication: **MODEL_TRIALS_NOT_RUN**. See its [release page](https://github.com/dkl101001/BLOOMCORE-NOW/releases/tag/edp-02-v0.2.0-experimental), [review evidence](EDP-02/evidence/REVIEW.md) and [approval receipt](EDP-02/evidence/PUBLICATION_APPROVAL.md).
+
 ## Begin here
 
 - [Current problem](forge/CURRENT_PROBLEM.md)

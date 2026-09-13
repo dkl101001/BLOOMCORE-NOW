@@ -1,0 +1,68 @@
+# SPDX-License-Identifier: Apache-2.0
+name: EDP-02 Frozen Experimental Release
+
+on:
+  push:
+    branches: ["main"]
+    paths: [".github/workflows/edp-02-release.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: edp-02-v0.2.0-release
+  cancel-in-progress: false
+
+env:
+  RELEASE_TAG: edp-02-v0.2.0-experimental
+  FROZEN_MANIFEST_SHA256: fa158e37fa47bfc60ac2566a03d191453c79d5e8e8979184fb0a07ccbbfe41fd
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    environment: release
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Verify approved frozen instrument
+        run: |
+          python - <<'PYCODE'
+          import hashlib, json, os
+          from pathlib import Path
+          p = Path('EDP-02/evidence/FROZEN_INSTRUMENT_MANIFEST.json')
+          assert hashlib.sha256(p.read_bytes()).hexdigest() == os.environ['FROZEN_MANIFEST_SHA256']
+          for name, expected in json.loads(p.read_text())['frozen_files'].items():
+              assert hashlib.sha256(Path(name).read_bytes()).hexdigest() == expected, name
+          assert 'human_release_approved: true' in Path('EDP-02/PUBLIC_BOUNDARY.yml').read_text()
+          PYCODE
+      - name: Install and test
+        run: |
+          python -m pip install -r EDP-01/requirements.txt -r EDP-02/requirements.txt
+          python -m compileall -q forge_tools releases EDP-01 EDP-02
+          python forge_tools/run_all_tests.py
+      - name: Package exact publication commit
+        run: |
+          mkdir -p release-assets
+          git archive --format=zip --output=release-assets/EDP-02-v0.2.0-experimental.zip "$GITHUB_SHA" EDP-02
+          cd release-assets
+          sha256sum EDP-02-v0.2.0-experimental.zip > SHA256SUMS
+      - name: Publish experimental prerelease
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh release view "$RELEASE_TAG" > /dev/null 2>&1; then
+            echo "Release already exists; preserving its assets and notes."
+            exit 0
+          fi
+          gh release create "$RELEASE_TAG" \
+            release-assets/EDP-02-v0.2.0-experimental.zip release-assets/SHA256SUMS \
+            --target "$GITHUB_SHA" \
+            --title "EDP-02 — Architectural Causality & Recursive Internalization v0.2.0" \
+            --notes-file docs/releases/EDP-02-v0.2.0.md \
+            --prerelease

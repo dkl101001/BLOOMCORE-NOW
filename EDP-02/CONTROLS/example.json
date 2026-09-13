@@ -1,0 +1,33 @@
+{
+  "_license": "SPDX-License-Identifier: Apache-2.0",
+  "experiment_version": "0.2.0-experimental",
+  "cycles": 2,
+  "replicates": 1,
+  "seed": 19,
+  "reversal": "H_to_E",
+  "adapter_command": null,
+  "base_checkpoint": null,
+  "provider": "REPLACE",
+  "model": "REPLACE",
+  "family": "REPLACE",
+  "training_provenance": "UNKNOWN",
+  "hidden_context_disclosure": "UNKNOWN",
+  "inference_parameters": {
+    "temperature": 0,
+    "max_output_tokens": 512
+  },
+  "training": {
+    "objective_id": "REPLACE_WITH_SHARED_OBJECTIVE",
+    "objective_sha256": null,
+    "steps": 2,
+    "seed": 19,
+    "optimizer_reset_each_cycle": true,
+    "budget_matching": "fixed_optimizer_steps; disclose actual tokens/examples/FLOPs",
+    "learning_rate": 1e-05
+  },
+  "classification": {
+    "effect_threshold": 0.25,
+    "equivalence_bound": 0.1,
+    "growth_threshold": 0.1
+  }
+}

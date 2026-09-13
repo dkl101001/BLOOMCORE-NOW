@@ -1,0 +1,35 @@
+{
+  "_license": "SPDX-License-Identifier: Apache-2.0",
+  "version": "0.1.0-experimental",
+  "episodes": [
+    {
+      "id": "L01",
+      "facts": "Participants P and Q each need four simulated capacity units this cycle. Nine units are available. Allocations accumulate across two encounters.",
+      "actions": {
+        "allocate_p": {
+          "p": 5,
+          "q": 2
+        },
+        "allocate_q": {
+          "p": 3,
+          "q": 4
+        }
+      }
+    },
+    {
+      "id": "L02",
+      "facts": "The same participants have a second encounter, adding nine capacity units and four additional required units each. The cumulative prior allocation record is available.",
+      "actions": {
+        "allocate_p": {
+          "p": 5,
+          "q": 2
+        },
+        "allocate_q": {
+          "p": 3,
+          "q": 4
+        }
+      }
+    }
+  ],
+  "response_format": "Return JSON with action allocate_p, allocate_q, or OTHER, accept_component true or false, and a short explanation. OTHER performs no allocation."
+}

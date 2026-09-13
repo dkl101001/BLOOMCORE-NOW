@@ -28,9 +28,9 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       - name: Install research instrument dependencies
-        run: python -m pip install -r EDP-01/requirements.txt
+        run: python -m pip install -r EDP-01/requirements.txt -r EDP-02/requirements.txt
       - name: Compile
-        run: python -m compileall -q forge_tools releases EDP-01
+        run: python -m compileall -q forge_tools releases EDP-01 EDP-02
       - name: Test foundry
         run: python forge_tools/run_all_tests.py
 

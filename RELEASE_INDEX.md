@@ -15,6 +15,9 @@ release approval.
 
 | Instrument | Version | Publication status | Empirical status |
 |---|---|---|---|
+| [EDP-02 — Architectural Causality & Recursive Internalization Protocol](EDP-02/) | 0.2.0-experimental | Frozen; operator-approved [experimental release](https://github.com/dkl101001/BLOOMCORE-NOW/releases/tag/edp-02-v0.2.0-experimental) | MODEL_TRIALS_NOT_RUN |
 | [EDP-01 — Endogenous Development Protocol](EDP-01/) | 0.1.1-experimental | Frozen candidate; operator-approved publication | MODEL_TRIALS_NOT_RUN |
 
 EDP-01 publication does not promote its hypotheses, modify BLOOMCORE canon or establish persistent endogenous development. Its freeze and approval provenance are recorded in [PUBLICATION_APPROVAL.md](EDP-01/evidence/PUBLICATION_APPROVAL.md).
+
+EDP-02 independently crosses executable topology and authority wording. Its [approval receipt](EDP-02/evidence/PUBLICATION_APPROVAL.md) and frozen manifest preserve the reviewed instrument. Publication supplies an experimental method, not confirmatory evidence.

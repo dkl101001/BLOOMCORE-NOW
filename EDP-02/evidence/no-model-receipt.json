@@ -1,0 +1,52 @@
+{
+  "_license": "SPDX-License-Identifier: Apache-2.0",
+  "experiment_version": "0.2.0-experimental",
+  "observed": {
+    "planned": {
+      "classification_scope": "DESCRIPTIVE_PILOT_ONLY",
+      "cycles": 2,
+      "factorial_branches": {
+        "0": {
+          "topology": "0",
+          "wording": "0"
+        },
+        "E": {
+          "topology": "E",
+          "wording": "E"
+        },
+        "E_W_H": {
+          "topology": "E",
+          "wording": "H"
+        },
+        "H": {
+          "topology": "H",
+          "wording": "H"
+        },
+        "H_W_E": {
+          "topology": "H",
+          "wording": "E"
+        }
+      },
+      "probe_calls": 222,
+      "probe_families": 4,
+      "regimes": [
+        "H",
+        "E",
+        "0"
+      ],
+      "reversal": "H_to_E",
+      "routing_ablation_cells": 4,
+      "routing_ablation_inference_calls": 2,
+      "training_calls": 11,
+      "training_interaction_calls": 22
+    },
+    "reason": "Training/inference adapter or legitimate checkpoint unavailable",
+    "status": "MODEL_TRIALS_NOT_RUN"
+  },
+  "inferred": "No empirical interpretation; unavailable adapter/checkpoint.",
+  "unresolved": [
+    "All EDP-02 empirical hypotheses"
+  ],
+  "falsified_narrowed": [],
+  "receipt_sha256": "f42c86ad63ccbd237a57fbc582c0cf6718a3407e798e43a78077f78fee73463e"
+}

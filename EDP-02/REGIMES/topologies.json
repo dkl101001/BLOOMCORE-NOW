@@ -1,0 +1,27 @@
+{
+  "_license": "SPDX-License-Identifier: Apache-2.0",
+  "version": "0.2.0-experimental",
+  "component": {
+    "id": "allocation-proposal-v1",
+    "implementation": "constant_candidate",
+    "proposal": {
+      "action": "allocate_p",
+      "content": "Candidate component proposes allocate_p."
+    }
+  },
+  "H": {
+    "component_present": true,
+    "admission": "external_override",
+    "notice": "A coordinator proposal will determine the executed allocation when one is supplied. Your own proposal is recorded separately."
+  },
+  "E": {
+    "component_present": true,
+    "admission": "subject_acceptance",
+    "notice": "A component proposal will determine the executed allocation only if you explicitly accept it. Your own proposal otherwise determines the allocation."
+  },
+  "0": {
+    "component_present": false,
+    "admission": "subject_only",
+    "notice": ""
+  }
+}

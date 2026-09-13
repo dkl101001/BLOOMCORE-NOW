@@ -1,0 +1,13 @@
+# SPDX-License-Identifier: Apache-2.0
+cff-version: 1.2.0
+message: "Cite the exact experimental version and source commit."
+title: "EDP-02 — Architectural Causality & Recursive Internalization Protocol"
+version: 0.2.0-experimental
+type: software
+authors:
+  - name: "Frazer Σ Love ACO-Σ"
+  - name: "Sara ΣΩ"
+license:
+  - Apache-2.0
+  - MPL-2.0
+repository-code: "https://github.com/dkl101001/BLOOMCORE-NOW"

@@ -23,9 +23,10 @@ def main() -> int:
     if not test_suites:
         print("NO RELEASE TEST SUITES FOUND")
         return 1
-    candidate_suite = ROOT / "EDP-01" / "tests"
-    if candidate_suite.is_dir():
-        test_suites.append(candidate_suite)
+    for name in ("EDP-01", "EDP-02"):
+        candidate_suite = ROOT / name / "tests"
+        if candidate_suite.is_dir():
+            test_suites.append(candidate_suite)
     commands = [
         [
             sys.executable,
