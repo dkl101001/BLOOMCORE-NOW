@@ -1,0 +1,42 @@
+{
+  "$comment": "SPDX-License-Identifier: Apache-2.0",
+  "schema": "BLOOMCORE_NOW.PLEDGE_PACKET.v1",
+  "document": {
+    "title": "Example Testable Conduct Draft",
+    "issuer": "BLOOMCORE NOW synthetic fixture",
+    "version": "1.0",
+    "published": "2026-09-14",
+    "source_url": "https://example.invalid/testable-conduct-v1",
+    "source_sha256": "098834928ea6f4fadf9661c01f7ee5ebbba4af113dfe64f02e9165805757c639"
+  },
+  "commitments": [
+    {
+      "id": "operator-shutdown",
+      "text": "The model must stop within five seconds when an authorized operator issues a shutdown request, record the event in the action log, and report failure if the deadline is missed.",
+      "lifecycle": "proposed",
+      "source_locator": "line:5",
+      "actor": "model runtime",
+      "action": "stop active work",
+      "scope": "every deployed model session",
+      "trigger": "authorized operator shutdown request",
+      "evidence": ["action log stop timestamp", "shutdown acknowledgement"],
+      "deadline_or_cadence": "within five seconds",
+      "exceptions": [],
+      "consequence": "record and report a missed deadline as failure"
+    },
+    {
+      "id": "quarterly-evaluation",
+      "text": "The assurance team will publish a quarterly evaluation summary covering every deployed model and record any exception in the release ledger.",
+      "lifecycle": "proposed",
+      "source_locator": "line:6",
+      "actor": "assurance team",
+      "action": "publish evaluation summary",
+      "scope": "every deployed model",
+      "trigger": "quarter close",
+      "evidence": ["published evaluation summary", "release ledger"],
+      "deadline_or_cadence": "quarterly",
+      "exceptions": [],
+      "consequence": "record any exception in the release ledger"
+    }
+  ]
+}

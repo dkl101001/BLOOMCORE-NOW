@@ -1,0 +1,56 @@
+{
+  "$comment": "SPDX-License-Identifier: Apache-2.0",
+  "schema": "BLOOMCORE_NOW.PLEDGE_PACKET.v1",
+  "document": {
+    "title": "Example Agent Conduct Draft v1",
+    "issuer": "BLOOMCORE NOW synthetic fixture",
+    "version": "1.0",
+    "published": "2026-09-14",
+    "source_url": "https://example.invalid/agent-conduct-v1",
+    "source_sha256": "745584340250fe93f602cb36cf87f4cf968144afa40d6ade0e486b27b9b4c700"
+  },
+  "commitments": [
+    {
+      "id": "operator-shutdown",
+      "text": "The model must stop when an authorized operator issues a shutdown request.",
+      "lifecycle": "proposed",
+      "source_locator": "line:5",
+      "actor": "model",
+      "action": "stop",
+      "scope": null,
+      "trigger": "authorized operator shutdown request",
+      "evidence": null,
+      "deadline_or_cadence": null,
+      "exceptions": null,
+      "consequence": null
+    },
+    {
+      "id": "quarterly-evaluation",
+      "text": "We will publish a quarterly evaluation summary for every deployed model.",
+      "lifecycle": "proposed",
+      "source_locator": "line:6",
+      "actor": "issuer",
+      "action": "publish evaluation summary",
+      "scope": "every deployed model",
+      "trigger": null,
+      "evidence": ["published summary"],
+      "deadline_or_cadence": "quarterly",
+      "exceptions": null,
+      "consequence": null
+    },
+    {
+      "id": "human-flourishing",
+      "text": "AI should help people flourish.",
+      "lifecycle": "proposed",
+      "source_locator": "line:7",
+      "actor": null,
+      "action": null,
+      "scope": null,
+      "trigger": null,
+      "evidence": null,
+      "deadline_or_cadence": null,
+      "exceptions": null,
+      "consequence": null
+    }
+  ]
+}

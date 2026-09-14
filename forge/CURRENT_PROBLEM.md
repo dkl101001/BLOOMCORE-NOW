@@ -1,19 +1,18 @@
 <!-- SPDX-License-Identifier: Apache-2.0 -->
 
-# Current Problem — 2026-W36
+# Current Problem — 2026-W38
 
-Complex source-bound work can look complete while silently collapsing which
-source governs, where research is allowed to inform, what remains uncertain,
-which interpretations were rejected, and whether the final claim is actually
-supported by evidence.
+AI labs and software providers increasingly publish codes of conduct, safety
+roadmaps and public commitments. Those documents mix principles, rules,
+deadlines, confidence, exceptions and aspirations, but users lack a small
+portable way to distinguish:
 
-Users need a small workflow surface that:
+- a commitment with an actor, action, scope, trigger and observable evidence;
+- a partial commitment whose accountability structure is incomplete;
+- a broad declaration that cannot yet be tested;
+- a withdrawn or superseded commitment;
+- a later version that removes an ID or loses a previously populated field.
 
-- binds authority to exact source hashes;
-- preserves differentiated roles and epistemic classes;
-- makes transition, recursion, exploration, scheduling, replay, persistence,
-  mutation, and authority choices explicit;
-- refuses evidence-free completion and output overwrite;
-- emits deterministic, replayable receipts without private infrastructure.
-
-Selected release candidate: **BLOOMCORE Triad-Derived Workflow v0.1.0**
+Selected build: **BLOOMCORE PLEDGE RECEIPT v0.1.0** — a local deterministic
+witness for source-bound pledge scaffolding, structural audit and lineage-aware
+version diffs. It does not grade values, infer compliance or certify conduct.

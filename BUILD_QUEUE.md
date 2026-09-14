@@ -4,6 +4,9 @@
 
 ## Active
 
+- `2026-W38`: BLOOMCORE PLEDGE RECEIPT — source-bound structural audit and
+  version-diff receipts for public AI commitments, held at release-candidate
+  status pending Operator approval.
 - `2026-W36`: Triad-Derived Workflow — source-bound workflow packets with
   differentiated authority, explicit uncertainty, deterministic receipts and
   byte-for-byte replay.
@@ -12,12 +15,14 @@
 
 ## Liminal releases
 
+- `2026-W37`: BLOOMCORE SBOM RECEIPT — independent draft PR #10; not imported
+  into W38 and awaiting Operator review.
 - `2026-W31`: BLOOMCORE RECEIPT — built and awaiting human release approval.
 
 ## Liminal candidates
 
-- Human-readable dependency and software-supply-chain receipts.
-- Local privacy and secret inspection for AI-assisted projects.
+- AGENT SCOPE CANARY — commercial-priority candidate awaiting safe passive
+  probe and portability boundaries.
 - Fuck-It Budget — minimum defensible effort calculator for tasks attempting to
   become a lifestyle.
 

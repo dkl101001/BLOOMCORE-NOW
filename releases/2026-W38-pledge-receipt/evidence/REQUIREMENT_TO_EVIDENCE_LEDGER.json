@@ -1,0 +1,18 @@
+{
+  "$comment": "SPDX-License-Identifier: Apache-2.0",
+  "schema": "BLOOMCORE_NOW.REQUIREMENT_TO_EVIDENCE.v1",
+  "requirements": [
+    {"id": "W38-01", "requirement": "exactly three topical candidates", "implementation": "forge/CANDIDATES.md and issue 11", "verification": "manual/count review", "status": "TESTED"},
+    {"id": "W38-02", "requirement": "independent Forge and commercial routing", "implementation": "selection and commercial evaluation", "verification": "three dispositions and divergence notes", "status": "TESTED"},
+    {"id": "W38-03", "requirement": "hard Frazer-dependency gate", "implementation": "commercial evaluation/bank", "verification": "explicit PASS/FAIL for every candidate", "status": "TESTED"},
+    {"id": "W38-04", "requirement": "bank priority and strong watch candidates", "implementation": "forge/COMMERCIAL_CANDIDATE_BANK.md", "verification": "required extraction fields present", "status": "TESTED"},
+    {"id": "W38-05", "requirement": "bounded sub-minute program", "implementation": "pledge_receipt package and demo", "verification": "unit tests and examples/demo.sh", "status": "EXECUTABLE"},
+    {"id": "W38-06", "requirement": "custody and non-sovereign receipt boundaries", "implementation": "README, docs and PUBLIC_BOUNDARY", "verification": "boundary audit and test assertions", "status": "TESTED"},
+    {"id": "W38-07", "requirement": "three-license membrane", "implementation": "LICENSE_MAP, SPDX and path rule", "verification": "repository license audit", "status": "TESTED"},
+    {"id": "W38-08", "requirement": "additive lineage", "implementation": "new W38 directory from main", "verification": "git path diff", "status": "TESTED"},
+    {"id": "W38-09", "requirement": "deterministic self-verifying receipts", "implementation": "canonical JSON audit/diff receipts", "verification": "replay and tamper tests", "status": "TESTED"},
+    {"id": "W38-10", "requirement": "release candidate only", "implementation": "Phi state and draft PR", "verification": "human_release_approved false; no merge/tag/release", "status": "SOURCE_PRESERVED"},
+    {"id": "W38-11", "requirement": "full foundry regression", "implementation": "dynamic foundry test runner", "verification": "local and GitHub checks", "status": "LOCAL_TESTED_REMOTE_PENDING"}
+  ],
+  "claim_aperture": "W38_PUBLIC_RELEASE_CANDIDATE"
+}

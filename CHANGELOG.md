@@ -4,6 +4,11 @@
 
 ## Unreleased
 
+- Added the W38 BLOOMCORE PLEDGE RECEIPT v0.1.0 release candidate with
+  source-bound scaffolding, structural testability audit, version-drift
+  receipts, deterministic verification and explicit policy/conduct limits.
+- Added independent W38 commercial routing and banked AGENT SCOPE CANARY without
+  forcing the weekly build to become the commercial project.
 - Promoted Triad-Derived Workflow v0.1.0 to `1 — ACTIVE` after explicit human
   approval bound to the green W36 candidate merged at `8207e90`.
 - Added the W36 Triad-Derived Workflow v0.1.0 release candidate with strict

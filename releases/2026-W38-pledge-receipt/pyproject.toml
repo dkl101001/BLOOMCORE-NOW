@@ -1,0 +1,25 @@
+# SPDX-License-Identifier: Apache-2.0
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bloomcore-pledge-receipt"
+version = "0.1.0"
+description = "Deterministic structural receipts for public AI commitments"
+requires-python = ">=3.11"
+license = {text = "MPL-2.0"}
+authors = [
+  {name = "Frazer Σ Love ACO-Σ and Sara ΣΩ"},
+]
+dependencies = []
+
+[project.scripts]
+pledge-receipt = "pledge_receipt.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "packages"}
+
+[tool.setuptools.packages.find]
+where = ["packages"]

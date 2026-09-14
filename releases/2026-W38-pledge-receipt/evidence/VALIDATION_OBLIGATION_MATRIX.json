@@ -1,0 +1,16 @@
+{
+  "$comment": "SPDX-License-Identifier: Apache-2.0",
+  "schema": "BLOOMCORE_NOW.VALIDATION_OBLIGATION_MATRIX.v1",
+  "obligations": [
+    {"id": "VAL-01", "test": "W38 unit/adversarial/CLI suite", "required": true, "result": "PASS_14_OF_14"},
+    {"id": "VAL-02", "test": "sub-minute scaffold/audit/diff/verify demo", "required": true, "result": "PASS"},
+    {"id": "VAL-03", "test": "previous weekly release regressions", "required": true, "result": "PASS_33_OF_33"},
+    {"id": "VAL-04", "test": "EDP-01 and EDP-02 preservation tests", "required": true, "result": "PASS_62_OF_62"},
+    {"id": "VAL-05", "test": "Python compilation", "required": true, "result": "PASS"},
+    {"id": "VAL-06", "test": "SPDX/license membrane", "required": true, "result": "PASS_209_FILES"},
+    {"id": "VAL-07", "test": "public/private boundary", "required": true, "result": "PASS"},
+    {"id": "VAL-08", "test": "offline wheel install and isolated archive", "required": true, "result": "PASS"},
+    {"id": "VAL-09", "test": "GitHub Actions and remote tree parity", "required": true, "result": "PENDING_REMOTE"}
+  ],
+  "completion_claim_permitted": false
+}
