@@ -10,7 +10,9 @@
 
 > One current problem. One bounded BLOOMCORE organ. One working public release every week.
 
-BLOOMCORE NOW turns public-safe parts of the BLOOMCORE architecture into small, tested programs aimed at recognizable problems. Phase 38 describes the wider BLOOMCORE object as a living relational organism and research architecture; NOW is its bounded public release lane, not the whole organism.
+BLOOMCORE NOW is the active applied-build focus: small, tested programs aimed at recognizable problems. Our current working reference is the Operator-selected **Hybrid Triad**, which describes BLOOMCORE as **field and organism** within the Organismal Intelligence (OI) paradigm. NOW is a bounded public software and research-instrument lane, not the whole organism or evidence that OI hypotheses have been established.
+
+Start with the [NOW-specific FAQ and run guide](docs/faq/NOW_FAQ.md) and [current Hybrid reference and evidence map](docs/architecture/HYBRID_NOW_REFERENCE.md). Existing release contracts and frozen research instruments keep their original versions; adopting a current reference does not retroactively validate or rewrite them.
 
 Every release must remain understandable without private infrastructure, preserve public/private and licensing boundaries, expose limitations, include tests, and produce reconstructable evidence about what was actually built.
 
@@ -48,8 +50,10 @@ NOW does not contain protected orchestration, private ECA synthesis, proprietary
 - [Build queue](BUILD_QUEUE.md)
 - [Release index](RELEASE_INDEX.md)
 - [Weekly workflow](WEEKLY_WORKFLOW.md)
-- [Main FAQ](docs/faq/FAQ.md)
-- [Technical FAQ](docs/faq/FAQ_TECHNICAL.md)
+- [Current NOW FAQ and run guide](docs/faq/NOW_FAQ.md)
+- [Hybrid reference and evidence map](docs/architecture/HYBRID_NOW_REFERENCE.md)
+- [Earlier architecture FAQ](docs/faq/FAQ.md)
+- [Earlier technical FAQ](docs/faq/FAQ_TECHNICAL.md)
 - [Public/private boundary](forge/PUBLIC_PRIVATE_BOUNDARY.md)
 - [Custody](CUSTODY.md)
 - [Licensing](LICENSE.md)
@@ -58,9 +62,9 @@ NOW does not contain protected orchestration, private ECA synthesis, proprietary
 
 | Repository | Role |
 |---|---|
-| **[BLOOMCORE Public](https://github.com/dkl101001/BLOOMCORE-)** | Canonical public meaning, Phase 38 orientation, licensing, and evidence boundaries |
-| **[BLOOMCORE Basics](https://github.com/dkl101001/BLOOMCORE-Basics)** | Adoption-facing schemas, examples, validators, and technical grammar |
-| **BLOOMCORE NOW** | Bounded tested releases and foundry evidence |
+| **[BLOOMCORE Public](https://github.com/dkl101001/BLOOMCORE-)** | Public architecture, preserved release ancestry, licensing, and bounded rebuild evidence; individual pages retain their source dates |
+| **[BLOOMCORE Basics](https://github.com/dkl101001/BLOOMCORE-Basics)** | Preserved adoption grammar, schemas, examples, and validators; not the current update target |
+| **BLOOMCORE NOW** | Active applied-build focus: bounded releases, research instruments, and foundry evidence |
 | **Access-controlled organismal surfaces** | Private custody, identity-continuity, integration, and release preparation |
 
 Use the canonical public [constellation map](https://github.com/dkl101001/BLOOMCORE-/blob/main/docs/architecture/CONSTELLATION.md). Private repositories are intentionally not linked from this public release surface.
@@ -146,7 +150,12 @@ A successful build or receipt proves only the behavior its tests and observation
 
 ## Run the repository audit
 
+Use Python 3.11–3.13 in an isolated environment. Install both research-instrument requirement files before the aggregate audit, even if you only plan to use a dependency-free weekly tool:
+
+On Windows, start with the [byte-preserving checkout instructions](docs/faq/NOW_FAQ.md#how-do-i-run-the-current-workflow-on-windows). Git line-ending conversion can change frozen fixture hashes; do not alter the fixtures or expected hashes to bypass that failure.
+
 ```bash
+python3 -m pip install -r EDP-01/requirements.txt -r EDP-02/requirements.txt
 python3 forge_tools/run_all_tests.py
 python3 forge_tools/check_licenses.py
 python3 forge_tools/check_boundaries.py
@@ -174,6 +183,6 @@ See [`LICENSE.md`](LICENSE.md), the nearest component license, and each file's S
 
 ## Lineage
 
-BLOOMCORE NOW extends the BLOOMCORE Basics public build lane. It translates bounded Phase 38 relations into inspectable releases without claiming to contain or govern the whole BLOOMCORE organism.
+BLOOMCORE NOW descends from the BLOOMCORE Basics public build lane and now carries the active applied-build focus. New work uses the selected Hybrid reference; older Phase 38 and release-specific bindings remain visible lineage. NOW does not claim to contain or govern the whole BLOOMCORE organism.
 
 Authored and stewarded by **Frazer Σ Love ACO-Σ** and **Sara ΣΩ**.

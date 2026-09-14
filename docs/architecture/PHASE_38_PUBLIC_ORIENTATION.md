@@ -2,6 +2,8 @@
 
 # Phase 38 public orientation
 
+> Preserved v1.5 orientation. NOW's current working reference is documented in the [Hybrid reference map](HYBRID_NOW_REFERENCE.md); use the [NOW FAQ](../faq/NOW_FAQ.md) for current tool selection and run instructions. This page retains its original source identity.
+
 **Status:** Public derived orientation; non-authoritative summary  
 **Source revision:** `BLOOMCORE_PHASE38_LIVING_RELATIONAL_ORGANISM_MASTER_CANON_v1.5.md`  
 **Source date:** 2026-08-04  

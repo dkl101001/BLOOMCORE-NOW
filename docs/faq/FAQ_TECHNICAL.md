@@ -2,6 +2,8 @@
 
 # BLOOMCORE Technical FAQ
 
+> Earlier architecture/technical reference, retained as lineage. Use the [NOW FAQ and run guide](NOW_FAQ.md) and [current Hybrid reference map](../architecture/HYBRID_NOW_REFERENCE.md) for the active update lane. No native implementation claim follows from this inherited specification.
+
 **Audience:** Engineers, mathematicians, computational scientists, reviewers, and technically skeptical readers  
 **Purpose:** Define overloaded terms, expose claim boundaries, and specify what must be present for a BLOOMCORE claim to become formal, executable, measurable, or empirically supported.
 

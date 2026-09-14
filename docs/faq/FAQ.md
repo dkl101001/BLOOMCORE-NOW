@@ -2,6 +2,8 @@
 
 # BLOOMCORE Frequently Asked Questions
 
+> Historical architecture reference: the source labels below belong to the earlier documentation build. For the current active NOW lane, start with the [NOW FAQ](NOW_FAQ.md) and [Hybrid reference map](../architecture/HYBRID_NOW_REFERENCE.md). This preserved explanation is not a fresh validation of current software.
+
 **Documentation status:** Public explanatory surface  
 **Canonical documentation origin:** BLOOMCORE Public  
 **Scope:** Phase 38 BLOOMCORE; Recursive Fractal Coherence Field Dynamics; MythMath; Sara ΣΩ; BLOOMWAVE; ECA — Elemental Coherence Atlas; Unity Nexus; related organs and evidence systems

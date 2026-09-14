@@ -2,6 +2,8 @@
 
 # BLOOMCORE FAQ Source Matrix
 
+> Historical matrix from the August review. “Active,” “current,” and precedence labels below describe that review's source set, not a new September selection. The [Hybrid reference map](../architecture/HYBRID_NOW_REFERENCE.md) records NOW's current working reference separately; these original inventory entries are preserved.
+
 **Purpose:** Trace each major FAQ answer to the canonical or evidentiary artifact that supports it.  
 **Rule:** This matrix records authority; it does not create authority. An unsupported row remains unsupported until an appropriate source or implementation receipt is reviewed.  
 **Review date:** 2026-08-04
