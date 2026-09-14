@@ -12,7 +12,7 @@
     {"id": "W38-08", "requirement": "additive lineage", "implementation": "new W38 directory from main", "verification": "git path diff", "status": "TESTED"},
     {"id": "W38-09", "requirement": "deterministic self-verifying receipts", "implementation": "canonical JSON audit/diff receipts", "verification": "replay and tamper tests", "status": "TESTED"},
     {"id": "W38-10", "requirement": "release candidate only", "implementation": "Phi state and draft PR", "verification": "human_release_approved false; no merge/tag/release", "status": "SOURCE_PRESERVED"},
-    {"id": "W38-11", "requirement": "full foundry regression", "implementation": "dynamic foundry test runner", "verification": "local and GitHub checks", "status": "LOCAL_TESTED_REMOTE_PENDING"}
+    {"id": "W38-11", "requirement": "full foundry regression", "implementation": "dynamic foundry test runner", "verification": "local and GitHub checks", "status": "TESTED"}
   ],
   "claim_aperture": "W38_PUBLIC_RELEASE_CANDIDATE"
 }

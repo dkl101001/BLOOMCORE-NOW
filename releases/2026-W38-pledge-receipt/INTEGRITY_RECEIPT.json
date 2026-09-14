@@ -32,8 +32,8 @@
     },
     {
       "path": "RELEASE_RECEIPT.md",
-      "sha256": "0a124a89bb9e6208586f447d9c1941595c7577a0f09ae3afdd1a679f36866037",
-      "bytes": 1686
+      "sha256": "8e42b21e1bca48aa325310e0be6bf5a56eab66d8b1fcc9380c2ddf78782cc0dd",
+      "bytes": 1824
     },
     {
       "path": "contracts/pledge-packet.schema.json",
@@ -62,8 +62,8 @@
     },
     {
       "path": "evidence/CONTINUATION_CHECKPOINT.md",
-      "sha256": "24184cf6661f2bb0a1bdecbd33ac8286ef39d354265b59378e5146ec2b81a3d5",
-      "bytes": 470
+      "sha256": "f6f6f7d2cc49c349931af7e6685a941a4c3ee29e5316ab371ad4a107f8f0b5f1",
+      "bytes": 456
     },
     {
       "path": "evidence/MANTIS_POSTBUILD_AUDIT.md",
@@ -72,8 +72,8 @@
     },
     {
       "path": "evidence/PHASE38_POSTFLIGHT_RECEIPT.md",
-      "sha256": "4375f0e6d01a79bb2d8e3a3e7273da3e4c63d836ef3156e1ed85840e879125b8",
-      "bytes": 1401
+      "sha256": "9c02dcae67265edaf11a7841ae492a83daab83176e754785fb31fb9923882b1f",
+      "bytes": 1428
     },
     {
       "path": "evidence/PREFLIGHT_SOURCE_BINDING_LEDGER.md",
@@ -82,8 +82,8 @@
     },
     {
       "path": "evidence/REQUIREMENT_TO_EVIDENCE_LEDGER.json",
-      "sha256": "a6de602443d30eee16e6a8872ab32fab8a1848e8c4e2306f9d98f8cc49cee42b",
-      "bytes": 2345
+      "sha256": "6ede7f6ce6a28183ffd8c1064480d9a01e0d8a0c3256c5678df88331d5adafe5",
+      "bytes": 2324
     },
     {
       "path": "evidence/SOURCE_DISPOSITION_LEDGER.json",
@@ -92,8 +92,8 @@
     },
     {
       "path": "evidence/VALIDATION_OBLIGATION_MATRIX.json",
-      "sha256": "af0300f148d99c2a2c332bc185cc50e65e7f187473b2c5de7b0e4c6996b7ba2d",
-      "bytes": 1140
+      "sha256": "d977aa0faaf8bf19646f0a95303d4f6ffc5cba73b7989602454c3389f9b2800f",
+      "bytes": 1129
     },
     {
       "path": "examples/complete-policy.md",

@@ -10,7 +10,7 @@
     {"id": "VAL-06", "test": "SPDX/license membrane", "required": true, "result": "PASS_209_FILES"},
     {"id": "VAL-07", "test": "public/private boundary", "required": true, "result": "PASS"},
     {"id": "VAL-08", "test": "offline wheel install and isolated archive", "required": true, "result": "PASS"},
-    {"id": "VAL-09", "test": "GitHub Actions and remote tree parity", "required": true, "result": "PENDING_REMOTE"}
+    {"id": "VAL-09", "test": "GitHub Actions and remote tree parity", "required": true, "result": "PASS"}
   ],
-  "completion_claim_permitted": false
+  "completion_claim_permitted": true
 }

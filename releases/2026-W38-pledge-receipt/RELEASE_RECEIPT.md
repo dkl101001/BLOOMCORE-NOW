@@ -27,11 +27,13 @@ and makes removed commitments and lost structure visible.
   self-verifying receipt.
 - An isolated archive of the candidate commit replayed all 14 W38 tests, the
   sub-minute demo, wheel build, install, audit and self-hash verification.
+- The GitHub CI and Boundary and License Membrane workflows passed, and the
+  reviewed local and remote trees matched exactly.
 - A missing fresh-environment dependency for EDP-01 was installed from that
   instrument's declared requirements; no validation scope was removed.
 
-Remote tree parity and GitHub checks are recorded only after a candidate branch
-exists. See the postflight evidence for open residue.
+All bounded build obligations are closed. Operator approval and the commercial
+hypotheses remain open; neither is implied by passing validation.
 
 ## Authority boundary
 

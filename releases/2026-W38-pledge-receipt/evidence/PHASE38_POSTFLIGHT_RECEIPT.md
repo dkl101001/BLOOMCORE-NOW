@@ -28,8 +28,9 @@ or promotion.
 
 ## Current residue
 
-Remote Actions, exact remote-tree parity and Operator decision remain open.
-Commercial pricing, buyer willingness, semantic extraction quality and
-domain-specific rule packs remain hypotheses outside this weekly release.
+Remote tree parity and GitHub CI/boundary workflows passed. Operator decision
+remains open. Commercial pricing, buyer willingness, semantic extraction
+quality and domain-specific rule packs remain hypotheses outside this weekly
+release.
 
-`PHASE38_POSTFLIGHT: LOCAL_COMPLETE_REMOTE_PENDING`
+`PHASE38_POSTFLIGHT: BOUNDED_BUILD_VERIFIED_RELEASE_UNSHIPPED`
