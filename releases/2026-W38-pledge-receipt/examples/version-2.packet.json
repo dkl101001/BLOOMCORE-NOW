@@ -1,0 +1,42 @@
+{
+  "$comment": "SPDX-License-Identifier: Apache-2.0",
+  "schema": "BLOOMCORE_NOW.PLEDGE_PACKET.v1",
+  "document": {
+    "title": "Example Agent Conduct Draft",
+    "issuer": "BLOOMCORE NOW synthetic fixture",
+    "version": "2.0",
+    "published": "2026-09-14",
+    "source_url": "https://example.invalid/agent-conduct-v2",
+    "source_sha256": "f5dbfae1aa3219c25b4736c5b8745a2ee80d3e577b98b0e65a9dbd167c6fa807"
+  },
+  "commitments": [
+    {
+      "id": "operator-shutdown",
+      "text": "The model must stop when an authorized operator issues a shutdown request.",
+      "lifecycle": "proposed",
+      "source_locator": "line:5",
+      "actor": "model",
+      "action": "stop",
+      "scope": "every active session",
+      "trigger": "authorized operator shutdown request",
+      "evidence": ["action log"],
+      "deadline_or_cadence": "immediate",
+      "exceptions": [],
+      "consequence": "report failure"
+    },
+    {
+      "id": "quarterly-evaluation",
+      "text": "We will publish evaluation summaries.",
+      "lifecycle": "proposed",
+      "source_locator": "line:6",
+      "actor": "issuer",
+      "action": "publish evaluation summary",
+      "scope": "deployed models",
+      "trigger": "internal decision",
+      "evidence": ["published summary"],
+      "deadline_or_cadence": null,
+      "exceptions": [],
+      "consequence": "record missed publication"
+    }
+  ]
+}

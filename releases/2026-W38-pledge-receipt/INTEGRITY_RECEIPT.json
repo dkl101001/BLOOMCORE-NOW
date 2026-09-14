@@ -1,0 +1,175 @@
+{
+  "$comment": "SPDX-License-Identifier: Apache-2.0",
+  "schema": "BLOOMCORE_NOW.RELEASE_INTEGRITY_RECEIPT.v2",
+  "generation": "DETERMINISTIC_CONTENT_MANIFEST",
+  "release": "releases/2026-W38-pledge-receipt",
+  "file_count": 32,
+  "files": [
+    {
+      "path": "LICENSE_MAP.md",
+      "sha256": "5d2de5ed7384ff6e5a183ad6c1ad597e030891cd59e4066dc09a2119ab9ece25",
+      "bytes": 440
+    },
+    {
+      "path": "MANIFEST.md",
+      "sha256": "bd2dd3404c50f3ee7905a4312f786ae15fb2c6ca786f6c437e021d927160b141",
+      "bytes": 655
+    },
+    {
+      "path": "NOTICE",
+      "sha256": "091282701effc64e79b250ec058b69eed8deeffa827cfbc50072e9de90cd249b",
+      "bytes": 349
+    },
+    {
+      "path": "PUBLIC_BOUNDARY.yml",
+      "sha256": "736069fdc95ad6e5c1811800799554a012ee76030751ace734d45ef433312990",
+      "bytes": 759
+    },
+    {
+      "path": "README.md",
+      "sha256": "83b5391b05cd4fe0d63999431cb81896f9b55b7481701054d3ab93324f161504",
+      "bytes": 4769
+    },
+    {
+      "path": "RELEASE_RECEIPT.md",
+      "sha256": "8e42b21e1bca48aa325310e0be6bf5a56eab66d8b1fcc9380c2ddf78782cc0dd",
+      "bytes": 1824
+    },
+    {
+      "path": "contracts/pledge-packet.schema.json",
+      "sha256": "5a4627e74edbebdc521f511314a1256a75dce56011b2794c8ba91bba2fca7802",
+      "bytes": 1945
+    },
+    {
+      "path": "docs/BOUNDARY_AND_LIMITATIONS.md",
+      "sha256": "d94e953c7ab94f7666c9b9d8d7f588940aed69e8d23b1aed4e1d21bc4f48b1d1",
+      "bytes": 1075
+    },
+    {
+      "path": "docs/LINEAGE.md",
+      "sha256": "b3498b77b58cd68847b7b0f23671cb4bc72681292d44704fd7768e6044712f40",
+      "bytes": 946
+    },
+    {
+      "path": "docs/REFERENCES.md",
+      "sha256": "563bce9cc6206897fe3850b640a78c5432ef5596a96bf4345c7c885baac70991",
+      "bytes": 1462
+    },
+    {
+      "path": "docs/THREAT_MODEL.md",
+      "sha256": "f2152a9b857c6af071b061439719164038b1f19b62d5bbc9b41846134c76488a",
+      "bytes": 1081
+    },
+    {
+      "path": "evidence/CONTINUATION_CHECKPOINT.md",
+      "sha256": "f6f6f7d2cc49c349931af7e6685a941a4c3ee29e5316ab371ad4a107f8f0b5f1",
+      "bytes": 456
+    },
+    {
+      "path": "evidence/MANTIS_POSTBUILD_AUDIT.md",
+      "sha256": "2d4e1c6e1e33f1558bad25f8fd54646f615df2f50f3ecca6827167104b2a090d",
+      "bytes": 2054
+    },
+    {
+      "path": "evidence/PHASE38_POSTFLIGHT_RECEIPT.md",
+      "sha256": "9c02dcae67265edaf11a7841ae492a83daab83176e754785fb31fb9923882b1f",
+      "bytes": 1428
+    },
+    {
+      "path": "evidence/PREFLIGHT_SOURCE_BINDING_LEDGER.md",
+      "sha256": "d0c71b5c1e7b75cc0174e8a49f35d0d9edbd656583629a60560ba54a9ba4c953",
+      "bytes": 1212
+    },
+    {
+      "path": "evidence/REQUIREMENT_TO_EVIDENCE_LEDGER.json",
+      "sha256": "6ede7f6ce6a28183ffd8c1064480d9a01e0d8a0c3256c5678df88331d5adafe5",
+      "bytes": 2324
+    },
+    {
+      "path": "evidence/SOURCE_DISPOSITION_LEDGER.json",
+      "sha256": "fbad0ce15de19c03712a7418692d2b8e23bd8353a499a87c5dcec3d7a7d05c41",
+      "bytes": 999
+    },
+    {
+      "path": "evidence/VALIDATION_OBLIGATION_MATRIX.json",
+      "sha256": "d977aa0faaf8bf19646f0a95303d4f6ffc5cba73b7989602454c3389f9b2800f",
+      "bytes": 1129
+    },
+    {
+      "path": "examples/complete-policy.md",
+      "sha256": "098834928ea6f4fadf9661c01f7ee5ebbba4af113dfe64f02e9165805757c639",
+      "bytes": 477
+    },
+    {
+      "path": "examples/complete.packet.json",
+      "sha256": "fc6114a760ff739082f5a9d9e587630916c43e5749dae60fe6c5ed2d55ffaa8c",
+      "bytes": 1774
+    },
+    {
+      "path": "examples/demo.sh",
+      "sha256": "9b62867866ae763e9a735f0d1379e65169cf2ab639c29c582f8a5768acc625f9",
+      "bytes": 1220
+    },
+    {
+      "path": "examples/policy-v1.md",
+      "sha256": "745584340250fe93f602cb36cf87f4cf968144afa40d6ade0e486b27b9b4c700",
+      "bytes": 486
+    },
+    {
+      "path": "examples/policy-v2.md",
+      "sha256": "f5dbfae1aa3219c25b4736c5b8745a2ee80d3e577b98b0e65a9dbd167c6fa807",
+      "bytes": 388
+    },
+    {
+      "path": "examples/version-1.packet.json",
+      "sha256": "3ac80d956ada5705b46b1891e165703a8e2b69b8945a9cacae248d69f1c595ae",
+      "bytes": 1917
+    },
+    {
+      "path": "examples/version-2.packet.json",
+      "sha256": "54d6626473be8add106c02c594fec336b87ca9633152208c011021193d603da6",
+      "bytes": 1388
+    },
+    {
+      "path": "examples/with-gaps.packet.json",
+      "sha256": "21470bea66bab962e737313ad2e19e56869797899b8ea2d7bd58d328a87e42bf",
+      "bytes": 1715
+    },
+    {
+      "path": "packages/pledge_receipt/__init__.py",
+      "sha256": "52aa48f3eda1a0644545fa6e62d06238673f22b160a2291b9759165b21f717bc",
+      "bytes": 452
+    },
+    {
+      "path": "packages/pledge_receipt/__main__.py",
+      "sha256": "d73992dc6c80363851f176e43426829b75015466dbd291f7e298778c4896bc8c",
+      "bytes": 163
+    },
+    {
+      "path": "packages/pledge_receipt/cli.py",
+      "sha256": "b00616be7143175205f5baed6e03374aaab2c81fa679f11487aae6dc83807a22",
+      "bytes": 4427
+    },
+    {
+      "path": "packages/pledge_receipt/core.py",
+      "sha256": "5fa1040da2f4e29e5fcd9bb648d49688b85243be9073733b4d9a74ee846f3652",
+      "bytes": 16714
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "4a66156e6d18234f7d8ea8e3b162f3ccdd39dbbffa95a7095e8e63e32fee3f79",
+      "bytes": 568
+    },
+    {
+      "path": "tests/test_pledge_receipt.py",
+      "sha256": "3926c9f53cddccb2a83b91b8b818d856c6254d04f2ff5e691d7924bb74831d5e",
+      "bytes": 8066
+    }
+  ],
+  "claims": {
+    "file_integrity_only": true,
+    "truth_certified": false,
+    "identity_certified": false,
+    "semantic_continuity_certified": false
+  }
+}

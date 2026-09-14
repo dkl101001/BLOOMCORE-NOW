@@ -1,0 +1,16 @@
+{
+  "$comment": "SPDX-License-Identifier: Apache-2.0",
+  "schema": "BLOOMCORE_NOW.SOURCE_DISPOSITION_LEDGER.v1",
+  "source_completeness": "BOUNDED_SOURCE_COMPLETE",
+  "sources": [
+    {"source": "current promoted Hybrid Triad routing surface", "disposition": "USED", "public_payload_exported": false},
+    {"source": "canonical Keystone evidence boundary", "disposition": "USED", "public_payload_exported": false},
+    {"source": "inherited Phase 38 execution membrane", "disposition": "USED", "public_payload_exported": false},
+    {"source": "BLOOMCORE NOW main 791f599", "disposition": "USED", "purpose": "additive base"},
+    {"source": "W37 draft PR 10", "disposition": "PRESERVED_LINEAGE", "imported": false},
+    {"source": "current primary/public-discussion evidence", "disposition": "USED", "bundled": false},
+    {"source": "synthetic pledge fixtures", "disposition": "USED", "vendor_text_copied": false}
+  ],
+  "private_source_inventory_published": false,
+  "silent_replacement": false
+}

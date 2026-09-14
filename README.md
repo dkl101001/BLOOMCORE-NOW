@@ -67,11 +67,14 @@ Use the canonical public [constellation map](https://github.com/dkl101001/BLOOMC
 
 ## Weekly cadence
 
-| Day | Stage | Required output |
-|---|---|---|
-| Monday | Public Module Forge | Three current-problem candidates and one selection receipt |
-| Tuesday–Thursday | Bounded build | Working application, tests, examples, documentation, and license map |
-| Friday | Test and release tranche | Deterministic audit and human-approved release candidate |
+| Stage | Required output |
+|---|---|
+| Research | Exactly three current-problem candidates with independent Forge and commercial routing |
+| Selection and build | One public-safe minimum useful program, tests, examples, documentation and license map |
+| Candidate handoff | Deterministic audit and draft PR held for human approval |
+
+The scheduled weekly run performs these stages sequentially. It may prepare a
+draft release candidate, but it may not merge, tag, publish or promote one.
 
 Candidate state uses ternary honesty:
 
@@ -108,6 +111,18 @@ provider-neutral experimental protocol, nine-task pilot, blinded scoring and
 deterministic provenance checks. **Frozen experimental candidate;
 MODEL_TRIALS_NOT_RUN.** Frazer approved this reviewed artifact for repository publication; its hypotheses remain unconfirmed.
 Install `EDP-01/requirements.txt` before running its tests or the full repository audit.
+
+## Current release candidate
+
+[`2026-W38 — BLOOMCORE PLEDGE RECEIPT`](releases/2026-W38-pledge-receipt/)
+turns public AI promises into source-bound structural audits and version diffs.
+
+> Paste a public AI promise. See what anyone could actually test.
+
+It preserves candidate statements, explicit unknowns, stable commitment IDs,
+removed commitments and lost fields without grading values or certifying
+implementation. It is `Φ — RELEASE_CANDIDATE_NOT_SHIPPED` pending Operator
+review.
 
 ## Current active release
 
@@ -152,14 +167,12 @@ python3 forge_tools/check_licenses.py
 python3 forge_tools/check_boundaries.py
 ```
 
-## Run the current release
+## Run the current release candidate
 
 ```bash
-cd releases/2026-W36-triad-workflow
+cd releases/2026-W38-pledge-receipt
 export PYTHONPATH="$PWD/packages"
-python3 -m triad_workflow validate examples/source-bound-workflow/workflow.json
-python3 -m triad_workflow run examples/source-bound-workflow/workflow.json --out /tmp/triad-workflow-run
-python3 -m triad_workflow verify /tmp/triad-workflow-run
+sh examples/demo.sh
 ```
 
 ## Licensing

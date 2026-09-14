@@ -4,12 +4,16 @@
 
 | Week | Release | State | Version | Problem |
 | --- | --- | --- | --- | --- |
+| 2026-W38 | [BLOOMCORE PLEDGE RECEIPT](releases/2026-W38-pledge-receipt/) | Φ — RELEASE_CANDIDATE_NOT_SHIPPED | 0.1.0 | Public AI codes and roadmaps lack portable structural testability and version-drift receipts |
 | 2026-W36 | [Triad-Derived Workflow](releases/2026-W36-triad-workflow/) | 1 — ACTIVE | 0.1.0 | Complex source-bound work can silently collapse authority, uncertainty, contradiction, and evidence |
 | 2026-W35 | [Panic Professionally](releases/2026-W35-panic-professionally/) | 1 — ACTIVE | 0.1.0 | Incident response becomes chaotic precisely when a clear local record matters most |
 | 2026-W31 | BLOOMCORE RECEIPT | Φ — LIMINAL | 0.1.0 | AI-generated claims can cite nonexistent, unreachable or weakly aligned sources |
 
 State becomes `1 — ACTIVE` only after deterministic validation and human
 release approval.
+
+W37 BLOOMCORE SBOM RECEIPT remains an independent unmerged draft in PR #10 and
+is not silently imported into this W38 branch.
 
 ## Experimental research instruments
 
