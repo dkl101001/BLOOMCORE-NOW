@@ -4,6 +4,8 @@
 from __future__ import annotations
 
 import sys
+import json
+import subprocess
 import tempfile
 import unittest
 from pathlib import Path
@@ -63,6 +65,29 @@ class PanicStoreTests(unittest.TestCase):
         self.assertIn("Production smells like toast", markdown)
         self.assertIn("Receipt chain: **VALID**", markdown)
         self.assertIn('"receipt_verification"', json_text)
+
+    def test_serious_demo_creates_valid_synthetic_evidence(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            output_directory = Path(temporary_directory) / "demo"
+            result = subprocess.run(
+                [
+                    sys.executable,
+                    str(RELEASE_ROOT / "examples" / "serious_demo.py"),
+                    "--output-dir",
+                    str(output_directory),
+                ],
+                cwd=RELEASE_ROOT,
+                text=True,
+                capture_output=True,
+                check=False,
+            )
+            self.assertEqual(result.returncode, 0, result.stderr)
+            summary = json.loads(result.stdout)
+            self.assertTrue(summary["synthetic_data"])
+            self.assertTrue(summary["receipt_verification"]["valid"])
+            self.assertEqual(summary["receipt_verification"]["events_checked"], 10)
+            self.assertTrue((output_directory / "incident.md").is_file())
+            self.assertTrue((output_directory / "incident.json").is_file())
 
 
 if __name__ == "__main__":

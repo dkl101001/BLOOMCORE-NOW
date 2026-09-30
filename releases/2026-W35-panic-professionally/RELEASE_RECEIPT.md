@@ -1,8 +1,12 @@
 <!-- SPDX-License-Identifier: Apache-2.0 -->
 
-# Release Receipt — Panic Professionally v0.1.0
+# Historical Release Receipt - Panic Professionally v0.1.0
 
-State: `1 — ACTIVE`
+State: `1 - ACTIVE`
+
+This table records the original v0.1.0 approval and validation at commit
+`47fc608`; its counts are not presented as a fresh rerun. Current maintenance
+verification is recorded separately in `docs/RELEASE_READINESS_2026-09-30.md`.
 
 | Check | Result |
 | --- | --- |

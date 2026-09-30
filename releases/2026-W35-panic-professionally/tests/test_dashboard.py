@@ -10,6 +10,7 @@ import tempfile
 import threading
 import unittest
 import urllib.request
+from urllib.error import HTTPError
 from http.server import ThreadingHTTPServer
 from pathlib import Path
 
@@ -59,6 +60,31 @@ class DashboardTests(unittest.TestCase):
             detail = json.load(response)
         self.assertEqual(detail["title"], "Moon fax machine unavailable")
         self.assertTrue(detail["receipt_verification"]["valid"])
+
+    def test_packaged_dashboard_matches_source_interface(self) -> None:
+        source_html = (RELEASE_ROOT / "apps" / "dashboard" / "index.html").read_text(
+            encoding="utf-8"
+        )
+        self.assertEqual(SERVER_MODULE.INDEX.decode("utf-8").splitlines(), source_html.splitlines())
+
+    def test_missing_database_is_not_created(self) -> None:
+        missing_database = Path(self.temp.name) / "missing.db"
+        server = ThreadingHTTPServer(
+            ("127.0.0.1", 0), SERVER_MODULE.handler_factory(missing_database)
+        )
+        thread = threading.Thread(target=server.serve_forever, daemon=True)
+        thread.start()
+        try:
+            with self.assertRaises(HTTPError) as raised:
+                urllib.request.urlopen(
+                    f"http://127.0.0.1:{server.server_port}/api/incidents", timeout=2
+                )
+            self.assertEqual(raised.exception.code, 503)
+            self.assertFalse(missing_database.exists())
+        finally:
+            server.shutdown()
+            server.server_close()
+            thread.join(timeout=2)
 
 
 if __name__ == "__main__":
