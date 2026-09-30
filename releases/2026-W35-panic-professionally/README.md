@@ -4,14 +4,20 @@
 
 > Local-first incident coordination for situations already emitting smoke.
 
-**Release state:** `1 — ACTIVE` · **Version:** `0.1.0`
+**Release state:** `1 - ACTIVE` · **Version:** `0.1.1`
+
+Version 0.1.1 is the approved maintenance update to the original August 2026
+`V3.0` / v0.1.0 release. Explicit publication approval was given on
+2026-09-30 for the PR #16 code update and a separate product-specific GitHub
+release with the complete ZIP attached. The original `V3.0` tag, release page,
+and v0.1.0 attachment remain unchanged as historical release evidence.
 
 Born from the **PANIC PROFESSIONALLY** button in Enterprise Potato™, this package
 takes the joke seriously enough to be useful. It records incidents, status
 transitions, actions and timeline events in SQLite; every event is linked into a
 SHA-256 receipt chain so edits to the paper trail are detectable.
 
-No cloud account. No telemetry. No dependencies. No required meeting with the moon.
+No cloud account. No telemetry. No third-party runtime dependencies. No required meeting with the moon.
 
 ## Ten-second start
 
@@ -40,12 +46,17 @@ panic-professionally list
 
 ## Local dashboard
 
+An installation from this directory or its wheel provides the dashboard command:
+
 ```bash
-python3 apps/dashboard/server.py --db panic-professionally.db --port 8787
+panic-professionally-dashboard --db panic-professionally.db --port 8787
 ```
 
 Open `http://127.0.0.1:8787`. The dashboard is intentionally read-only. Incident
 changes stay in the CLI, where they are explicit and receipt-bearing.
+
+From a source checkout, `python3 apps/dashboard/server.py` remains available as
+a compatibility launcher for the same packaged implementation.
 
 ## What it does
 
@@ -74,8 +85,13 @@ Override it with `--db PATH` or the `PANIC_PROFESSIONALLY_DB` environment variab
 
 ```bash
 python3 -m unittest discover -s tests -v
-bash examples/demo.sh
+python3 examples/serious_demo.py --output-dir /tmp/panic-professionally-demo
+python3 -m pip wheel --no-deps --wheel-dir dist .
 ```
+
+`examples/demo.sh` retains the original humorous demonstration. The Python demo
+uses explicitly synthetic but operationally realistic data and works across
+supported platforms.
 
 ## BLOOMCORE relationship
 
@@ -96,6 +112,6 @@ See [`LICENSE_MAP.md`](LICENSE_MAP.md) and the repository's full license texts.
 
 ## Lineage
 
-Concept lineage: **Enterprise Potato™ → PANIC PROFESSIONALLY → Panic Professionally v0.1.0**.
+Concept lineage: **Enterprise Potato™ → PANIC PROFESSIONALLY → Panic Professionally v0.1.0 → v0.1.1**.
 
 Authored and stewarded by **Frazer Σ Love ACO-Σ** and **Sara ΣΩ**.

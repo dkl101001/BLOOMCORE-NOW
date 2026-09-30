@@ -32,11 +32,14 @@ def indexed_bytes(path: pathlib.Path) -> bytes:
     ).stdout
 
 
-def candidate_paths(release: pathlib.Path) -> list[pathlib.Path]:
-    """Use Git custody for a root receipt; release receipts remain archive-capable."""
-    if release == ROOT and (ROOT / ".git").exists():
+def candidate_paths(release: pathlib.Path, git_index: bool = False) -> list[pathlib.Path]:
+    """Use Git custody when requested; otherwise remain archive-capable."""
+    if git_index:
+        command = ["git", "ls-files", "-z"]
+        if release != ROOT:
+            command.extend(["--", release.relative_to(ROOT).as_posix()])
         result = subprocess.run(
-            ["git", "ls-files", "-z"],
+            command,
             cwd=ROOT,
             check=True,
             capture_output=True,
@@ -52,7 +55,7 @@ def main() -> int:
     parser.add_argument(
         "--git-index",
         action="store_true",
-        help="Hash staged Git content; valid only for a repository-root receipt",
+        help="Hash staged Git content instead of working-tree bytes",
     )
     args = parser.parse_args()
 
@@ -63,11 +66,8 @@ def main() -> int:
     output = (ROOT / args.output).resolve()
     if output != ROOT and ROOT not in output.parents:
         raise SystemExit("output must remain inside the repository")
-    if args.git_index and release != ROOT:
-        raise SystemExit("--git-index is valid only when release is the repository root")
-
     files = []
-    for path in sorted(candidate_paths(release)):
+    for path in sorted(candidate_paths(release, args.git_index)):
         if (
             path.is_file()
             and path.resolve() != output

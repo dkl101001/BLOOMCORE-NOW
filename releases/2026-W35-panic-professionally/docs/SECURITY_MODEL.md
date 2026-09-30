@@ -15,8 +15,13 @@ often contain operationally sensitive information.
 ## Receipt claim
 
 Each event receipt hashes a canonical event payload together with the previous
-event's receipt hash. Verification can detect modification, deletion,
-reordering or chain substitution within the observed database history.
+event's receipt hash. Verification can detect modification, reordering, chain
+substitution and deletions that break links between preserved events.
+
+Without an independently preserved chain-head hash, verification cannot detect
+removal of one or more trailing events or replacement of the complete chain.
+Export and retain the observed head hash outside the database when that threat
+matters.
 
 A valid chain proves only internal consistency of the preserved event sequence.
 It does not prove that an event was truthful, complete, timely or written by the

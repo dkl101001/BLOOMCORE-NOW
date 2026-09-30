@@ -100,7 +100,7 @@ def main(argv: list[str] | None = None) -> int:
                 print_incident(store.transition(args.incident_id, args.value, args.actor))
             elif args.command == "action" and args.action_command == "add":
                 item = store.add_action(args.incident_id, args.title, args.owner)
-                print(f"ACTION ASSIGNED  {item['id']} → {item['owner']}")
+                print(f"ACTION ASSIGNED  {item['id']} -> {item['owner']}")
             elif args.command == "action" and args.action_command == "done":
                 item = store.complete_action(args.action_id, args.actor)
                 print(f"ACTION COMPLETE  {item['id']}  The moon acknowledges receipt.")

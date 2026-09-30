@@ -38,6 +38,10 @@ PATH_RULES = (
     ("releases/2026-W31-bloomcore-receipt/packages/receipt-schema/", "Apache-2.0"),
     ("releases/2026-W31-bloomcore-receipt/examples/", "Apache-2.0"),
     ("releases/2026-W35-panic-professionally/apps/dashboard/", "AGPL-3.0-only"),
+    (
+        "releases/2026-W35-panic-professionally/packages/panic_professionally/dashboard.",
+        "AGPL-3.0-only",
+    ),
     ("releases/2026-W35-panic-professionally/packages/panic_professionally/", "MPL-2.0"),
     ("releases/2026-W35-panic-professionally/tests/", "MPL-2.0"),
     ("releases/2026-W35-panic-professionally/examples/", "Apache-2.0"),

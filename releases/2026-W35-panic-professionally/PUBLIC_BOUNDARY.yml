@@ -10,5 +10,8 @@ phase38_lineage_present: true
 authorship_preserved: true
 human_release_approved: true
 human_release_approval_evidence: "Pull request #3 merged into main at commit 47fc608"
+maintenance_version: "0.1.1"
+maintenance_release_approved: true
+maintenance_release_approval_evidence: "Explicit user approval on 2026-09-30 to merge pull request #16 and publish a separate product-specific GitHub release"
 protected_surfaces_imported: []
 boundary_note: "Standalone incident utility; no protected organismal assembly paths included."

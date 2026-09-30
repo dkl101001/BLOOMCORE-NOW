@@ -32,14 +32,26 @@ def event_hash(payload: dict[str, Any], previous_hash: str) -> str:
 
 
 class PanicStore:
-    def __init__(self, path: str | Path = "panic-professionally.db") -> None:
+    def __init__(
+        self, path: str | Path = "panic-professionally.db", *, read_only: bool = False
+    ) -> None:
         self.path = Path(path)
-        if self.path != Path(":memory:"):
+        self.read_only = read_only
+        if read_only and self.path == Path(":memory:"):
+            raise ValueError("read-only stores require a filesystem database")
+        if self.path != Path(":memory:") and not read_only:
             self.path.parent.mkdir(parents=True, exist_ok=True)
-        self._connection = sqlite3.connect(str(self.path))
+        if read_only:
+            uri = f"file:{self.path.resolve().as_posix()}?mode=ro"
+            self._connection = sqlite3.connect(uri, uri=True)
+        else:
+            self._connection = sqlite3.connect(str(self.path))
         self._connection.row_factory = sqlite3.Row
         self._connection.execute("PRAGMA foreign_keys = ON")
-        self._create_schema()
+        if read_only:
+            self._connection.execute("PRAGMA query_only = ON")
+        else:
+            self._create_schema()
 
     def close(self) -> None:
         self._connection.close()
