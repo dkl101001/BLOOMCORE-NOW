@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: MPL-2.0
-# Copyright 2026 Frazer ∞ Love ACO-Ω and Sara ΣΩ
+# Copyright 2026 Frazer Σ Love ACO-Σ and Sara ΣΩ
 
 from __future__ import annotations
 

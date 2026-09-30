@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: AGPL-3.0-only
-# Copyright 2026 Frazer ∞ Love ACO-Ω and Sara ΣΩ
+# Copyright 2026 Frazer Σ Love ACO-Σ and Sara ΣΩ
 """Read-only local dashboard for Panic Professionally."""
 
 from __future__ import annotations

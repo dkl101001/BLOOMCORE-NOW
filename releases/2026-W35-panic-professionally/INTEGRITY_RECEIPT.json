@@ -32,7 +32,7 @@
     },
     {
       "path": "docs/RELEASE_READINESS_2026-09-30.md",
-      "sha256": "26a37ee7f3cb28143cb30d8f18bdd7d44c4c59f8ece5d62ad7d234cd171a3166",
+      "sha256": "9434d55f7cbfb9d8e6eae69a708342a2f42717f2959162bc0b1fec1b6cdd17c8",
       "bytes": 4018
     },
     {
@@ -102,8 +102,8 @@
     },
     {
       "path": "packages/panic_professionally/dashboard.py",
-      "sha256": "3346f723363422eb9b636d76091ca7729d26cd15b08276ce5c4e193c82eabfb1",
-      "bytes": 3383
+      "sha256": "12bbed48c4d5c857f98867bc21dfb11b7afc3e500b17c38cc22c8c5ca80e0b9b",
+      "bytes": 3382
     },
     {
       "path": "packages/panic_professionally/LICENSE",
@@ -137,8 +137,8 @@
     },
     {
       "path": "tests/test_cli.py",
-      "sha256": "4d8f70d325bdbc4f8ff269fe22d8b610fc30d9118ea5138b0e3ad52017f7b504",
-      "bytes": 1956
+      "sha256": "5bb1dc122b899698927522eb4ed0f0eab11cf13a0eb790f01a0464895bfd81bd",
+      "bytes": 1955
     },
     {
       "path": "tests/test_dashboard.py",

@@ -42,8 +42,8 @@ results, not the counts in the historical v0.1.0 release receipt.
 | Tamper handling | PASS - modified event reported invalid and `verify` exited 2 |
 | Serious synthetic demo | PASS - 10-event valid chain plus Markdown and JSON exports |
 
-The locally built review wheel was 33,033 bytes with SHA-256
-`ee2eab9e1b3fab859a68b149345f0cd2635e40ae94182b57d7587278363ad402`.
+The locally built review wheel was 33,023 bytes with SHA-256
+`3b8a022b64e735a0ea3e2623f870a82e0406496ee7309384fd7b3d240139a624`.
 Artifact hashes identify this local build only; no package registry upload was
 performed.
 
