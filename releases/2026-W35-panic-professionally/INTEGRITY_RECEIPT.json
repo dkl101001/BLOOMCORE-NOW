@@ -3,7 +3,7 @@
   "schema": "BLOOMCORE_NOW.RELEASE_INTEGRITY_RECEIPT.v2",
   "generation": "DETERMINISTIC_CONTENT_MANIFEST",
   "release": "releases/2026-W35-panic-professionally",
-  "file_count": 29,
+  "file_count": 30,
   "files": [
     {
       "path": "apps/dashboard/index.html",
@@ -27,13 +27,18 @@
     },
     {
       "path": "docs/OPERATIONS.md",
-      "sha256": "2f0671f23ea451b5145c7989997430072c76058ba1f2270348cf068a9a76c3e0",
+      "sha256": "2e31ef84a768e57f0d5c3aa124f0dec3f7f1f918c30d6f61e5ccd005e488d8b4",
       "bytes": 1585
     },
     {
+      "path": "docs/RELEASE_NOTES_v0.1.1.md",
+      "sha256": "24b8a62bbc27869247cea75df63d3f6e77afa5265c9c3b52c5f460d8cb33e1ca",
+      "bytes": 1692
+    },
+    {
       "path": "docs/RELEASE_READINESS_2026-09-30.md",
-      "sha256": "9434d55f7cbfb9d8e6eae69a708342a2f42717f2959162bc0b1fec1b6cdd17c8",
-      "bytes": 4018
+      "sha256": "89d451db298c3097ac5442d43879dcbc38c6e2b520f95df9b28b9193893c1e9f",
+      "bytes": 4654
     },
     {
       "path": "docs/SECURITY_MODEL.md",
@@ -67,17 +72,17 @@
     },
     {
       "path": "MANIFEST.md",
-      "sha256": "afec5bd8cb6aee2a137bb7bbd93ff33d789dceb03fd84cf6ea36c68c0b81157f",
-      "bytes": 1244
+      "sha256": "3e207ae886f2c90f719cb63fdd9a7f85bb2bb3373c9d6a3cf27239eed035b4e2",
+      "bytes": 1328
     },
     {
       "path": "NOTICE",
-      "sha256": "4cfa40e8b3deee49da7ab2a6bb202427f4d1a495b70ec5dadcc4e07726acf721",
-      "bytes": 473
+      "sha256": "6b63d51e4eee2ac73ed467862d0278b6210df32af6bd4284457a78793a9fb9a1",
+      "bytes": 483
     },
     {
       "path": "packages/panic_professionally/__init__.py",
-      "sha256": "ad7bc8eb3bdb1eae7746d3d9552a12de5de7bd4dd4e8cfd1a97d289522e145de",
+      "sha256": "3ea2a68c076b9b024a30c383ebf781551abb27076b0c61b57b7429ee650017bb",
       "bytes": 317
     },
     {
@@ -117,18 +122,18 @@
     },
     {
       "path": "PUBLIC_BOUNDARY.yml",
-      "sha256": "766103bff538340697fca93906a13fe1123b0d2108042f8fb61c42bda5d59d79",
-      "bytes": 529
+      "sha256": "f5f7d299b074ab220bc2258846470e5caf2f79ed2f08115f8869ae5ecda8a75f",
+      "bytes": 752
     },
     {
       "path": "pyproject.toml",
-      "sha256": "f3d99fa836af87acacb646d7fbbbf137252c46f2612a0708d884cdd3b93f386d",
+      "sha256": "e00531e9a6ca77b62a9473e6894e79fa0ecfa3feab4d4e3a04e04b36b5c754cb",
       "bytes": 849
     },
     {
       "path": "README.md",
-      "sha256": "03849127e51e3fe89ac6063f70d31a76f5f3ef4213830e789576f6c7035dacdc",
-      "bytes": 4199
+      "sha256": "12fc24e12cc35bf1be879c560b45838859ca8d44e714815277d0f71dc5c30321",
+      "bytes": 4366
     },
     {
       "path": "RELEASE_RECEIPT.md",

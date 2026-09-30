@@ -4,11 +4,13 @@
 
 > Local-first incident coordination for situations already emitting smoke.
 
-**Release state:** `1 - ACTIVE` · **Version:** `0.1.0`
+**Release state:** `1 - ACTIVE` · **Version:** `0.1.1`
 
-The original v0.1.0 approval remains historical fact. Maintenance changes made
-after that approval are review candidates until separately reviewed; they do
-not authorize a new tag, package publication or deployment.
+Version 0.1.1 is the approved maintenance update to the original August 2026
+`V3.0` / v0.1.0 release. Explicit publication approval was given on
+2026-09-30 for the PR #16 code update and a separate product-specific GitHub
+release with the complete ZIP attached. The original `V3.0` tag, release page,
+and v0.1.0 attachment remain unchanged as historical release evidence.
 
 Born from the **PANIC PROFESSIONALLY** button in Enterprise Potato™, this package
 takes the joke seriously enough to be useful. It records incidents, status
@@ -110,6 +112,6 @@ See [`LICENSE_MAP.md`](LICENSE_MAP.md) and the repository's full license texts.
 
 ## Lineage
 
-Concept lineage: **Enterprise Potato™ → PANIC PROFESSIONALLY → Panic Professionally v0.1.0**.
+Concept lineage: **Enterprise Potato™ → PANIC PROFESSIONALLY → Panic Professionally v0.1.0 → v0.1.1**.
 
 Authored and stewarded by **Frazer Σ Love ACO-Σ** and **Sara ΣΩ**.

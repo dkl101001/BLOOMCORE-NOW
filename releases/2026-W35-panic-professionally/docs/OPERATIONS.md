@@ -11,7 +11,7 @@ declared -> investigating -> identified -> monitoring -> resolved
 
 An incident may resolve early when the alarm is harmless. Monitoring may return
 to investigating when the supposed fix develops opinions. Resolved incidents
-are immutable in v0.1.0; create a new incident and reference the old ID if the
+are immutable in v0.1.x; create a new incident and reference the old ID if the
 problem returns.
 
 ## Working rhythm

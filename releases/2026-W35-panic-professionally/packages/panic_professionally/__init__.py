@@ -6,4 +6,4 @@ from .core import IncidentStatus, Severity
 from .store import PanicStore
 
 __all__ = ["IncidentStatus", "PanicStore", "Severity"]
-__version__ = "0.1.0"
+__version__ = "0.1.1"
