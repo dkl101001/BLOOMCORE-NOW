@@ -1,0 +1,14 @@
+# SPDX-License-Identifier: Apache-2.0
+# Release-specific NOW foundry boundary; compatibility overlay only.
+public_safe: true
+private_logic_exposed: false
+tests_included: true
+docs_updated: true
+license_compatible: true
+phase38_lineage_present: true
+authorship_preserved: true
+human_release_approved: false
+source_release: "TRIAD-TOY-2026-W42-RVP01 v0.1.0"
+compatibility_revision: "v0.1.0-compat.1"
+source_archive_sha256: "4ead6451fb9d6681640e5e19defd065d461c85122f5179bda02a3154cc4c1c0c"
+claim_boundary: "Structural and byte-bound reconstruction checks only, not semantic truth, native admission, or canon promotion."

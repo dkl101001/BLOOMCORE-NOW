@@ -4,6 +4,7 @@
 
 from __future__ import annotations
 
+import os
 import pathlib
 import subprocess
 import sys
@@ -13,7 +14,14 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 
 def run(command: list[str]) -> int:
     print(f"+ {' '.join(command)}")
-    return subprocess.run(command, cwd=ROOT, check=False).returncode
+    env = None
+    if "-s" in command:
+        suite_dir = ROOT / command[command.index("-s") + 1]
+        src_dir = suite_dir.parent / "src"
+        if src_dir.is_dir():
+            env = os.environ.copy()
+            env["PYTHONPATH"] = str(src_dir) + os.pathsep + env.get("PYTHONPATH", "")
+    return subprocess.run(command, cwd=ROOT, env=env, check=False).returncode
 
 
 def main() -> int:
