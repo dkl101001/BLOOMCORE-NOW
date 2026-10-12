@@ -4,6 +4,9 @@
 
 ## Active
 
+- `2026-W39`: Agent Trace Receipt — selected for construction; passive policy/
+  trace comparison complete and held at release-candidate state for Operator
+  review.
 - `2026-W36`: Triad-Derived Workflow — source-bound workflow packets with
   differentiated authority, explicit uncertainty, deterministic receipts and
   byte-for-byte replay.
@@ -16,8 +19,8 @@
 
 ## Liminal candidates
 
-- Human-readable dependency and software-supply-chain receipts.
-- Local privacy and secret inspection for AI-assisted projects.
+- Package Install Receipt — awaiting a stable, portable metadata-snapshot contract.
+- Web Agent Access Receipt — awaiting portable identity and authorization evidence.
 - Fuck-It Budget — minimum defensible effort calculator for tasks attempting to
   become a lifestyle.
 

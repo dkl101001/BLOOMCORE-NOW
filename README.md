@@ -125,6 +125,17 @@ eight execution axes, contradiction residue, evidence-bound completion, and
 tamper/replay receipts. It is `1 — ACTIVE` following deterministic validation
 and explicit human approval.
 
+## Current release candidate
+
+[`2026-W39 — Agent Trace Receipt`](releases/2026-W39-agent-trace-receipt/)
+compares a declared agent scope with a supplied JSONL action trace.
+
+> See what stayed inside, crossed outside, or cannot be classified.
+
+It is local, passive, deterministic, dependency-free, and held at
+`Φ — RELEASE_CANDIDATE_NOT_SHIPPED` pending Operator review. It does not collect
+telemetry, prevent actions, or prove that a trace is complete.
+
 ## Previous active release
 
 [`2026-W35 — Panic Professionally`](releases/2026-W35-panic-professionally/)
@@ -169,6 +180,15 @@ export PYTHONPATH="$PWD/packages"
 python3 -m triad_workflow validate examples/source-bound-workflow/workflow.json
 python3 -m triad_workflow run examples/source-bound-workflow/workflow.json --out /tmp/triad-workflow-run
 python3 -m triad_workflow verify /tmp/triad-workflow-run
+```
+
+## Run the current release candidate
+
+```bash
+cd releases/2026-W39-agent-trace-receipt
+export PYTHONPATH="$PWD/packages"
+python3 -m agent_trace_receipt audit examples/out-of-scope/policy.json examples/out-of-scope/trace.jsonl --out /tmp/agent-trace-demo
+python3 -m agent_trace_receipt verify /tmp/agent-trace-demo
 ```
 
 ## Licensing

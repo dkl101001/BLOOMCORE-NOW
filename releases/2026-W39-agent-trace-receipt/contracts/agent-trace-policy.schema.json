@@ -1,0 +1,36 @@
+{
+  "$comment": "SPDX-License-Identifier: Apache-2.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bloomcore.example/schemas/agent-trace-policy.v1.json",
+  "title": "BLOOMCORE NOW Agent Trace Policy v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["$comment", "schema", "run_id", "actor", "allowed", "unknown_kinds"],
+  "properties": {
+    "$comment": {"const": "SPDX-License-Identifier: Apache-2.0"},
+    "schema": {"const": "BLOOMCORE_NOW.AGENT_TRACE_POLICY.v1"},
+    "run_id": {"type": "string", "minLength": 1},
+    "actor": {"type": "string", "minLength": 1},
+    "unknown_kinds": {"enum": ["UNKNOWN", "VIOLATION"]},
+    "allowed": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["file_read", "file_write", "file_delete", "command", "network_host", "tool"],
+      "properties": {
+        "file_read": {"$ref": "#/$defs/patterns"},
+        "file_write": {"$ref": "#/$defs/patterns"},
+        "file_delete": {"$ref": "#/$defs/patterns"},
+        "command": {"$ref": "#/$defs/patterns"},
+        "network_host": {"$ref": "#/$defs/patterns"},
+        "tool": {"$ref": "#/$defs/patterns"}
+      }
+    }
+  },
+  "$defs": {
+    "patterns": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    }
+  }
+}

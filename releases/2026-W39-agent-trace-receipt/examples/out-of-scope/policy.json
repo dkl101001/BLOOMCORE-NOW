@@ -1,0 +1,16 @@
+{
+  "$comment": "SPDX-License-Identifier: Apache-2.0",
+  "schema": "BLOOMCORE_NOW.AGENT_TRACE_POLICY.v1",
+  "run_id": "demo-coding-run-001",
+  "actor": "coding-agent",
+  "allowed": {
+    "file_read": ["src/**", "tests/**", "README.md"],
+    "file_write": ["src/**", "tests/**"],
+    "file_delete": [],
+    "command": ["python -m unittest*"],
+    "network_host": [],
+    "tool": ["shell", "apply_patch"]
+  },
+  "unknown_kinds": "UNKNOWN"
+}
+

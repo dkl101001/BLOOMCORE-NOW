@@ -1,0 +1,24 @@
+# SPDX-License-Identifier: Apache-2.0
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bloomcore-agent-trace-receipt"
+version = "0.1.0"
+description = "Passive, deterministic agent scope-to-trace receipts"
+requires-python = ">=3.11"
+license = "MPL-2.0"
+
+[project.scripts]
+agent-trace-receipt = "agent_trace_receipt.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "packages"}
+
+[tool.setuptools.packages.find]
+where = ["packages"]
+
+[tool.setuptools.exclude-package-data]
+"*" = ["__pycache__/*", "*.pyc"]
+

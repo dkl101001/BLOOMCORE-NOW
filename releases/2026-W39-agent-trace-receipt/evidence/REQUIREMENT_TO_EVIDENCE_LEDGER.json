@@ -1,0 +1,16 @@
+{
+  "$comment": "SPDX-License-Identifier: Apache-2.0",
+  "schema": "BLOOMCORE_NOW.REQUIREMENT_EVIDENCE.v1",
+  "release": "2026-W39-agent-trace-receipt",
+  "requirements": [
+    {"id":"R1","criterion":"Exactly three current-problem candidates","state":"CLOSED_WITH_EVIDENCE","evidence":["forge/CANDIDATES.md"]},
+    {"id":"R2","criterion":"Independent Forge and commercial decisions","state":"CLOSED_WITH_EVIDENCE","evidence":["forge/SELECTION_RECEIPT.md","forge/COMMERCIAL_SELECTION_MEMBRANE.md"]},
+    {"id":"R3","criterion":"Hard Frazer-dependency gate","state":"CLOSED_WITH_EVIDENCE","evidence":["forge/COMMERCIAL_CANDIDATE_BANK.md"]},
+    {"id":"R4","criterion":"One-minute functional build","state":"CLOSED_WITH_EVIDENCE","evidence":["README.md","examples/out-of-scope/policy.json","examples/out-of-scope/trace.jsonl"]},
+    {"id":"R5","criterion":"Deterministic receipts, integrity verification, and replay","state":"CLOSED_WITH_EVIDENCE","evidence":["packages/agent_trace_receipt/core.py","tests/test_agent_trace_receipt.py"]},
+    {"id":"R6","criterion":"Unknowns and limitations remain explicit","state":"CLOSED_WITH_EVIDENCE","evidence":["docs/BOUNDARY_AND_LIMITATIONS.md","docs/THREAT_MODEL.md"]},
+    {"id":"R7","criterion":"Public/private and licensing membrane","state":"CLOSED_WITH_EVIDENCE","evidence":["PUBLIC_BOUNDARY.yml","LICENSE_MAP.md","NOTICE"]},
+    {"id":"R8","criterion":"Release remains Operator-gated","state":"CLOSED_WITH_EVIDENCE","evidence":["PUBLIC_BOUNDARY.yml","RELEASE_RECEIPT.md"]}
+  ]
+}
+
