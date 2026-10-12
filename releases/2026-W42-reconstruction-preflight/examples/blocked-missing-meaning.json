@@ -1,0 +1,15 @@
+{
+  "spdx_license_identifier": "Apache-2.0",
+  "schema": "bloomcore.reconstruction-preflight/v0.1",
+  "scope": {"id": "missing-meaning", "accepted_changes": ["EX-002"], "independent_work": [], "held_work": ["EX-002"]},
+  "sources": [{"id": "synthetic-source", "path": "source.txt", "sha256": "9c9f78ffe824e7b286653d89f0108ca39d69be94233cc14b66b6a6cac985ff8d", "required": true}],
+  "dimensions": {
+    "authority": {"status": "VERIFIED", "predicate": "Authority is bound.", "observation": "Byte binding exists.", "evidence": ["synthetic-source"], "requirement_ids": ["EX-002"]},
+    "dependencies": {"status": "VERIFIED", "predicate": "Dependencies close.", "observation": "One input exists.", "evidence": ["synthetic-source"], "requirement_ids": ["EX-002"]},
+    "ancestry": {"status": "NOT_APPLICABLE_WITH_EVIDENCE", "predicate": "No parent required.", "observation": "Independent fixture.", "evidence": ["scope:missing-meaning"], "requirement_ids": ["EX-002"]},
+    "state": {"status": "VERIFIED", "predicate": "State is readable.", "observation": "Bytes verified.", "evidence": ["synthetic-source"], "requirement_ids": ["EX-002"]},
+    "behavior": {"status": "VERIFIED", "predicate": "Baseline replays.", "observation": "Structural baseline passed.", "evidence": ["synthetic-source"], "requirement_ids": ["EX-002"]},
+    "meaning": {"status": "MISSING", "predicate": "Meaning evidence must survive translation.", "observation": "No semantic-fidelity record was supplied.", "evidence": ["negative:meaning-not-supplied"], "requirement_ids": ["EX-002"]}
+  }
+}
+

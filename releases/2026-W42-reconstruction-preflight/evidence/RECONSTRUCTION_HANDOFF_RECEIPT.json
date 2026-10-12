@@ -1,0 +1,44 @@
+{
+  "schema": "bloomcore.reconstruction-handoff/v0.1",
+  "spdx_license_identifier": "Apache-2.0",
+  "candidate_id": "TRIAD-TOY-2026-W42-RVP01",
+  "version": "0.1.0",
+  "state": "BUILT_PENDING_REVIEW",
+  "authority": {
+    "triad": "1.12",
+    "default_edition": "Hybrid",
+    "hybrid_sha256": "8899b41c762c3337c63d2a90961abcab0e0c6fadb0067700d80776d53ddee862",
+    "promotion_receipt_sha256": "ca0be52a0d1067aec43b4616d1f32ab4d44b80e02f56236aaa3612670f74b406",
+    "keystone": "1.16",
+    "keystone_sha256": "bbf10935306d7225ff8444ca6843724bb0b7f5762c21221f0b17fd8013393b26"
+  },
+  "dependencies": {
+    "python": ">=3.11",
+    "runtime_packages": [],
+    "network": false
+  },
+  "ancestry": {
+    "rvp01_sha256": "58e41d33f69152cdaa25a6f5d8506f5fd9c29c4cfcc026a94d08f7de8fe8c510",
+    "psm01_sha256": "8c5b5a34abd2c8e377a3eeddbb979cd2abb4cbdaeac9f75ae5b7b45ec91cbb00",
+    "triad_v1_11_3": "UNRESOLVED_PRIMARY_BYTES",
+    "cse_rst_v0_7_1": "SOURCE_UNAVAILABLE"
+  },
+  "behavior": {
+    "tests": {"passed": 19, "failed": 0},
+    "experiment": "SUPPORTED_WITHIN_BOUNDS",
+    "external_replay": "NOT_RUN"
+  },
+  "meaning": {
+    "phase36_translation": "APPLIED",
+    "mythic_namespace_authority": false,
+    "receipt_is_certification": false
+  },
+  "mutation": {
+    "github": false,
+    "canon": false,
+    "native_state": false,
+    "publication_authorized": false
+  },
+  "next_action": "Operator review of exact archive identity and digest"
+}
+

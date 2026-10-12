@@ -1,0 +1,27 @@
+{
+  "spdx_license_identifier": "Apache-2.0",
+  "schema": "bloomcore.reconstruction-preflight/v0.1",
+  "scope": {
+    "id": "public-example",
+    "accepted_changes": ["EX-001"],
+    "independent_work": [],
+    "held_work": []
+  },
+  "sources": [
+    {
+      "id": "synthetic-source",
+      "path": "source.txt",
+      "sha256": "9c9f78ffe824e7b286653d89f0108ca39d69be94233cc14b66b6a6cac985ff8d",
+      "required": true
+    }
+  ],
+  "dimensions": {
+    "authority": {"status": "VERIFIED", "predicate": "The selected source is named and byte-bound.", "observation": "Synthetic source recovered.", "evidence": ["synthetic-source"], "requirement_ids": ["EX-001"]},
+    "dependencies": {"status": "VERIFIED", "predicate": "All dependencies are retrieved.", "observation": "One dependency verified.", "evidence": ["synthetic-source"], "requirement_ids": ["EX-001"]},
+    "ancestry": {"status": "NOT_APPLICABLE_WITH_EVIDENCE", "predicate": "No parent is required for this new independent example.", "observation": "The example declares no parent or delta base.", "evidence": ["scope:public-example"], "requirement_ids": ["EX-001"]},
+    "state": {"status": "VERIFIED", "predicate": "The touched state is readable.", "observation": "Input bytes verified.", "evidence": ["synthetic-source"], "requirement_ids": ["EX-001"]},
+    "behavior": {"status": "VERIFIED", "predicate": "The baseline can be replayed.", "observation": "Fixture replay is deterministic.", "evidence": ["tests:test_verified_fixture"], "requirement_ids": ["EX-001"]},
+    "meaning": {"status": "VERIFIED", "predicate": "The bounded claim and exclusions are explicit.", "observation": "The example claims structural checking only.", "evidence": ["README:evidence-boundary"], "requirement_ids": ["EX-001"]}
+  }
+}
+
