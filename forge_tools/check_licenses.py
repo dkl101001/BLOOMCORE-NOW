@@ -4,6 +4,7 @@
 
 from __future__ import annotations
 
+import json
 import pathlib
 import sys
 
@@ -24,6 +25,9 @@ TEXT_SUFFIXES = {
 SPECIAL_TEXT = {".gitignore"}
 
 PATH_RULES = (
+    ("releases/2026-W42-reconstruction-preflight/src/", "MPL-2.0"),
+    ("releases/2026-W42-reconstruction-preflight/tests/", "MPL-2.0"),
+    ("releases/2026-W42-reconstruction-preflight/experiment.py", "MPL-2.0"),
     ("EDP-02/runner/", "MPL-2.0"),
     ("EDP-02/analysis/", "MPL-2.0"),
     ("EDP-02/tests/", "MPL-2.0"),
@@ -80,17 +84,49 @@ def iter_text_files() -> list[pathlib.Path]:
     return sorted(files)
 
 
+def declared_license(path: pathlib.Path, source: str) -> str | None:
+    """Recognize already-declared JSON SPDX metadata without mutating receipts.
+
+    Ordinary text must keep its existing SPDX header. JSON uses a structured
+    root-level field because JSON comments are not legal and a generated
+    receipt's canonical bytes cannot be changed by adding a fake header.
+    """
+    if path.suffix == ".json":
+        try:
+            payload = json.loads(source)
+        except json.JSONDecodeError:
+            return None
+        if not isinstance(payload, dict):
+            return None
+        declared = payload.get("spdx_license_identifier")
+        if isinstance(declared, str):
+            return declared if declared in {"Apache-2.0", "MPL-2.0", "AGPL-3.0-only"} else None
+        marker = "SPDX-License-Identifier: "
+        for key in ("$comment", "_license"):
+            value = payload.get(key)
+            if isinstance(value, str) and value.startswith(marker):
+                found = value[len(marker):].strip()
+                return found if found in {"Apache-2.0", "MPL-2.0", "AGPL-3.0-only"} else None
+        return None
+    marker = "SPDX-License-Identifier: "
+    for line in source[:600].splitlines():
+        if marker in line:
+            return line.split(marker, 1)[1].split(" ", 1)[0].strip()
+    return None
+
+
 def main() -> int:
     failures: list[str] = []
     for path in iter_text_files():
         relative = path.relative_to(ROOT).as_posix()
         text = path.read_text(encoding="utf-8")
-        if "SPDX-License-Identifier:" not in text[:600]:
-            failures.append(f"{relative}: missing SPDX identifier near file start")
+        declared = declared_license(path, text)
+        if not declared:
+            failures.append(f"{relative}: missing or invalid SPDX identifier")
             continue
         required = expected_license(relative)
-        if required and f"SPDX-License-Identifier: {required}" not in text[:600]:
-            failures.append(f"{relative}: expected {required}")
+        if required and declared != required:
+            failures.append(f"{relative}: expected {required}; observed {declared}")
 
     required_texts = {
         "Apache-2.0": ROOT / "LICENSES" / "Apache-2.0.txt",

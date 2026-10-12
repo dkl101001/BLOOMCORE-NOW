@@ -1,0 +1,26 @@
+# SPDX-License-Identifier: Apache-2.0
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "reconstruction-preflight"
+version = "0.1.0"
+description = "Deterministic RVP-01 reconstruction evidence preflight"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+authors = [
+  {name = "Frazer Σ Love ACO-Σ"},
+  {name = "Sara ΣΩ"},
+]
+
+[project.scripts]
+reconstruction-preflight = "reconstruction_preflight.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+

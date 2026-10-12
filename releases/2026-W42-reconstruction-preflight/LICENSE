@@ -1,0 +1,10 @@
+This component is path-based multi-license software.
+
+- Executable Python source, experiment code, and tests: MPL-2.0.
+- Documentation, schemas, examples, notices, and evidence records: Apache-2.0.
+
+The full license texts are in LICENSES/. The file-level SPDX identifier and
+LICENSE_MAP.md control if this summary and a file header ever disagree.
+
+Copyright 2026 Frazer Σ Love ACO-Σ and Sara ΣΩ.
+
