@@ -1,0 +1,93 @@
+{
+  "aggregate_observation_counts": {
+    "WIFI_80211": 8
+  },
+  "export_id": "export_3dbea8c3b7e88db214090b971302195b55107b3b",
+  "generated_from_receipts": [
+    "receipt_b4b3b1cc917bf2007395ad285e20ab993c640b5a"
+  ],
+  "nodes": [
+    {
+      "asset_kind_hypotheses": [
+        "UNKNOWN"
+      ],
+      "claim_level": "SIGNATURE_MATCH",
+      "classification": {
+        "calibration_state": "UNCALIBRATED",
+        "confidence_label": "UNKNOWN",
+        "probabilities": null,
+        "ranked_labels": [
+          "RF_PATTERN",
+          "UNKNOWN"
+        ]
+      },
+      "contradiction_refs": [],
+      "location": {
+        "area_m2": 5676.0,
+        "calibration_state": "UNCALIBRATED",
+        "confidence_level": null,
+        "geojson": {
+          "coordinates": [
+            [
+              [
+                -86.0003441,
+                35.9996205
+              ],
+              [
+                -85.9996105,
+                35.9996205
+              ],
+              [
+                -85.9996105,
+                36.0003939
+              ],
+              [
+                -86.0003441,
+                36.0003939
+              ],
+              [
+                -86.0003441,
+                35.9996205
+              ]
+            ]
+          ],
+          "type": "Polygon"
+        },
+        "geometry_type": "POLYGON",
+        "method": "RANK_RSSI_SUPPORT"
+      },
+      "motion_state": "MOTION_UNRESOLVED",
+      "node_id": "node_ed18ea3e03a6f47efdf320bad0eca12c",
+      "public_evidence_refs": [],
+      "receipt_id": "receipt_b4b3b1cc917bf2007395ad285e20ab993c640b5a",
+      "revision": 1
+    }
+  ],
+  "policy_version": "public-export-1.0.0",
+  "public_evidence": [],
+  "publication_approval": {
+    "acknowledgements": {
+      "contradictions_preserved": true,
+      "no_automatic_publication": true,
+      "raw_identifiers_excluded": true,
+      "remote_id_operator_positions_excluded": true,
+      "route_data_excluded": true
+    },
+    "approval_id": "approval_1a48dcd7f9000aa1701e3f98626ba018e00bd988",
+    "approval_type": "LOCAL_OPERATOR_OPT_IN",
+    "approved_at_utc": "2026-08-22T12:30:00Z",
+    "policy_version": "public-export-1.0.0",
+    "request_digest": "sha256:8c88a66f0585f4d7023663274adee52b293488dc4fe3d7db38b6bc7cece65ba0",
+    "schema_version": "1.0.0",
+    "scope": "LOCAL_DRAFT_ONLY"
+  },
+  "redactions": [
+    "observer route and exact observation times",
+    "raw and pseudonymous emitter identifiers",
+    "Remote ID operator/control/takeoff positions",
+    "raw capture references and local storage paths"
+  ],
+  "review_state": "LOCAL_DRAFT",
+  "route_data_included": false,
+  "schema_version": "1.0.0"
+}

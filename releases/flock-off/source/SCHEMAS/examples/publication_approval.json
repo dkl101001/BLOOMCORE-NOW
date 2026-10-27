@@ -1,0 +1,16 @@
+{
+  "acknowledgements": {
+    "contradictions_preserved": true,
+    "no_automatic_publication": true,
+    "raw_identifiers_excluded": true,
+    "remote_id_operator_positions_excluded": true,
+    "route_data_excluded": true
+  },
+  "approval_id": "approval_45d6a5d59772452b58e2f8849c5ab98ae7d9b0f0",
+  "approval_type": "LOCAL_OPERATOR_OPT_IN",
+  "approved_at_utc": "2026-08-22T12:30:00Z",
+  "policy_version": "public-export-1.0.0",
+  "request_digest": "sha256:73472ef3d37973b58fe6e2d4e5c6a53665e78662784ac9426302bc934e5bc1bd",
+  "schema_version": "1.0.0",
+  "scope": "LOCAL_DRAFT_ONLY"
+}

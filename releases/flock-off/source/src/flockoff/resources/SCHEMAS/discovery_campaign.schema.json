@@ -1,0 +1,31 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://flockoff.local/schemas/v1.1/discovery_campaign.schema.json",
+  "title":"FLOCK OFF recursive discovery campaign revision",
+  "type":"object",
+  "required":["schema_version","campaign_id","target_asset_ref","origin_failure_ref","state","known_features","missing_features","failed_assumptions","next_tests","evidence_history","signature_lineage","claim_ceiling","opened_at_utc","updated_at_utc","revision","parent_campaign_hash","content_hash"],
+  "properties":{
+    "schema_version":{"const":"1.1.0"},
+    "campaign_id":{"type":"string","pattern":"^campaign_[a-f0-9]{40}$"},
+    "target_asset_ref":{"type":"string","minLength":1},
+    "origin_failure_ref":{"type":"string","pattern":"^failure_[a-f0-9]{40}$"},
+    "state":{"enum":["HUNTING","CANDIDATE_SIGNATURE","CONTROL_TESTING","REPLICATION_PENDING","VALIDATED","SENSING_APERTURE_INSUFFICIENT","NO_PRACTICALLY_SEPARABLE_PASSIVE_SIGNATURE_YET"]},
+    "known_features":{"type":"array","uniqueItems":true,"items":{"type":"string"}},
+    "missing_features":{"type":"array","uniqueItems":true,"items":{"type":"string"}},
+    "failed_assumptions":{"type":"array","minItems":1,"uniqueItems":true,"items":{"type":"string"}},
+    "next_tests":{"type":"array","uniqueItems":true,"items":{"type":"string"}},
+    "evidence_history":{"type":"array","minItems":1,"uniqueItems":true,"items":{"type":"string"}},
+    "signature_lineage":{"type":"array","uniqueItems":true,"items":{"type":"string"}},
+    "claim_ceiling":{"enum":["RF_ACTIVITY_PRESENT","RF_PATTERN","DEVICE_FAMILY_ASSOCIATED","VENDOR_ASSOCIATED","MODEL_ASSOCIATED"]},
+    "opened_at_utc":{"type":"string","format":"date-time"},
+    "updated_at_utc":{"type":"string","format":"date-time"},
+    "revision":{"type":"integer","minimum":1},
+    "parent_campaign_hash":{"type":["string","null"],"pattern":"^sha256:[a-f0-9]{64}$"},
+    "content_hash":{"type":"string","pattern":"^sha256:[a-f0-9]{64}$"}
+  },
+  "allOf":[
+    {"if":{"properties":{"state":{"const":"VALIDATED"}}},"then":{"properties":{"next_tests":{"maxItems":0}}},"else":{"properties":{"next_tests":{"minItems":1}}}},
+    {"if":{"properties":{"revision":{"const":1}}},"then":{"properties":{"parent_campaign_hash":{"type":"null"}}},"else":{"properties":{"parent_campaign_hash":{"type":"string","pattern":"^sha256:[a-f0-9]{64}$"}}}}
+  ],
+  "additionalProperties":false
+}

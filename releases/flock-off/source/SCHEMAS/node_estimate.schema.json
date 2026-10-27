@@ -1,0 +1,136 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://flockoff.local/schemas/v1/node_estimate.schema.json",
+  "title": "FLOCK OFF node estimate revision",
+  "type": "object",
+  "required": ["schema_version", "node_id", "revision", "parent_revision_hash", "motion_state", "asset_kind_hypotheses", "evidence_state", "lifecycle_state", "claim_level", "classification", "location", "evidence_refs", "independent_source_lineages", "measurement_lineages", "contradiction_refs", "receipt_id", "updated_at_utc", "publication_state"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "node_id": {"type": "string", "pattern": "^node_[a-f0-9]{16,64}$"},
+    "revision": {"type": "integer", "minimum": 1},
+    "parent_revision_hash": {"type": ["string", "null"], "pattern": "^sha256:[a-f0-9]{64}$"},
+    "motion_state": {"enum": ["STATIC", "MOBILE", "MOTION_UNRESOLVED", "MIXED_OR_CONTRADICTED"]},
+    "asset_kind_hypotheses": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"enum": ["ALPR_OR_CAMERA", "DRONE", "DOCK_OR_BASE", "OTHER_SURVEILLANCE_SENSOR", "ORDINARY_RF_DEVICE", "UNKNOWN"]}
+    },
+    "evidence_state": {"enum": ["PUBLIC_ONLY", "MEASURED", "FUSED", "CONTRADICTED", "EVIDENCE_UNAVAILABLE"]},
+    "lifecycle_state": {"enum": ["CANDIDATE", "CURRENT", "STALE", "RETIRED", "RETRACTED", "TOMBSTONED"]},
+    "claim_level": {"enum": ["PUBLICLY_MAPPED", "RF_ACTIVITY_PRESENT", "SIGNATURE_MATCH", "NODE_LOCALIZED", "VENDOR_ASSOCIATED", "MODEL_ASSOCIATED", "MOBILE_TRACK"]},
+    "classification": {
+      "type": "object",
+      "required": ["ranked_labels", "probabilities", "calibration_state", "confidence_label"],
+      "properties": {
+        "ranked_labels": {"type": "array", "items": {"type": "string"}, "minItems": 1, "uniqueItems": true},
+        "probabilities": {
+          "anyOf": [
+            {"type": "null"},
+            {"type": "object", "additionalProperties": {"type": "number", "minimum": 0, "maximum": 1}}
+          ]
+        },
+        "calibration_state": {"enum": ["UNCALIBRATED", "INTERNALLY_CALIBRATED", "EXTERNALLY_VALIDATED"]},
+        "confidence_label": {"enum": ["LOW", "MODERATE", "HIGH", "UNKNOWN"]}
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"calibration_state": {"const": "UNCALIBRATED"}}},
+          "then": {"properties": {"probabilities": {"type": "null"}}}
+        }
+      ],
+      "additionalProperties": false
+    },
+    "location": {
+      "anyOf": [
+        {"type": "null"},
+        {
+          "type": "object",
+          "required": ["geometry_type", "geojson", "calibration_state", "confidence_level", "area_m2", "method"],
+          "properties": {
+            "geometry_type": {"enum": ["CIRCLE", "ELLIPSE", "POLYGON", "TRAJECTORY_ENVELOPE"]},
+            "geojson": {
+              "anyOf": [
+                {
+                  "type": "object",
+                  "required": ["type", "coordinates"],
+                  "properties": {
+                    "type": {"const": "Polygon"},
+                    "coordinates": {
+                      "type": "array",
+                      "minItems": 1,
+                      "items": {
+                        "type": "array",
+                        "minItems": 4,
+                        "items": {
+                          "type": "array",
+                          "minItems": 2,
+                          "maxItems": 3,
+                          "items": {"type": "number"}
+                        }
+                      }
+                    }
+                  },
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "required": ["type", "coordinates"],
+                  "properties": {
+                    "type": {"const": "MultiPolygon"},
+                    "coordinates": {
+                      "type": "array",
+                      "minItems": 1,
+                      "items": {
+                        "type": "array",
+                        "minItems": 1,
+                        "items": {
+                          "type": "array",
+                          "minItems": 4,
+                          "items": {
+                            "type": "array",
+                            "minItems": 2,
+                            "maxItems": 3,
+                            "items": {"type": "number"}
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              ]
+            },
+            "calibration_state": {"enum": ["UNCALIBRATED", "INTERNALLY_CALIBRATED", "EXTERNALLY_VALIDATED"]},
+            "confidence_level": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+            "area_m2": {"type": "number", "exclusiveMinimum": 0},
+            "method": {"enum": ["RANK_RSSI_SUPPORT", "DIFFERENTIAL_RSSI", "BEARING_TRIANGULATION", "TDOA_MULTILATERATION", "REMOTE_ID_BROADCAST", "PUBLIC_PRIOR_ONLY", "FUSED"]}
+          },
+          "allOf": [
+            {
+              "if": {"properties": {"calibration_state": {"const": "UNCALIBRATED"}}},
+              "then": {"properties": {"confidence_level": {"type": "null"}}}
+            }
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "trajectory": {"type": ["array", "null"], "items": {"type": "object"}},
+    "evidence_refs": {"type": "array", "items": {"type": "string"}, "minItems": 1, "uniqueItems": true},
+    "independent_source_lineages": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "measurement_lineages": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "contradiction_refs": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "receipt_id": {"type": "string", "pattern": "^receipt_[a-f0-9]{32,64}$"},
+    "updated_at_utc": {"type": "string", "format": "date-time"},
+    "publication_state": {"enum": ["PRIVATE_LOCAL", "READY_FOR_REVIEW", "SHARED_REDACTED", "PUBLIC_CANDIDATE", "PUBLIC_VERIFIED", "RETRACTED_OR_CORRECTED"]}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"revision": {"const": 1}}},
+      "then": {"properties": {"parent_revision_hash": {"type": "null"}}},
+      "else": {"properties": {"parent_revision_hash": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"}}}
+    }
+  ],
+  "additionalProperties": false
+}

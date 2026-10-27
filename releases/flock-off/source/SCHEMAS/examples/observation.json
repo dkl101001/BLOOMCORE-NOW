@@ -1,0 +1,84 @@
+{
+  "clock_uncertainty_ms": 1000.0,
+  "emitter": {
+    "address_randomization_state": "LOCALLY_ADMINISTERED",
+    "ephemeral_emitter_key": "ephem:96a1d24a74d9452d8adfc4e9f2ae00712eecbb607441ea9606f249c118167979",
+    "identifier_retention": "ROTATING_HASH",
+    "identifier_type": "IEEE_802_MAC",
+    "target_identifier": null
+  },
+  "measurement": {
+    "bearing_deg": null,
+    "bearing_uncertainty_deg": null,
+    "detection_method": "wifi_wildcard_probe_ie_sig",
+    "extensions": {
+      "unavailable_for_host_reproduction": [
+        "source_timestamp",
+        "packet_bytes",
+        "information_element_vector",
+        "frame_sequence_number",
+        "channel_scan_coverage"
+      ],
+      "upstream_assertion": {
+        "method": "wifi_wildcard_probe_ie_sig",
+        "observed_prefix": "82:6b:f2",
+        "tier": 4
+      }
+    },
+    "feature_hashes": [],
+    "frame_type": null,
+    "kind": "WIFI_DETECTION",
+    "payload_digest": null,
+    "remote_id": null,
+    "rssi_dbm": -67.0,
+    "snr_db": null,
+    "tdoa_seconds": null,
+    "tdoa_uncertainty_seconds": null,
+    "upstream_tier": 4
+  },
+  "measurement_lineage_id": "mlineage_f48a9dd3b8ab856d3378936545f638fe0e56f341",
+  "observation_id": "obs_d7ad2e15f8e35cca428f90d53ff46c8643ffeaeb",
+  "observed_at_utc": "2026-08-22T12:00:00Z",
+  "privacy": {
+    "class": "OPERATIONAL_MINIMIZED",
+    "public_export_allowed": false,
+    "raw_retained": false,
+    "rotation_epoch": "replay-session-1"
+  },
+  "provenance": {
+    "adapter_commit_or_version": "7e969663eade07833603bad86cb156338e895583",
+    "adapter_source_ref": "https://github.com/colonelpanichacks/flock-you",
+    "ingested_at_utc": "2026-08-22T12:00:00Z",
+    "normalizer_version": "0.1.0",
+    "raw_capture_ref": null,
+    "raw_input_digest": "hmac-sha256:c6b8639fe34ed0d75eb8650b2b5372ed6aa37aafcfc08fcad33b000769dd3cf9"
+  },
+  "receiver": {
+    "calibration_profile_id": null,
+    "pose_ref": "pose_0247ae3ab4d97427f633d92e0a1b6f89f03fe5ac",
+    "receiver_id": "rx-a"
+  },
+  "schema_version": "1.0.0",
+  "sensor": {
+    "adapter_id": "flock_you_json",
+    "adapter_version": "0.1.0",
+    "band": "2.4_GHZ",
+    "bandwidth_hz": null,
+    "capabilities": [
+      "PASSIVE_WIFI_MANAGEMENT_RECEPTION",
+      "RSSI"
+    ],
+    "center_frequency_hz": 2437000000,
+    "channel": 6,
+    "hardware_profile_id": "xiao-esp32s3-flock-you-2g4",
+    "protocol": "WIFI_80211"
+  },
+  "timing": {
+    "clock_epoch_id": "host-clock-epoch-0",
+    "host_monotonic_ns": 1000000000,
+    "host_received_at_utc": "2026-08-22T12:00:00Z",
+    "sensor_boot_id": "fixture-boot-1",
+    "source_sequence": 1,
+    "source_time_state": "HOST_RECEIPT_ONLY"
+  }
+}

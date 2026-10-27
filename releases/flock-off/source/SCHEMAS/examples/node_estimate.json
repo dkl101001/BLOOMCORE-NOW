@@ -1,0 +1,104 @@
+{
+  "asset_kind_hypotheses": [
+    "UNKNOWN"
+  ],
+  "claim_level": "SIGNATURE_MATCH",
+  "classification": {
+    "calibration_state": "UNCALIBRATED",
+    "confidence_label": "UNKNOWN",
+    "probabilities": null,
+    "ranked_labels": [
+      "RF_PATTERN",
+      "UNKNOWN"
+    ]
+  },
+  "contradiction_refs": [],
+  "evidence_refs": [
+    "assoc_62187e80e4d88f3b1dbf6a8a151135630f828622",
+    "assoc_84b9a9a5e3645370d9b44f98cf38b8a25644713c",
+    "assoc_a8910510e7e8e2b7db15e1f67e31c70f32ad7ee3",
+    "assoc_ae845206efd74d07f142518eaad5cf00b5fb479f",
+    "assoc_af29a083a75afb56199292deecef65c5580fc16f",
+    "assoc_d010e2063d2aa8a0383aa6a120328c17eacda13b",
+    "assoc_d354cd99df50c8fa0d7684399a9f221358374e74",
+    "assoc_f5e0ce16c7decfc9703ddc56ea29873db2072d39",
+    "match_1fe9c58ca48db155c5db97531ff7b18c12b407d6",
+    "match_2d44a6e0361cd7d72bf66c522f6c8b414be9ee2f",
+    "match_59e0fde69738b30d4ab8d32e09bcb96f325b88bf",
+    "match_6882c233d9a6a23bc1856b97e11f4338e453f300",
+    "match_9c12f0150e6accb153d8e55824dec4a8a4274936",
+    "match_a6a17036dfb264a97123a370ba85dda9b04a5433",
+    "match_b8dd0d7eec84cc06c251112707490b004e4487b5",
+    "match_cdbe4ce160fb5aa8fce34909ab7c426218ed9ef9",
+    "mlineage_7c6dc8e5a4646eba18c392cf793261b6b3df6ac6",
+    "mlineage_f48a9dd3b8ab856d3378936545f638fe0e56f341",
+    "obs_1f8705164f5cb82180640989a686cba321065320",
+    "obs_2828d225795e68e9eac28365433ab9e150e567f0",
+    "obs_3223e31ef1d700dcce95db7118a8c71c18449aea",
+    "obs_87bd9ac49dd0aabc58d206143408edf435c27d71",
+    "obs_b4c63d3d758884701b2481c010e0aa377e42f6b6",
+    "obs_d1ebafc67da3af44a2a72188020ae072e9d42c26",
+    "obs_d3c141600973d68fe605ca29cb0cd4b1a659ab5a",
+    "obs_d7ad2e15f8e35cca428f90d53ff46c8643ffeaeb",
+    "partition_d15f83a056a4e6e9f74af26b9f0e0d0e45ea3755",
+    "receipt_23da2c796b2bb9388c935d8264599a60cb9b4a36",
+    "receipt_281891cb5bb271ba28157cc33d90bbe088a70172",
+    "receipt_5db3a4fc13a1acb7a0f66c6f09fcf2330200d3df",
+    "receipt_7cee270a0012bf7b4c04a9823055a15c19917875",
+    "receipt_8b6ef18e78091b900b84351760e5ca1b8d0cf6b6",
+    "receipt_b7cfc77080030a9cb9f8d9b673edc55a318e181e",
+    "receipt_b89f221e4b51688aa580cf8fd9fba9fd8adc6ad6",
+    "receipt_bde758bd9ddb422944c91e9cb202a552d188a77f",
+    "receipt_c4cb1afca9cade65f81cbb14c255f9fd6cbd60ff"
+  ],
+  "evidence_state": "MEASURED",
+  "independent_source_lineages": [],
+  "lifecycle_state": "CANDIDATE",
+  "location": {
+    "area_m2": 5676.0,
+    "calibration_state": "UNCALIBRATED",
+    "confidence_level": null,
+    "geojson": {
+      "coordinates": [
+        [
+          [
+            -86.0003441,
+            35.9996205
+          ],
+          [
+            -85.9996105,
+            35.9996205
+          ],
+          [
+            -85.9996105,
+            36.0003939
+          ],
+          [
+            -86.0003441,
+            36.0003939
+          ],
+          [
+            -86.0003441,
+            35.9996205
+          ]
+        ]
+      ],
+      "type": "Polygon"
+    },
+    "geometry_type": "POLYGON",
+    "method": "RANK_RSSI_SUPPORT"
+  },
+  "measurement_lineages": [
+    "mlineage_7c6dc8e5a4646eba18c392cf793261b6b3df6ac6",
+    "mlineage_f48a9dd3b8ab856d3378936545f638fe0e56f341"
+  ],
+  "motion_state": "MOTION_UNRESOLVED",
+  "node_id": "node_ed18ea3e03a6f47efdf320bad0eca12c",
+  "parent_revision_hash": null,
+  "publication_state": "PRIVATE_LOCAL",
+  "receipt_id": "receipt_5ec08fe1f38d09ef9197e2bb28f9bdfb40ebe82a",
+  "revision": 1,
+  "schema_version": "1.0.0",
+  "trajectory": null,
+  "updated_at_utc": "2026-08-22T12:02:30Z"
+}

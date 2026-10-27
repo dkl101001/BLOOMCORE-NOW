@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://flockoff.local/schemas/v1/public_evidence.schema.json",
+  "title": "FLOCK OFF public evidence",
+  "type": "object",
+  "required": ["schema_version", "evidence_id", "source_id", "source_lineage_id", "parent_source_ids", "source_type", "authority_role", "independence_class", "retrieved_at_utc", "claim", "provenance"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "evidence_id": {"type": "string", "pattern": "^pub_[a-f0-9]{32,64}$"},
+    "source_id": {"type": "string", "minLength": 1},
+    "source_lineage_id": {"type": "string", "minLength": 1},
+    "parent_source_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "source_type": {"enum": ["OFFICIAL_RECORD", "STANDARD", "PRIMARY_DATASET", "MUNICIPAL_RECORD", "REPOSITORY", "PEER_REVIEWED_RESEARCH", "COMMUNITY_CAPTURE", "MEDIA", "MIRROR", "OTHER"]},
+    "authority_role": {"enum": ["CODE", "PROTOCOL", "RULE", "PRODUCT", "FIELD_OBSERVATION", "DOCUMENTARY_EVIDENCE", "UNVERIFIED_CLAIM"]},
+    "independence_class": {"enum": ["ORIGINAL", "DERIVATIVE", "CORRELATED_MEASUREMENT", "UNKNOWN"]},
+    "retrieved_at_utc": {"type": "string", "format": "date-time"},
+    "document_or_effective_at_utc": {"type": ["string", "null"], "format": "date-time"},
+    "claim": {
+      "type": "object",
+      "required": ["claim_type", "claim_text"],
+      "properties": {
+        "claim_type": {"type": "string"},
+        "claim_text": {"type": "string", "minLength": 1},
+        "node_type": {"type": ["string", "null"]},
+        "vendor": {"type": ["string", "null"]},
+        "model": {"type": ["string", "null"]},
+        "geometry": {"type": ["object", "null"]},
+        "coordinate_uncertainty_m": {"type": ["number", "null"], "minimum": 0},
+        "bearing_deg": {"type": ["number", "null"], "minimum": 0, "exclusiveMaximum": 360},
+        "status": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "license_or_terms": {"type": ["string", "null"]},
+    "provenance": {
+      "type": "object",
+      "required": ["source_locator", "content_hash", "transform_version"],
+      "properties": {
+        "source_locator": {"type": "string", "minLength": 1},
+        "content_hash": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"},
+        "transform_version": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

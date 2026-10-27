@@ -1,0 +1,19 @@
+EVIDENCE APPENDIX
+Sources are evidence, not truth certificates. Mirrors are not independent confirmations.
+
+E01: Hypothetical contract
+Issuer: Example City
+Document: 2026-01-01 | Retrieved: 2026-10-27T14:00:00Z
+Source: https://example.org/contract
+Location: Section 4, page 2
+paraphrase: The example agreement renews annually unless notice is given 60 days before expiry.
+Limits: Does not identify a public review process or establish any actual deployment.
+SHA-256: not supplied; saved-file integrity not established
+Parent: original/unknown | Superseded by: none recorded
+
+Claim C01: The hypothetical contract describes a 60-day notice window.
+Basis/disposition: document / supported
+Support: E01
+Contrary: none identified; not proof none exists
+Underlying support roots (declared lineage): E01
+Qualification: This describes the example clause, not a legal conclusion.

@@ -1,0 +1,22 @@
+{
+  "id": "A01",
+  "question_id": "Q01",
+  "kind": "paraphrase",
+  "text": "The clerk said the purchasing office would identify the review date.",
+  "context": "Fictional example response, not an actual meeting.",
+  "speaker_role": "Example clerk",
+  "source": "Fictional meeting notes",
+  "locator": "Notes at 00:03:12",
+  "recorded_at": "2026-11-12T19:03:12-05:00",
+  "status": "partial",
+  "reviewer": "Example reviewer",
+  "remaining_gap": "No review date provided.",
+  "corroboration": "attributed_only",
+  "evidence_ids": [],
+  "commitment": {
+    "owner": "Example purchasing office",
+    "due_date": "2026-11-19",
+    "text": "Identify the review date.",
+    "agreed": true
+  }
+}

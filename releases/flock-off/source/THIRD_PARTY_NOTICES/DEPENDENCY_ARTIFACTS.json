@@ -1,0 +1,121 @@
+{
+  "certifi": {
+    "version": "2026.10.23",
+    "wheel": "certifi-2026.10.23-py3-none-any.whl",
+    "sha256": "e9b54de76e530bb6cf0ccd036787103acb58fd42ba930ea8bf948ddbaa2f61d1",
+    "license_expression": null,
+    "license_files": [
+      "THIRD_PARTY_NOTICES/licenses/certifi/licenses/LICENSE"
+    ]
+  },
+  "cffi": {
+    "version": "2.1.1",
+    "wheel": "cffi-2.1.1-cp312-cp312-win_amd64.whl",
+    "sha256": "f53e442b08449d42821fa4a4fba000095af9f62742a500f978a9f557ec44339a",
+    "license_expression": "MIT-0",
+    "license_files": [
+      "THIRD_PARTY_NOTICES/licenses/cffi/licenses/LICENSE"
+    ]
+  },
+  "charset-normalizer": {
+    "version": "3.5.2",
+    "wheel": "charset_normalizer-3.5.2-cp312-cp312-win_amd64.whl",
+    "sha256": "780fbe7cab297b81dad9fb8dc5eb003c0468ffb0d9e5f65068c53a34661a96bc",
+    "license_expression": null,
+    "license_files": [
+      "THIRD_PARTY_NOTICES/licenses/charset-normalizer/licenses/LICENSE"
+    ]
+  },
+  "cryptography": {
+    "version": "46.0.0",
+    "wheel": "cryptography-46.0.0-cp311-abi3-win_amd64.whl",
+    "sha256": "bbaa5eef3c19c66613317dc61e211b48d5f550db009c45e1c28b59d5a9b7812a",
+    "license_expression": "Apache-2.0 OR BSD-3-Clause",
+    "license_files": [
+      "THIRD_PARTY_NOTICES/licenses/cryptography/licenses/LICENSE",
+      "THIRD_PARTY_NOTICES/licenses/cryptography/licenses/LICENSE.APACHE",
+      "THIRD_PARTY_NOTICES/licenses/cryptography/licenses/LICENSE.BSD"
+    ]
+  },
+  "idna": {
+    "version": "3.20",
+    "wheel": "idna-3.20-py3-none-any.whl",
+    "sha256": "ab7ae7122974553370f0bdb919e1a960b2cd1bc1ef0276416d896db81c14582c",
+    "license_expression": "BSD-3-Clause",
+    "license_files": [
+      "THIRD_PARTY_NOTICES/licenses/idna/licenses/LICENSE.md"
+    ]
+  },
+  "numpy": {
+    "version": "2.5.4",
+    "wheel": "numpy-2.5.4-cp312-cp312-win_amd64.whl",
+    "sha256": "a7b1b6353e36a7e50de2973a38d705c88ee93adcf120673cee7f45a4a3fa223a",
+    "license_expression": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0",
+    "license_files": [
+      "THIRD_PARTY_NOTICES/licenses/numpy/licenses/LICENSE.txt",
+      "THIRD_PARTY_NOTICES/licenses/numpy/licenses/numpy/fft/pocketfft/LICENSE.md",
+      "THIRD_PARTY_NOTICES/licenses/numpy/licenses/numpy/linalg/lapack_lite/LICENSE.txt",
+      "THIRD_PARTY_NOTICES/licenses/numpy/licenses/numpy/ma/LICENSE",
+      "THIRD_PARTY_NOTICES/licenses/numpy/licenses/numpy/random/LICENSE.md",
+      "THIRD_PARTY_NOTICES/licenses/numpy/licenses/numpy/random/src/distributions/LICENSE.md",
+      "THIRD_PARTY_NOTICES/licenses/numpy/licenses/numpy/random/src/mt19937/LICENSE.md",
+      "THIRD_PARTY_NOTICES/licenses/numpy/licenses/numpy/random/src/pcg64/LICENSE.md",
+      "THIRD_PARTY_NOTICES/licenses/numpy/licenses/numpy/random/src/philox/LICENSE.md",
+      "THIRD_PARTY_NOTICES/licenses/numpy/licenses/numpy/random/src/sfc64/LICENSE.md",
+      "THIRD_PARTY_NOTICES/licenses/numpy/licenses/numpy/random/src/splitmix64/LICENSE.md",
+      "THIRD_PARTY_NOTICES/licenses/numpy/licenses/numpy/_core/include/numpy/libdivide/LICENSE.txt",
+      "THIRD_PARTY_NOTICES/licenses/numpy/licenses/numpy/_core/src/common/pythoncapi-compat/COPYING",
+      "THIRD_PARTY_NOTICES/licenses/numpy/licenses/numpy/_core/src/highway/LICENSE",
+      "THIRD_PARTY_NOTICES/licenses/numpy/licenses/numpy/_core/src/multiarray/dragon4_LICENSE.txt",
+      "THIRD_PARTY_NOTICES/licenses/numpy/licenses/numpy/_core/src/npysort/x86-simd-sort/LICENSE.md",
+      "THIRD_PARTY_NOTICES/licenses/numpy/licenses/numpy/_core/src/umath/svml/LICENSE"
+    ]
+  },
+  "pycparser": {
+    "version": "2.23",
+    "wheel": "pycparser-2.23-py3-none-any.whl",
+    "sha256": "e5c6e8d3fbad53479cab09ac03729e0a9faf2bee3db8208a550daf5af81a5934",
+    "license_expression": null,
+    "license_files": [
+      "THIRD_PARTY_NOTICES/licenses/pycparser/LICENSE"
+    ]
+  },
+  "pynacl": {
+    "version": "1.6.2",
+    "wheel": "pynacl-1.6.2-cp38-abi3-win_amd64.whl",
+    "sha256": "62985f233210dee6548c223301b6c25440852e13d59a8b81490203c3227c5ba0",
+    "license_expression": null,
+    "license_files": [
+      "THIRD_PARTY_NOTICES/licenses/pynacl/licenses/LICENSE",
+      "THIRD_PARTY_NOTICES/licenses/pynacl/licenses/licenses/LICENSE.libsodium.txt"
+    ]
+  },
+  "pysocks": {
+    "version": "1.7.1",
+    "wheel": "PySocks-1.7.1-py3-none-any.whl",
+    "sha256": "2725bd0a9925919b9b51739eea5f9e2bae91e83288108a9ad338b2e3a4435ee5",
+    "license_expression": null,
+    "license_files": [
+      "THIRD_PARTY_NOTICES/licenses/pysocks/LICENSE"
+    ]
+  },
+  "requests": {
+    "version": "2.34.2",
+    "wheel": "requests-2.34.2-py3-none-any.whl",
+    "sha256": "2a0d60c172f83ac6ab31e4554906c0f3b3588d37b5cb939b1c061f4907e278e0",
+    "license_expression": null,
+    "license_files": [
+      "THIRD_PARTY_NOTICES/licenses/requests/licenses/LICENSE",
+      "THIRD_PARTY_NOTICES/licenses/requests/licenses/NOTICE"
+    ]
+  },
+  "urllib3": {
+    "version": "2.8.0",
+    "wheel": "urllib3-2.8.0-py3-none-any.whl",
+    "sha256": "0cf3cae568d36aa9576b28dfb35f11328f1cb974ca7647d9475ebb86c75ac6e3",
+    "license_expression": "MIT",
+    "license_files": [
+      "THIRD_PARTY_NOTICES/licenses/urllib3/licenses/LICENSE.txt"
+    ]
+  }
+}

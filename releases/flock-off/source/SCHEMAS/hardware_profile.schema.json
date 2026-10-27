@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://flockoff.local/schemas/v1/hardware_profile.schema.json",
+  "title": "FLOCK OFF verified hardware capability profile",
+  "type": "object",
+  "required": ["schema_version", "hardware_profile_id", "status", "receiver", "capabilities", "verification", "limitations"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "hardware_profile_id": {"type": "string", "pattern": "^[a-z0-9_.-]+$"},
+    "status": {"enum": ["DECLARED", "BENCH_VERIFIED", "FIELD_VERIFIED", "BLOCKED", "RETIRED"]},
+    "receiver": {
+      "type": "object",
+      "required": ["manufacturer", "model", "driver_or_firmware", "revision"],
+      "properties": {
+        "manufacturer": {"type": "string"},
+        "model": {"type": "string"},
+        "driver_or_firmware": {"type": "string"},
+        "revision": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "capabilities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["protocol", "bands", "measurement_types", "verified"],
+        "properties": {
+          "protocol": {"enum": ["WIFI_80211", "BLUETOOTH_LE", "REMOTE_ID", "GNSS", "BEARING", "TDOA", "SPECTRUM"]},
+          "bands": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+          "measurement_types": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+          "verified": {"type": "boolean"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "verification": {
+      "type": "object",
+      "required": ["verified_at_utc", "method", "evidence_refs"],
+      "properties": {
+        "verified_at_utc": {"type": ["string", "null"], "format": "date-time"},
+        "method": {"type": "string"},
+        "evidence_refs": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "limitations": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}

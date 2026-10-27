@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0.0",
+  "hardware_profile_id": "wifi-5ghz-unbound",
+  "status": "BLOCKED",
+  "receiver": {
+    "manufacturer": "UNSELECTED",
+    "model": "UNSELECTED",
+    "driver_or_firmware": "UNSELECTED",
+    "revision": "UNSELECTED"
+  },
+  "capabilities": [],
+  "verification": {
+    "verified_at_utc": null,
+    "method": "No exact chipset/driver/channel/non-emission profile has passed.",
+    "evidence_refs": ["SRC-KISMET", "SRC-LIBPCAP", "SRC-ESP-IDF"]
+  },
+  "limitations": [
+    "5 GHz observations and absence claims are disabled.",
+    "ESP32-C6 is 2.4 GHz-only; ESP32-C5 dual-band operation is not simultaneous."
+  ]
+}

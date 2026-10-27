@@ -1,0 +1,24 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://flockoff.local/schemas/v1.1/validation_decision.schema.json",
+  "title":"FLOCK OFF recursive candidate validation decision",
+  "type":"object",
+  "required":["schema_version","validation_id","candidate_signature_ref","positive_physical_nodes","negative_control_count","false_positive_count","independent_replication_sites","contradiction_refs","evidence_refs","decision","reasons","probability","evaluated_at_utc","content_hash"],
+  "properties":{
+    "schema_version":{"const":"1.1.0"},
+    "validation_id":{"type":"string","pattern":"^validation_[a-f0-9]{40}$"},
+    "candidate_signature_ref":{"type":"string","minLength":1},
+    "positive_physical_nodes":{"type":"integer","minimum":0},
+    "negative_control_count":{"type":"integer","minimum":0},
+    "false_positive_count":{"type":"integer","minimum":0},
+    "independent_replication_sites":{"type":"integer","minimum":0},
+    "contradiction_refs":{"type":"array","uniqueItems":true,"items":{"type":"string"}},
+    "evidence_refs":{"type":"array","uniqueItems":true,"items":{"type":"string"}},
+    "decision":{"enum":["ADVANCE_TO_FIELD_TESTING","RECURSE"]},
+    "reasons":{"type":"array","items":{"type":"string"}},
+    "probability":{"type":"null"},
+    "evaluated_at_utc":{"type":"string","format":"date-time"},
+    "content_hash":{"type":"string","pattern":"^sha256:[a-f0-9]{64}$"}
+  },
+  "additionalProperties":false
+}

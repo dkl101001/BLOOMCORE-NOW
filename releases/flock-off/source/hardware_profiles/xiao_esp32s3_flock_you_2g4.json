@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0.0",
+  "hardware_profile_id": "xiao-esp32s3-flock-you-2g4",
+  "status": "DECLARED",
+  "receiver": {
+    "manufacturer": "Seeed Studio / Espressif",
+    "model": "XIAO ESP32-S3",
+    "driver_or_firmware": "colonelpanichacks/flock-you",
+    "revision": "7e969663eade07833603bad86cb156338e895583"
+  },
+  "capabilities": [
+    {
+      "protocol": "WIFI_80211",
+      "bands": ["2.4_GHZ"],
+      "measurement_types": ["SOURCE_REPORTED_DETECTION", "RSSI", "CHANNEL"],
+      "verified": false
+    }
+  ],
+  "verification": {
+    "verified_at_utc": null,
+    "method": "Repository documentation audited; receive-only over-air emission test and receiver calibration not yet run by FLOCK OFF.",
+    "evidence_refs": ["SRC-FLOCK-YOU-MAIN"]
+  },
+  "limitations": [
+    "Channels 11, 6, and 1 only with documented 250 ms dwell.",
+    "2.4 GHz only; no 5 GHz coverage.",
+    "JSON has no packet/IE digest, source timestamp, sequence, coverage, or calibration.",
+    "Upstream performs duplicate suppression and persists MAC observations on-device; custody audit required before field profile."
+  ]
+}

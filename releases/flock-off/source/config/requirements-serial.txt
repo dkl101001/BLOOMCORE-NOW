@@ -1,0 +1,2 @@
+# Optional local COM/POSIX serial transport. No upstream firmware is included.
+pyserial==3.5

@@ -1,0 +1,14 @@
+{
+  "transport": "wifi_beacon",
+  "validity": "MALFORMED",
+  "uas_id_type": null,
+  "uas_id": null,
+  "aircraft_position": {"latitude": 999, "longitude": -999},
+  "operator_or_takeoff_position": {"latitude": 999, "longitude": -999},
+  "authentication_state": "UNKNOWN",
+  "expected": {
+    "validity": "MALFORMED",
+    "aircraft_position": null,
+    "operator_or_takeoff_position": null
+  }
+}

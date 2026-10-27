@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://flockoff.local/schemas/v1/measurement_lineage.schema.json",
+  "title": "FLOCK OFF measurement lineage",
+  "type": "object",
+  "required": ["schema_version", "measurement_lineage_id", "raw_capture_digest", "session_id", "pass_id", "receiver_id", "calibration_profile_id", "normalization_transform", "parent_lineage_ids", "content_hash"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "measurement_lineage_id": {"type": "string"},
+    "raw_capture_digest": {"type": ["string", "null"], "pattern": "^(sha256|hmac-sha256):[a-f0-9]{64}$"},
+    "session_id": {"type": "string"},
+    "pass_id": {"type": ["string", "null"]},
+    "receiver_id": {"type": "string"},
+    "calibration_profile_id": {"type": ["string", "null"]},
+    "normalization_transform": {
+      "type": "object",
+      "required": ["name", "version", "code_revision", "code_digest"],
+      "properties": {
+        "name": {"type": "string"},
+        "version": {"type": "string"},
+        "code_revision": {"type": "string"},
+        "code_digest": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"}
+      },
+      "additionalProperties": false
+    },
+    "parent_lineage_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "content_hash": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"}
+  },
+  "additionalProperties": false
+}

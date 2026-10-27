@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://flockoff.local/schemas/v1/contradiction.schema.json",
+  "title": "FLOCK OFF contradiction event",
+  "type": "object",
+  "required": ["schema_version", "contradiction_id", "subject_ref", "assertion_a_refs", "assertion_b_refs", "kind", "state", "explanation", "created_at_utc", "content_hash"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "contradiction_id": {"type": "string", "pattern": "^conflict_[a-f0-9]{32,64}$"},
+    "subject_ref": {"type": "string"},
+    "assertion_a_refs": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "assertion_b_refs": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "kind": {"enum": ["LOCATION", "IDENTITY", "MOBILITY", "REMOTE_ID_VALIDITY", "SOURCE_LINEAGE", "SIGNATURE_DRIFT", "STATUS", "TIMING", "OTHER"]},
+    "state": {"enum": ["OPEN", "EXPLAINED_NOT_RESOLVED", "RESOLVED_BY_NEW_EVIDENCE", "RETRACTED_SOURCE"]},
+    "explanation": {"type": "string", "minLength": 1},
+    "resolution_refs": {"type": "array", "items": {"type": "string"}},
+    "created_at_utc": {"type": "string", "format": "date-time"},
+    "content_hash": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"}
+  },
+  "additionalProperties": false
+}

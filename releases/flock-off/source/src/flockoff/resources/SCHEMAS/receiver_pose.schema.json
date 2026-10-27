@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://flockoff.local/schemas/v1/receiver_pose.schema.json",
+  "title": "FLOCK OFF restricted receiver pose",
+  "type": "object",
+  "required": ["schema_version", "pose_id", "receiver_id", "observed_at_utc", "clock_uncertainty_ms", "position", "privacy", "provenance"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "pose_id": {"type": "string", "pattern": "^pose_[a-f0-9]{32,64}$"},
+    "receiver_id": {"type": "string", "minLength": 1},
+    "observed_at_utc": {"type": "string", "format": "date-time"},
+    "clock_uncertainty_ms": {"type": "number", "minimum": 0},
+    "position": {
+      "type": "object",
+      "required": ["latitude", "longitude", "horizontal_accuracy_m", "source"],
+      "properties": {
+        "latitude": {"type": "number", "minimum": -90, "maximum": 90},
+        "longitude": {"type": "number", "minimum": -180, "maximum": 180},
+        "altitude_m": {"type": ["number", "null"]},
+        "horizontal_accuracy_m": {"type": "number", "minimum": 0},
+        "vertical_accuracy_m": {"type": ["number", "null"], "minimum": 0},
+        "source": {"enum": ["GNSS", "GPSD", "NMEA", "NATIVE_MOBILE", "FIXED_SURVEY", "SYNTHETIC"]}
+      },
+      "additionalProperties": false
+    },
+    "heading_deg": {"type": ["number", "null"], "minimum": 0, "exclusiveMaximum": 360},
+    "speed_mps": {"type": ["number", "null"], "minimum": 0},
+    "privacy": {
+      "type": "object",
+      "required": ["class", "public_export_allowed"],
+      "properties": {
+        "class": {"const": "RESTRICTED_ROUTE"},
+        "public_export_allowed": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["source", "content_hash"],
+      "properties": {
+        "source": {"type": "string"},
+        "content_hash": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

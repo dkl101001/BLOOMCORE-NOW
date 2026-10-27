@@ -1,0 +1,13 @@
+{
+  "assertions": [
+    {"id": "osm:node:123", "relation": "ORIGINAL", "parents": []},
+    {"id": "osm:node:123@7", "relation": "SAME_ARTIFACT", "parents": ["osm:node:123"]},
+    {"id": "deflock", "relation": "CONFIRMED_DERIVATIVE", "parents": ["osm:node:123@7"]},
+    {"id": "flockhopper", "relation": "CONFIRMED_DERIVATIVE", "parents": ["osm:node:123@7"]},
+    {"id": "alprwatch-map", "relation": "CONFIRMED_DERIVATIVE", "parents": ["osm:node:123@7"]},
+    {"id": "site-four", "relation": "CONFIRMED_DERIVATIVE", "parents": ["osm:node:123@7"]},
+    {"id": "site-five", "relation": "CONFIRMED_DERIVATIVE", "parents": ["osm:node:123@7"]},
+    {"id": "municipal-contract", "relation": "INDEPENDENT_CONFIRMED", "parents": []}
+  ],
+  "expected_confirmed_root_count": 2
+}

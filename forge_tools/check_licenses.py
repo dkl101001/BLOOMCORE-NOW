@@ -5,6 +5,7 @@
 from __future__ import annotations
 
 import json
+import hashlib
 import pathlib
 import sys
 
@@ -75,6 +76,9 @@ def iter_text_files() -> list[pathlib.Path]:
     for path in ROOT.rglob("*"):
         if not path.is_file():
             continue
+        component_source = ROOT / "releases/flock-off/source"
+        if path.is_relative_to(component_source) and any(part in {"work", ".venv"} or part.endswith(".egg-info") for part in path.relative_to(component_source).parts):
+            continue
         if any(part in SKIP_DIRS for part in path.parts):
             continue
         if "LICENSES" in path.parts or path.name in {"NOTICE"}:
@@ -117,8 +121,22 @@ def declared_license(path: pathlib.Path, source: str) -> str | None:
 
 def main() -> int:
     failures: list[str] = []
+    component = ROOT / "releases/flock-off"
+    source_root = component / "source"
+    license_map = json.loads((component / "SOURCE_LICENSES.json").read_text(encoding="utf-8"))
+    mapped = license_map["files"]
+    if hashlib.sha256((source_root / "LICENSE").read_bytes()).hexdigest() != "8efd18c6e6527d9f853673c691ebbc0fc017b7a549c26b834f93bb0645b7093e":
+        failures.append("FLOCK OFF: pinned combined AGPL-3.0-only license changed")
+    for relative, record in mapped.items():
+        candidate = (source_root / relative).resolve()
+        if not candidate.is_relative_to(source_root.resolve()) or not candidate.is_file():
+            failures.append(f"FLOCK OFF: invalid mapped source path {relative}")
+        elif not isinstance(record.get("spdx_license_identifier"), str) or not record["spdx_license_identifier"] or hashlib.sha256(candidate.read_bytes()).hexdigest() != record["sha256"]:
+            failures.append(f"FLOCK OFF: source license mapping mismatch {relative}")
     for path in iter_text_files():
         relative = path.relative_to(ROOT).as_posix()
+        if path.is_relative_to(source_root) and path.relative_to(source_root).as_posix() in mapped:
+            continue
         text = path.read_text(encoding="utf-8")
         declared = declared_license(path, text)
         if not declared:

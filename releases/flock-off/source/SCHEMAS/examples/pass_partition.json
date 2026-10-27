@@ -1,0 +1,22 @@
+{
+  "algorithm": {
+    "code_digest": "sha256:4237b60322f9621bed6652194795eda9012dcf61f7f5568a1c44e861747b12c9",
+    "code_revision": "flockoff-runtime-0.1.0",
+    "name": "caller_explicit_pass_partition",
+    "version": "1.0.0"
+  },
+  "content_hash": "sha256:20b5300d41a029abc5d920eb25a7693cca73e27bfce6febb9e8c84b685a649bc",
+  "observation_pass_map": {
+    "obs_1f8705164f5cb82180640989a686cba321065320": "east-west",
+    "obs_2828d225795e68e9eac28365433ab9e150e567f0": "east-west",
+    "obs_3223e31ef1d700dcce95db7118a8c71c18449aea": "east-west",
+    "obs_87bd9ac49dd0aabc58d206143408edf435c27d71": "north-south",
+    "obs_b4c63d3d758884701b2481c010e0aa377e42f6b6": "north-south",
+    "obs_d1ebafc67da3af44a2a72188020ae072e9d42c26": "north-south",
+    "obs_d3c141600973d68fe605ca29cb0cd4b1a659ab5a": "north-south",
+    "obs_d7ad2e15f8e35cca428f90d53ff46c8643ffeaeb": "east-west"
+  },
+  "partition_id": "partition_d15f83a056a4e6e9f74af26b9f0e0d0e45ea3755",
+  "schema_version": "1.0.0",
+  "session_id": "replay-session-1"
+}

@@ -1,0 +1,14 @@
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+# Bounded public-records research adapter
+
+`flockoff_research` accepts an explicitly enabled watchlist of up to twenty public HTTPS static text URLs. An operator must confirm scope and review source access rules before enabling. It is disabled at construction, has no startup scan, and runs only when the host application calls `tick(app_active=True)`. There is no background service or ChatGPT automation. At most one fetch per minute globally and one per source per hour is attempted, including failures. Sources are limited to 512 KiB and UTF-8 static text; no scripts, links, images, attachments or remote HTML are executed or opened. PDF/OCR is not implemented.
+
+Only the configured SOCKS5h proxy is used; environment proxies and redirects are disabled. No direct fallback or local DNS lookup exists. URL syntax rejects credentials, queries, fragments, IP literals and reserved/local hostnames. Public DNS answers are not independently attested by this module: an approved public hostname's DNS behavior remains a transport trust limitation requiring review before live use. No live source fetching was performed in development.
+
+The independent public SQLite store retains immutable document revisions with URL, digest, full bounded source text, encounter time, optional known document/publication dates, exact excerpts, claim boundaries, contradictions and unresolved questions. Status is unknown by default; a human may record planned, purchased, installed or operating. Public records are explicitly marked as priors, not locally measured observations. There are no invented confidence scores, device probes, plate histories, filings or agency contacts.
+
+The adapter has no private ledger/room parameter, no public search query interface, and no automatic sharing. Callers must not feed private text into public URL paths. Watchlist enabling is consent to public-source retrieval only, not room disclosure. Stored research can enter collaboration only through its separate explicit projection/consent mechanism, which this module does not invoke.
+
+The research store now invokes the pinned public BLOOMCORE-derived TI-AGI83+ conductance core through a bounded FLOCK adapter. `memory_status` is `PUBLIC_SOURCE_BOUND_CONDUCTANCE_MEMORY_V1`. This is not a wholecore or native whole-brain claim. Actual grids, exactly-once encounters, nonmutating learned-versus-flat queries and checkpoint verification are documented in [PUBLIC_MEMORY.md](PUBLIC_MEMORY.md). No private wholecore is imported.
+
+Integration: construct `ResearchStore(path)`, then `ResearchAgent(store)`. Call `enable(urls, confirmed=True, public_scope=..., access_rules_reviewed=True)` only after affirmative UI consent. Invoke `tick` from an app-active bounded worker; marshal results back to Tk's main thread. Call `disable()` when paused and `store.close()` on shutdown. No settings persistence means a new app session starts disabled.

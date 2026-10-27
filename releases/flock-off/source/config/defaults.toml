@@ -1,0 +1,48 @@
+[runtime]
+profile = "LIVE_RECURSIVE_REFERENCE"
+network = "disabled"
+live_capture = true
+public_auto_publish = false
+vision = false
+
+[privacy]
+mode = "OPERATIONAL_MINIMIZED"
+raw_identifiers = "never_persist"
+identifier_rotation = "per_session"
+route_vault_required = true
+full_database_encryption_required_for_field = true
+plaintext_fallback = false
+
+[capabilities]
+flock_you_json_replay = true
+flock_you_json_live = true
+recursive_live_miss = true
+decoded_remote_id_replay = true
+decoded_remote_id_live = true
+generic_passive_live = false
+wifi_5ghz = false
+bluetooth_live = false
+remote_id_live = true
+sdr = false
+bearing = false
+tdoa = false
+calibrated_probabilities = false
+exposure_inference = false
+
+[ingest]
+max_ndjson_line_bytes = 1048576
+reject_duplicate_keys = true
+reject_nonfinite_numbers = true
+unknown_schema_major = "reject"
+
+[storage]
+sqlite_synchronous = "FULL"
+sqlite_wal = true
+immutable_events = true
+
+[publication]
+human_opt_in = true
+route_data_included = false
+raw_observations_allowed = false
+remote_id_operator_position_allowed = false
+residential_unknown_policy = "withhold_or_coarsen"

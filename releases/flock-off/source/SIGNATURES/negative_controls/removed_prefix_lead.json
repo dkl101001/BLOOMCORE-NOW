@@ -1,0 +1,10 @@
+{
+  "control_id": "lead_removed_prefix_f8_a2_d6",
+  "status": "RESEARCH_LEAD_ONLY",
+  "observed_prefix": "f8:a2:d6",
+  "reported_non_target": "Sony media device",
+  "source_ref": "SRC-FLOCK-YOU-MAIN",
+  "measurement_lineage_id": null,
+  "usable_for_rate_estimation": false,
+  "reason": "The upstream removal is valuable contradictory evidence but has no published raw capture, denominator, or independently auditable label."
+}

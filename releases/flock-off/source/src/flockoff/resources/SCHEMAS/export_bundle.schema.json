@@ -1,0 +1,267 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://flockoff.local/schemas/v1/export_bundle.schema.json",
+  "title": "FLOCK OFF privacy-reviewed local draft export",
+  "type": "object",
+  "required": [
+    "schema_version", "export_id", "policy_version", "review_state",
+    "publication_approval", "generated_from_receipts", "nodes",
+    "public_evidence", "aggregate_observation_counts", "redactions",
+    "route_data_included"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "export_id": {"type": "string", "pattern": "^export_[a-f0-9]{32,64}$"},
+    "policy_version": {"const": "public-export-1.0.0"},
+    "review_state": {"const": "LOCAL_DRAFT"},
+    "publication_approval": {
+      "type": "object",
+      "required": [
+        "schema_version", "approval_id", "approval_type", "scope",
+        "policy_version", "request_digest", "approved_at_utc", "acknowledgements"
+      ],
+      "properties": {
+        "schema_version": {"const": "1.0.0"},
+        "approval_id": {"type": "string", "pattern": "^approval_[a-f0-9]{32,64}$"},
+        "approval_type": {"const": "LOCAL_OPERATOR_OPT_IN"},
+        "scope": {"const": "LOCAL_DRAFT_ONLY"},
+        "policy_version": {"const": "public-export-1.0.0"},
+        "request_digest": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"},
+        "approved_at_utc": {"type": "string", "format": "date-time"},
+        "acknowledgements": {
+          "type": "object",
+          "required": [
+            "route_data_excluded", "raw_identifiers_excluded",
+            "remote_id_operator_positions_excluded", "contradictions_preserved",
+            "no_automatic_publication"
+          ],
+          "properties": {
+            "route_data_excluded": {"const": true},
+            "raw_identifiers_excluded": {"const": true},
+            "remote_id_operator_positions_excluded": {"const": true},
+            "contradictions_preserved": {"const": true},
+            "no_automatic_publication": {"const": true}
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "generated_from_receipts": {
+      "type": "array", "minItems": 1, "uniqueItems": true,
+      "items": {"type": "string", "pattern": "^receipt_[a-f0-9]{32,64}$"}
+    },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "node_id", "revision", "motion_state", "asset_kind_hypotheses",
+          "claim_level", "classification", "location", "public_evidence_refs",
+          "contradiction_refs", "receipt_id"
+        ],
+        "properties": {
+          "node_id": {"type": "string", "pattern": "^node_[a-f0-9]{16,64}$"},
+          "revision": {"type": "integer", "minimum": 1},
+          "motion_state": {"enum": ["STATIC", "MOBILE", "MOTION_UNRESOLVED", "MIXED_OR_CONTRADICTED"]},
+          "asset_kind_hypotheses": {
+            "type": "array", "minItems": 1, "uniqueItems": true,
+            "items": {"enum": ["ALPR_OR_CAMERA", "DRONE", "DOCK_OR_BASE", "OTHER_SURVEILLANCE_SENSOR", "ORDINARY_RF_DEVICE", "UNKNOWN"]}
+          },
+          "claim_level": {"enum": ["PUBLICLY_MAPPED", "RF_ACTIVITY_PRESENT", "SIGNATURE_MATCH", "NODE_LOCALIZED", "VENDOR_ASSOCIATED", "MODEL_ASSOCIATED", "MOBILE_TRACK"]},
+          "classification": {
+            "type": "object",
+            "required": ["ranked_labels", "probabilities", "calibration_state", "confidence_label"],
+            "properties": {
+              "ranked_labels": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+              "probabilities": {
+                "anyOf": [
+                  {"type": "null"},
+                  {"type": "object", "additionalProperties": {"type": "number", "minimum": 0, "maximum": 1}}
+                ]
+              },
+              "calibration_state": {"enum": ["UNCALIBRATED", "INTERNALLY_CALIBRATED", "EXTERNALLY_VALIDATED"]},
+              "confidence_label": {"enum": ["LOW", "MODERATE", "HIGH", "UNKNOWN"]}
+            },
+            "allOf": [
+              {
+                "if": {"properties": {"calibration_state": {"const": "UNCALIBRATED"}}},
+                "then": {"properties": {"probabilities": {"type": "null"}}}
+              }
+            ],
+            "additionalProperties": false
+          },
+          "location": {
+            "anyOf": [
+              {"type": "null"},
+              {
+                "type": "object",
+                "required": ["geometry_type", "geojson", "calibration_state", "confidence_level", "area_m2", "method"],
+                "properties": {
+                  "geometry_type": {"enum": ["CIRCLE", "ELLIPSE", "POLYGON", "TRAJECTORY_ENVELOPE"]},
+                  "geojson": {
+                    "anyOf": [
+                      {
+                        "type": "object", "required": ["type", "coordinates"],
+                        "properties": {
+                          "type": {"const": "Polygon"},
+                          "coordinates": {
+                            "type": "array", "minItems": 1,
+                            "items": {
+                              "type": "array", "minItems": 4,
+                              "items": {"type": "array", "minItems": 2, "maxItems": 3, "items": {"type": "number"}}
+                            }
+                          }
+                        },
+                        "additionalProperties": false
+                      },
+                      {
+                        "type": "object", "required": ["type", "coordinates"],
+                        "properties": {
+                          "type": {"const": "MultiPolygon"},
+                          "coordinates": {
+                            "type": "array", "minItems": 1,
+                            "items": {
+                              "type": "array", "minItems": 1,
+                              "items": {
+                                "type": "array", "minItems": 4,
+                                "items": {"type": "array", "minItems": 2, "maxItems": 3, "items": {"type": "number"}}
+                              }
+                            }
+                          }
+                        },
+                        "additionalProperties": false
+                      }
+                    ]
+                  },
+                  "calibration_state": {"enum": ["UNCALIBRATED", "INTERNALLY_CALIBRATED", "EXTERNALLY_VALIDATED"]},
+                  "confidence_level": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+                  "area_m2": {"type": "number", "exclusiveMinimum": 0},
+                  "method": {"enum": ["RANK_RSSI_SUPPORT", "DIFFERENTIAL_RSSI", "BEARING_TRIANGULATION", "TDOA_MULTILATERATION", "REMOTE_ID_BROADCAST", "PUBLIC_PRIOR_ONLY", "FUSED"]}
+                },
+                "allOf": [
+                  {
+                    "if": {"properties": {"calibration_state": {"const": "UNCALIBRATED"}}},
+                    "then": {"properties": {"confidence_level": {"type": "null"}}}
+                  }
+                ],
+                "additionalProperties": false
+              }
+            ]
+          },
+          "public_evidence_refs": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^pub_[a-f0-9]{32,64}$"}},
+          "contradiction_refs": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+          "receipt_id": {"type": "string", "pattern": "^receipt_[a-f0-9]{32,64}$"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "public_evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "evidence_id", "source_id", "source_lineage_id", "parent_source_ids",
+          "source_type", "authority_role", "independence_class", "retrieved_at_utc",
+          "claim", "license_or_terms", "source_locator", "content_hash"
+        ],
+        "properties": {
+          "evidence_id": {"type": "string", "pattern": "^pub_[a-f0-9]{32,64}$"},
+          "source_id": {"type": "string", "minLength": 1, "maxLength": 256},
+          "source_lineage_id": {"type": "string", "minLength": 1, "maxLength": 256},
+          "parent_source_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1, "maxLength": 256}},
+          "source_type": {"enum": ["OFFICIAL_RECORD", "STANDARD", "PRIMARY_DATASET", "MUNICIPAL_RECORD", "REPOSITORY", "PEER_REVIEWED_RESEARCH", "COMMUNITY_CAPTURE", "MEDIA", "MIRROR", "OTHER"]},
+          "authority_role": {"enum": ["CODE", "PROTOCOL", "RULE", "PRODUCT", "FIELD_OBSERVATION", "DOCUMENTARY_EVIDENCE", "UNVERIFIED_CLAIM"]},
+          "independence_class": {"enum": ["ORIGINAL", "DERIVATIVE", "CORRELATED_MEASUREMENT", "UNKNOWN"]},
+          "retrieved_at_utc": {"type": "string", "format": "date-time"},
+          "claim": {
+            "type": "object",
+            "required": ["claim_type", "claim_text"],
+            "properties": {
+              "claim_type": {"type": "string", "minLength": 1, "maxLength": 128},
+              "claim_text": {"type": "string", "minLength": 1, "maxLength": 4096},
+              "node_type": {"type": ["string", "null"], "maxLength": 128},
+              "vendor": {"type": ["string", "null"], "maxLength": 256},
+              "model": {"type": ["string", "null"], "maxLength": 256},
+              "geometry": {
+                "anyOf": [
+                  {"type": "null"},
+                  {
+                    "type": "object", "required": ["type", "coordinates"],
+                    "properties": {
+                      "type": {"const": "Point"},
+                      "coordinates": {"type": "array", "minItems": 2, "maxItems": 3, "items": {"type": "number"}}
+                    },
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "object", "required": ["type", "coordinates"],
+                    "properties": {
+                      "type": {"const": "Polygon"},
+                      "coordinates": {
+                        "type": "array", "minItems": 1,
+                        "items": {
+                          "type": "array", "minItems": 4,
+                          "items": {"type": "array", "minItems": 2, "maxItems": 3, "items": {"type": "number"}}
+                        }
+                      }
+                    },
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "object", "required": ["type", "coordinates"],
+                    "properties": {
+                      "type": {"const": "MultiPolygon"},
+                      "coordinates": {
+                        "type": "array", "minItems": 1,
+                        "items": {
+                          "type": "array", "minItems": 1,
+                          "items": {
+                            "type": "array", "minItems": 4,
+                            "items": {"type": "array", "minItems": 2, "maxItems": 3, "items": {"type": "number"}}
+                          }
+                        }
+                      }
+                    },
+                    "additionalProperties": false
+                  }
+                ]
+              },
+              "coordinate_uncertainty_m": {"type": ["number", "null"], "minimum": 0},
+              "bearing_deg": {"type": ["number", "null"], "minimum": 0, "exclusiveMaximum": 360},
+              "status": {"type": ["string", "null"], "maxLength": 128}
+            },
+            "additionalProperties": false
+          },
+          "license_or_terms": {"type": "string", "minLength": 1, "maxLength": 2048},
+          "source_locator": {"type": "string", "pattern": "^https?://", "maxLength": 4096},
+          "content_hash": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "aggregate_observation_counts": {
+      "type": "object",
+      "properties": {
+        "WIFI_80211": {"type": "integer", "minimum": 0},
+        "BLUETOOTH_LE": {"type": "integer", "minimum": 0},
+        "REMOTE_ID": {"type": "integer", "minimum": 0},
+        "BEARING": {"type": "integer", "minimum": 0},
+        "TDOA": {"type": "integer", "minimum": 0},
+        "SPECTRUM": {"type": "integer", "minimum": 0},
+        "PUBLIC_RECORD": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": false
+    },
+    "redactions": {
+      "const": [
+        "observer route and exact observation times",
+        "raw and pseudonymous emitter identifiers",
+        "Remote ID operator/control/takeoff positions",
+        "raw capture references and local storage paths"
+      ]
+    },
+    "route_data_included": {"const": false}
+  },
+  "additionalProperties": false
+}

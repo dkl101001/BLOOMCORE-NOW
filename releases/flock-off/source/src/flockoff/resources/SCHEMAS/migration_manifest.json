@@ -1,0 +1,21 @@
+{
+  "current_schema_version": "1.1.0",
+  "minimum_readable_version": "1.0.0",
+  "migrations": [
+    {
+      "id": "0001_initial_immutable_ledger",
+      "from": null,
+      "to": "1.0.0",
+      "path": "migrations/0001_initial.sql",
+      "destructive": false
+    },
+    {
+      "id": "0002_recursive_live_campaign_revisions",
+      "from": "1.0.0",
+      "to": "1.1.0",
+      "path": "migrations/0002_recursive_live_campaigns.sql",
+      "destructive": false
+    }
+  ],
+  "compatibility_policy": "Readers reject unknown major versions; migrations are append-only and checksummed before execution."
+}

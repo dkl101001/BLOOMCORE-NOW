@@ -1,0 +1,137 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://flockoff.local/schemas/v1.2/failure_packet.schema.json",
+  "title": "FLOCK OFF recursive detector failure packet",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "failure_id",
+    "target_asset_ref",
+    "failed_expectation",
+    "observation_refs",
+    "coverage_refs",
+    "context_refs",
+    "failed_assumption",
+    "rationale",
+    "absence_claim_permitted",
+    "next_test_seed",
+    "observed_at_utc",
+    "algorithm",
+    "content_hash"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.1.0"
+    },
+    "failure_id": {
+      "type": "string",
+      "pattern": "^failure_[a-f0-9]{40}$"
+    },
+    "target_asset_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "failed_expectation": {
+      "type": "string",
+      "minLength": 1
+    },
+    "observation_refs": {
+      "type": "array",
+      "minItems": 0,
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "coverage_refs": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "failed_assumption": {
+      "type": "string",
+      "minLength": 1
+    },
+    "rationale": {
+      "type": "string"
+    },
+    "absence_claim_permitted": {
+      "const": false
+    },
+    "next_test_seed": {
+      "type": "string",
+      "minLength": 1
+    },
+    "observed_at_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "algorithm": {
+      "type": "object",
+      "required": [
+        "name",
+        "version",
+        "code_revision",
+        "code_digest"
+      ],
+      "properties": {
+        "name": {
+          "const": "recursive_failure_capture"
+        },
+        "version": {
+          "const": "1.1.0"
+        },
+        "code_revision": {
+          "type": "string"
+        },
+        "code_digest": {
+          "type": "string",
+          "pattern": "^sha256:[a-f0-9]{64}$"
+        }
+      },
+      "additionalProperties": false
+    },
+    "content_hash": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "context_refs": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "anyOf": [
+        {
+          "properties": {
+            "observation_refs": {
+              "minItems": 1
+            }
+          }
+        },
+        {
+          "properties": {
+            "coverage_refs": {
+              "minItems": 1
+            }
+          }
+        },
+        {
+          "properties": {
+            "context_refs": {
+              "minItems": 1
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

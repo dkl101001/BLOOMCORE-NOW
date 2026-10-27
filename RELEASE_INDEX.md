@@ -21,3 +21,5 @@ release approval.
 EDP-01 publication does not promote its hypotheses, modify BLOOMCORE canon or establish persistent endogenous development. Its freeze and approval provenance are recorded in [PUBLICATION_APPROVAL.md](EDP-01/evidence/PUBLICATION_APPROVAL.md).
 
 EDP-02 independently crosses executable topology and authority wording. Its [approval receipt](EDP-02/evidence/PUBLICATION_APPROVAL.md) and frozen manifest preserve the reviewed instrument. Publication supplies an experimental method, not confirmatory evidence.
+
+- [FLOCK OFF 0.3.0+collaboration.1 experimental prerelease](releases/flock-off/README.md) — local records, opt-in collaboration and public research; partial independent review, real Tor privacy unvalidated.

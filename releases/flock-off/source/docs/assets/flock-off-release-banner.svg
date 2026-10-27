@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="800" viewBox="0 0 1600 800" role="img" aria-labelledby="title desc">
+<title id="title">FLOCK OFF: Bureaucracy. Now with more receipts.</title><desc id="desc">Cream paper, black typography, red tape and an unofficial stamp. Public questions. Inspectable software. Exceptional paperwork.</desc>
+<defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#191919" stroke-opacity=".045"/></pattern></defs>
+<rect width="1600" height="800" fill="#f4efdf"/><rect width="1600" height="800" fill="url(#grid)"/>
+<rect x="32" y="32" width="1536" height="736" rx="2" fill="none" stroke="#22221f" stroke-width="2"/>
+<path d="M64 98H1536M64 650H1536" stroke="#22221f" stroke-width="2"/>
+<g fill="#22221f" font-family="DejaVu Sans Mono, monospace" font-size="18"><text x="65" y="74">BLOOMCORE OI / SOFTWARE RELEASE</text><text x="1535" y="74" text-anchor="end">FORM FO-001 • RETAIN YOUR COPY</text></g>
+<text x="57" y="309" fill="#20211f" font-family="DejaVu Sans, sans-serif" font-size="209" font-weight="bold" letter-spacing="-13">FLOCK OFF</text>
+<rect x="65" y="341" width="1000" height="69" fill="#e8312e"/>
+<text x="87" y="387" fill="#fffaf0" font-family="DejaVu Sans, sans-serif" font-size="36" font-weight="bold" letter-spacing="-.6">BUREAUCRACY. NOW WITH MORE RECEIPTS.</text>
+<g transform="translate(1310 463) rotate(-12)"><circle r="143" fill="none" stroke="#df302d" stroke-width="7"/><circle r="129" fill="none" stroke="#df302d" stroke-width="2"/><path d="M-110 -35H110M-110 43H110" stroke="#df302d" stroke-width="3"/><g text-anchor="middle" fill="#df302d" font-family="DejaVu Sans Mono, monospace" font-weight="bold"><text y="-62" font-size="20">DEPARTMENT OF</text><text y="9" font-size="37">ASK AGAIN</text><text y="78" font-size="19">ENTIRELY UNOFFICIAL</text></g></g>
+<g fill="#22221f" font-family="DejaVu Sans Mono, monospace" font-size="25"><text x="66" y="471">Your request to avoid accountability</text><text x="66" y="511">has been received. Please allow</text><text x="66" y="551">6–8 additional forms.</text></g>
+<g fill="#22221f" font-family="DejaVu Sans Mono, monospace" font-size="19"><text x="67" y="692">01 / SENSOR CONSOLE</text><text x="569" y="692">02 / TRANSPARENCY DESK</text><text x="1086" y="692">03 / RED TAPE DISPENSER</text></g>
+<text x="67" y="737" fill="#55564f" font-family="DejaVu Sans Mono, monospace" font-size="16">PUBLIC QUESTIONS. INSPECTABLE SOFTWARE. EXCEPTIONAL PAPERWORK.</text>
+<g transform="translate(1380 719)" fill="#22221f"><rect width="3" height="25"/><rect x="7" width="6" height="25"/><rect x="17" width="2" height="25"/><rect x="24" width="8" height="25"/><rect x="36" width="3" height="25"/><rect x="44" width="5" height="25"/><rect x="54" width="2" height="25"/><rect x="61" width="9" height="25"/><rect x="75" width="3" height="25"/><rect x="83" width="5" height="25"/><rect x="92" width="2" height="25"/><rect x="100" width="7" height="25"/><rect x="113" width="3" height="25"/><rect x="121" width="6" height="25"/><rect x="132" width="2" height="25"/><rect x="139" width="8" height="25"/></g>
+</svg>

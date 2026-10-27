@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://flockoff.local/schemas/v1/event_envelope.schema.json",
+  "title": "FLOCK OFF adapter event envelope",
+  "type": "object",
+  "required": ["schema_version", "event_id", "event_type", "payload_schema_id", "payload_schema_digest", "adapter", "timing", "raw_record_digest", "capability_snapshot_ref", "privacy_class", "payload"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "event_id": {"type": "string", "pattern": "^event_[a-f0-9]{32,64}$"},
+    "event_type": {"enum": ["OBSERVATION", "COVERAGE", "ADAPTER_HEALTH", "LOSS_GAP", "PUBLIC_ASSERTION", "QUARANTINE"]},
+    "payload_schema_id": {"type": "string"},
+    "payload_schema_digest": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"},
+    "adapter": {
+      "type": "object",
+      "required": ["adapter_id", "version", "commit_or_build", "process_instance_id"],
+      "properties": {
+        "adapter_id": {"type": "string"},
+        "version": {"type": "string"},
+        "commit_or_build": {"type": "string"},
+        "process_instance_id": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "timing": {
+      "type": "object",
+      "required": ["host_received_at_utc", "host_monotonic_ns", "sensor_boot_id", "source_sequence", "clock_epoch_id", "clock_uncertainty_ms"],
+      "properties": {
+        "host_received_at_utc": {"type": "string", "format": "date-time"},
+        "host_monotonic_ns": {"type": ["integer", "null"], "minimum": 0},
+        "sensor_boot_id": {"type": ["string", "null"]},
+        "source_sequence": {"type": ["integer", "null"], "minimum": 0},
+        "clock_epoch_id": {"type": "string"},
+        "clock_uncertainty_ms": {"type": "number", "minimum": 0}
+      },
+      "additionalProperties": false
+    },
+    "raw_record_digest": {"type": "string", "pattern": "^(sha256|hmac-sha256):[a-f0-9]{64}$"},
+    "capability_snapshot_ref": {"type": "string"},
+    "privacy_class": {"enum": ["OPERATIONAL_MINIMIZED", "RESEARCH_RAW", "RESTRICTED_ROUTE", "PUBLIC_IMPORT", "QUARANTINE"]},
+    "payload": {"type": "object"}
+  },
+  "allOf": [
+    {
+      "if": {
+        "required": ["privacy_class"],
+        "properties": {"privacy_class": {"const": "OPERATIONAL_MINIMIZED"}}
+      },
+      "then": {
+        "properties": {
+          "raw_record_digest": {
+            "type": "string",
+            "pattern": "^hmac-sha256:[a-f0-9]{64}$"
+          }
+        }
+      }
+    }
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,40 @@
+{
+  "location": {
+    "area_m2": 5676.0,
+    "calibration_state": "UNCALIBRATED",
+    "confidence_level": null,
+    "geojson": {
+      "coordinates": [
+        [
+          [
+            -86.0003441,
+            35.9996205
+          ],
+          [
+            -85.9996105,
+            35.9996205
+          ],
+          [
+            -85.9996105,
+            36.0003939
+          ],
+          [
+            -86.0003441,
+            36.0003939
+          ],
+          [
+            -86.0003441,
+            35.9996205
+          ]
+        ]
+      ],
+      "type": "Polygon"
+    },
+    "geometry_type": "POLYGON",
+    "method": "RANK_RSSI_SUPPORT"
+  },
+  "node_id": "node_ed18ea3e03a6f47efdf320bad0eca12c",
+  "observation_count": 8,
+  "receipt_id": "receipt_5ec08fe1f38d09ef9197e2bb28f9bdfb40ebe82a",
+  "signature_match_count": 8
+}

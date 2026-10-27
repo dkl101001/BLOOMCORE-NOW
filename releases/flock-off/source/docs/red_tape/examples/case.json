@@ -1,0 +1,154 @@
+{
+  "schema_version": "1.0",
+  "id": "demo-city-001",
+  "agency": "Example City (fictional)",
+  "meeting": {
+    "date": "2026-11-12",
+    "agenda_item": "Item 7 \u2014 hypothetical camera contract",
+    "decision": "Consider a hypothetical renewal",
+    "url": "https://example.org/agenda",
+    "speaking_seconds": 180,
+    "rules_url": "https://example.org/rules",
+    "rules_verified": true
+  },
+  "requested_action": "Publish a written clarification of the renewal and sharing terms before deciding this item.",
+  "why": {
+    "text": "The hypothetical contract describes a renewal window; the review process is not established by that clause.",
+    "claim_ids": [
+      "C01"
+    ]
+  },
+  "qualification": "All example facts are fictional. Contractual permission does not establish actual use.",
+  "sources": [
+    {
+      "id": "E01",
+      "title": "Hypothetical contract",
+      "issuer": "Example City",
+      "document_date": "2026-01-01",
+      "retrieved_at": "2026-10-27T14:00:00Z",
+      "url": "https://example.org/contract",
+      "locator": "Section 4, page 2",
+      "content": "The example agreement renews annually unless notice is given 60 days before expiry.",
+      "content_kind": "paraphrase",
+      "limits": "Does not identify a public review process or establish any actual deployment."
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "text": "The hypothetical contract describes a 60-day notice window.",
+      "basis": "document",
+      "evidence_ids": [
+        "E01"
+      ],
+      "contrary_ids": [],
+      "qualification": "This describes the example clause, not a legal conclusion.",
+      "disposition": "supported"
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q01",
+      "subject": "Renewal review",
+      "text": "Which office owns the next renewal review, and where will the public decision date be recorded?",
+      "claim_ids": [
+        "C01"
+      ],
+      "gap": "Responsible review office and date remain unknown.",
+      "follow_up": "Does that date leave time for the notice window in Section 4?",
+      "rank_reason": "Directly relevant to the pending hypothetical renewal.",
+      "priority": 1
+    }
+  ],
+  "selected_questions": [
+    "Q01"
+  ],
+  "answers": [],
+  "assessment": {
+    "T01": {
+      "state": "unanswered",
+      "evidence_ids": [],
+      "explanation": "No responsive record reviewed in this fictional example."
+    },
+    "T02": {
+      "state": "unanswered",
+      "evidence_ids": [],
+      "explanation": "No responsive record reviewed in this fictional example."
+    },
+    "T03": {
+      "state": "unanswered",
+      "evidence_ids": [],
+      "explanation": "No responsive record reviewed in this fictional example."
+    },
+    "T04": {
+      "state": "unanswered",
+      "evidence_ids": [],
+      "explanation": "No responsive record reviewed in this fictional example."
+    },
+    "T05": {
+      "state": "unanswered",
+      "evidence_ids": [],
+      "explanation": "No responsive record reviewed in this fictional example."
+    },
+    "T06": {
+      "state": "unanswered",
+      "evidence_ids": [],
+      "explanation": "No responsive record reviewed in this fictional example."
+    },
+    "T07": {
+      "state": "unanswered",
+      "evidence_ids": [],
+      "explanation": "No responsive record reviewed in this fictional example."
+    },
+    "T08": {
+      "state": "unanswered",
+      "evidence_ids": [],
+      "explanation": "No responsive record reviewed in this fictional example."
+    },
+    "T09": {
+      "state": "unanswered",
+      "evidence_ids": [],
+      "explanation": "No responsive record reviewed in this fictional example."
+    },
+    "T10": {
+      "state": "unanswered",
+      "evidence_ids": [],
+      "explanation": "No responsive record reviewed in this fictional example."
+    },
+    "T11": {
+      "state": "unanswered",
+      "evidence_ids": [],
+      "explanation": "No responsive record reviewed in this fictional example."
+    },
+    "T12": {
+      "state": "unanswered",
+      "evidence_ids": [],
+      "explanation": "No responsive record reviewed in this fictional example."
+    }
+  },
+  "requests": [
+    {
+      "id": "R01",
+      "scope": "the hypothetical camera contract renewal",
+      "start_date": "2026-01-01",
+      "end_date": "2026-10-27",
+      "categories": [
+        "Executed renewal terms and amendments",
+        "Existing records identifying the review office and next decision date"
+      ],
+      "recipient_url": "https://example.org/records",
+      "recipient_verified_at": "2026-10-27",
+      "fee_ceiling": "$10",
+      "status": "draft",
+      "existing_evidence_ids": [
+        "E01"
+      ],
+      "remaining_gap": "Review owner and decision date.",
+      "next_review_date": "2026-11-01"
+    }
+  ],
+  "private": {
+    "contact": "PRIVATE_CONTACT_DO_NOT_EXPORT",
+    "notes": "PRIVATE_NOTES_DO_NOT_EXPORT"
+  }
+}

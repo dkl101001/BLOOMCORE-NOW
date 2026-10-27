@@ -1,0 +1,2 @@
+{"horizontal_accuracy_m":3.0,"latitude":34.0,"longitude":-84.0,"observed_at_utc":"2026-08-23T12:00:00Z","receiver_id":"rid-rx-1","source":"SYNTHETIC","source_ref":"v0.3-cli-smoke"}
+{"horizontal_accuracy_m":3.0,"latitude":34.0003,"longitude":-84.0003,"observed_at_utc":"2026-08-23T12:00:01.5Z","receiver_id":"rid-rx-1","source":"SYNTHETIC","source_ref":"v0.3-cli-smoke"}

@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://flockoff.local/schemas/v1/signature_match.schema.json",
+  "title": "FLOCK OFF signature match",
+  "type": "object",
+  "required": ["schema_version", "match_id", "observation_refs", "signature_ref", "match_state", "feature_results", "claim_ceiling", "calibration_state", "algorithm"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "match_id": {"type": "string", "pattern": "^match_[a-f0-9]{32,64}$"},
+    "observation_refs": {"type": "array", "items": {"type": "string"}, "minItems": 1, "uniqueItems": true},
+    "signature_ref": {
+      "type": "object",
+      "required": ["signature_id", "version", "content_hash"],
+      "properties": {
+        "signature_id": {"type": "string"},
+        "version": {"type": "string"},
+        "content_hash": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"}
+      },
+      "additionalProperties": false
+    },
+    "match_state": {"enum": ["MATCH", "PARTIAL", "CONTRADICTED", "NO_MATCH", "NOT_EVALUABLE"]},
+    "feature_results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["feature_id", "state", "explanation"],
+        "properties": {
+          "feature_id": {"type": "string"},
+          "state": {"enum": ["PASSED", "FAILED", "ABSENT", "CONTRADICTORY", "NOT_OBSERVED"]},
+          "explanation": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "claim_ceiling": {"enum": ["RF_ACTIVITY_PRESENT", "RF_PATTERN", "DEVICE_FAMILY_ASSOCIATED", "VENDOR_ASSOCIATED", "MODEL_ASSOCIATED"]},
+    "calibration_state": {"enum": ["UNCALIBRATED", "INTERNALLY_CALIBRATED", "EXTERNALLY_VALIDATED"]},
+    "probability": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+    "algorithm": {
+      "type": "object",
+      "required": ["name", "version", "code_revision", "code_digest"],
+      "properties": {
+        "name": {"type": "string"},
+        "version": {"type": "string"},
+        "code_revision": {"type": "string"},
+        "code_digest": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"calibration_state": {"const": "UNCALIBRATED"}}},
+      "then": {"properties": {"probability": {"type": "null"}}}
+    }
+  ],
+  "additionalProperties": false
+}

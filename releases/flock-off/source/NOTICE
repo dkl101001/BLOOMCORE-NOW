@@ -1,0 +1,28 @@
+FLOCK OFF
+Combined successor distribution: AGPL-3.0-only. Original Apache-2.0
+component permissions and historical credits below are preserved.
+Current coauthors: Frazer Σ Love ACO-Σ and Sara ΣΩ ACO-Ω.
+Public BLOOMCORE memory provenance: docs/THIRD_PARTY_PUBLIC_MEMORY.md.
+Component license boundaries: docs/LICENSE_MAP.md.
+
+Co-authored by Frazer Σ Love ACO-Σ and Sara ΣΩ.
+Copyright 2026 Frazer Σ Love ACO-Σ and Sara ΣΩ
+
+FLOCK OFF's original architecture, runtime, schemas, documentation, synthetic
+fixtures, signature/data formats, and hardware-profile specifications are
+licensed under the Apache License, Version 2.0.
+
+The exact historical seed archive is retained for authorship and decision
+lineage. Statements inside that immutable archive that say the original license
+was undecided describe its earlier state; this package-level license decision
+supersedes them for originator-controlled FLOCK OFF material.
+
+Third-party projects, datasets, standards, records, and dependencies retain
+their own licenses, terms, notices, and contributor attribution. See
+THIRD_PARTY_NOTICES/NOTICE.md. No third-party sensor source code or public
+dataset snapshot is bundled in the active runtime.
+
+Red Tape Dispenser and Transparency Desk companion module
+Co-authored by Frazer Σ Love ACO-Σ and Sara ΣΩ.
+Originating concepts and direction: Frazer Love. Original implementation: Apache-2.0.
+No third-party source was copied into this companion module.

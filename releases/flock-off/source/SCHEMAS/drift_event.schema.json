@@ -1,0 +1,24 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://flockoff.local/schemas/v1.1/drift_event.schema.json",
+  "title":"FLOCK OFF signature drift event",
+  "type":"object",
+  "required":["schema_version","drift_id","target_asset_ref","signature_ref","prior_match_refs","current_match_refs","coverage_refs","coverage_adequate","independent_miss_count","drift_state","required_action","absence_claim_permitted","observed_at_utc","content_hash"],
+  "properties":{
+    "schema_version":{"const":"1.1.0"},
+    "drift_id":{"type":"string","pattern":"^drift_[a-f0-9]{40}$"},
+    "target_asset_ref":{"type":"string","minLength":1},
+    "signature_ref":{"type":"string","minLength":1},
+    "prior_match_refs":{"type":"array","minItems":1,"uniqueItems":true,"items":{"type":"string"}},
+    "current_match_refs":{"type":"array","minItems":1,"uniqueItems":true,"items":{"type":"string"}},
+    "coverage_refs":{"type":"array","uniqueItems":true,"items":{"type":"string"}},
+    "coverage_adequate":{"type":"boolean"},
+    "independent_miss_count":{"type":"integer","minimum":0},
+    "drift_state":{"enum":["NO_DRIFT","INSUFFICIENT_COVERAGE","SUSPECTED_DRIFT","CONFIRMED_DRIFT"]},
+    "required_action":{"enum":["KEEP_DETECT","RETEST_WITH_COMPLETE_COVERAGE","REACTIVATE_DISCOVERY","DEGRADE_SIGNATURE_AND_REACTIVATE_DISCOVERY"]},
+    "absence_claim_permitted":{"const":false},
+    "observed_at_utc":{"type":"string","format":"date-time"},
+    "content_hash":{"type":"string","pattern":"^sha256:[a-f0-9]{64}$"}
+  },
+  "additionalProperties":false
+}

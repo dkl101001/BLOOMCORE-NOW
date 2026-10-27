@@ -1,0 +1,25 @@
+{
+  "clock_uncertainty_ms": 10.0,
+  "heading_deg": null,
+  "observed_at_utc": "2026-08-22T12:00:00Z",
+  "pose_id": "pose_0247ae3ab4d97427f633d92e0a1b6f89f03fe5ac",
+  "position": {
+    "altitude_m": null,
+    "horizontal_accuracy_m": 3.0,
+    "latitude": 36.0003,
+    "longitude": -86.001,
+    "source": "SYNTHETIC",
+    "vertical_accuracy_m": null
+  },
+  "privacy": {
+    "class": "RESTRICTED_ROUTE",
+    "public_export_allowed": false
+  },
+  "provenance": {
+    "content_hash": "sha256:3e7d9d131d8af084e54a837389992df7fe5460c522d03bbba3c09b24866364d7",
+    "source": "replay-fixture"
+  },
+  "receiver_id": "rx-a",
+  "schema_version": "1.0.0",
+  "speed_mps": null
+}

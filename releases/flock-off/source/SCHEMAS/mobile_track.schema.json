@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://flockoff.local/schemas/v1/mobile_track.schema.json",
+  "title": "FLOCK OFF immutable mobile-track revision",
+  "type": "object",
+  "required": ["schema_version", "track_revision_id", "track_id", "revision", "parent_revision_hash", "evidence_basis", "motion_state", "points", "observer_pose_association_refs", "contradiction_refs", "calibration_state", "confidence_level", "receipt_id"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "track_revision_id": {"type": "string", "pattern": "^trackrev_[a-f0-9]{32,64}$"},
+    "track_id": {"type": "string", "pattern": "^track_[a-f0-9]{32,64}$"},
+    "revision": {"type": "integer", "minimum": 1},
+    "parent_revision_hash": {
+      "anyOf": [
+        {"type": "null"},
+        {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"}
+      ]
+    },
+    "evidence_basis": {"enum": ["BROADCAST_REMOTE_ID", "RF_INFERRED"]},
+    "motion_state": {"enum": ["MOBILE", "MOTION_UNRESOLVED", "MIXED_OR_CONTRADICTED"]},
+    "points": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["observation_ref", "observed_at_utc", "latitude", "longitude", "altitude_m", "horizontal_accuracy_m", "speed_mps", "heading_deg", "validity", "basis"],
+        "properties": {
+          "observation_ref": {"type": "string", "pattern": "^obs_[a-f0-9]{32,64}$"},
+          "observed_at_utc": {"type": "string", "format": "date-time"},
+          "latitude": {"type": "number", "minimum": -90, "maximum": 90},
+          "longitude": {"type": "number", "minimum": -180, "maximum": 180},
+          "altitude_m": {"type": ["number", "null"]},
+          "horizontal_accuracy_m": {"type": ["number", "null"], "minimum": 0},
+          "speed_mps": {"type": ["number", "null"], "minimum": 0},
+          "heading_deg": {"type": ["number", "null"], "minimum": 0, "exclusiveMaximum": 360},
+          "validity": {"enum": ["VALID", "UNVERIFIED", "INCOMPLETE"]},
+          "basis": {"const": "BROADCAST_REMOTE_ID"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "observer_pose_association_refs": {
+      "type": "array",
+      "items": {"type": "string", "pattern": "^assoc_[a-f0-9]{32,64}$"},
+      "uniqueItems": true
+    },
+    "contradiction_refs": {
+      "type": "array",
+      "items": {"type": "string", "pattern": "^conflict_[a-f0-9]{32,64}$"},
+      "uniqueItems": true
+    },
+    "calibration_state": {"const": "UNCALIBRATED"},
+    "confidence_level": {"type": "null"},
+    "receipt_id": {"type": "string", "pattern": "^receipt_[a-f0-9]{32,64}$"}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"revision": {"const": 1}}},
+      "then": {"properties": {"parent_revision_hash": {"type": "null"}}},
+      "else": {"properties": {"parent_revision_hash": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"}}}
+    }
+  ],
+  "additionalProperties": false
+}

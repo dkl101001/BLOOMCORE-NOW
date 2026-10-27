@@ -1,0 +1,17 @@
+{
+  "calibration_profile_id": null,
+  "content_hash": "sha256:e11e6d8f776f47d7a57d0c0c31f3a51af0e54a557c37b803ae498ee8b351f63f",
+  "measurement_lineage_id": "mlineage_7c6dc8e5a4646eba18c392cf793261b6b3df6ac6",
+  "normalization_transform": {
+    "code_digest": "sha256:e38b95bc669b9980935ef794402657a950b6c84c6153d90fb2ce961043144b9a",
+    "code_revision": "flockoff-runtime-0.1.0",
+    "name": "flock_you_json_normalizer",
+    "version": "0.1.0"
+  },
+  "parent_lineage_ids": [],
+  "pass_id": "north-south",
+  "raw_capture_digest": "hmac-sha256:1bae504d849ce177a846bd6e02254bda31b28d4dc3cd21f508ab94b4c2123344",
+  "receiver_id": "rx-a",
+  "schema_version": "1.0.0",
+  "session_id": "replay-session-1"
+}

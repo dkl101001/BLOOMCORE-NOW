@@ -47,6 +47,7 @@ def main() -> int:
         ]
         for suite in test_suites
     ]
+    commands.append([sys.executable, "releases/flock-off/source/tools/verify_release.py"])
     commands.extend([
         [sys.executable, "forge_tools/check_licenses.py"],
         [sys.executable, "forge_tools/check_boundaries.py"],

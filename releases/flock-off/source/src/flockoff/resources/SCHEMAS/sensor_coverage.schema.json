@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://flockoff.local/schemas/v1/sensor_coverage.schema.json",
+  "title": "FLOCK OFF sensor coverage interval",
+  "type": "object",
+  "required": ["schema_version", "coverage_id", "receiver_id", "hardware_profile_id", "started_at_utc", "ended_at_utc", "protocols", "bands", "channels", "state", "loss_count", "limitations", "content_hash"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "coverage_id": {"type": "string", "pattern": "^coverage_[a-f0-9]{32,64}$"},
+    "receiver_id": {"type": "string"},
+    "hardware_profile_id": {"type": "string"},
+    "started_at_utc": {"type": "string", "format": "date-time"},
+    "ended_at_utc": {"type": "string", "format": "date-time"},
+    "protocols": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "bands": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "channels": {"type": "array", "items": {"type": "integer", "minimum": 0}, "uniqueItems": true},
+    "state": {"enum": ["COMPLETE", "PARTIAL", "UNSUPPORTED", "THROTTLED", "LOSS_GAP", "CLOCK_INVALID"]},
+    "loss_count": {"type": "integer", "minimum": 0},
+    "limitations": {"type": "array", "items": {"type": "string"}},
+    "content_hash": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"}
+  },
+  "additionalProperties": false
+}

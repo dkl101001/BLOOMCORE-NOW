@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://flockoff.local/schemas/v1/pose_association.schema.json",
+  "title": "FLOCK OFF observation-to-pose association",
+  "type": "object",
+  "required": ["schema_version", "association_id", "observation_ref", "pose_refs", "method", "time_offset_ms", "association_uncertainty_ms", "receipt_id"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "association_id": {"type": "string", "pattern": "^assoc_[a-f0-9]{32,64}$"},
+    "observation_ref": {"type": "string", "pattern": "^obs_[a-f0-9]{32,64}$"},
+    "pose_refs": {"type": "array", "items": {"type": "string", "pattern": "^pose_[a-f0-9]{32,64}$"}, "minItems": 1, "maxItems": 2, "uniqueItems": true},
+    "method": {"enum": ["EXACT_TIMESTAMP", "NEAREST_NEIGHBOR", "LINEAR_INTERPOLATION", "FIXED_RECEIVER"]},
+    "time_offset_ms": {"type": "number"},
+    "association_uncertainty_ms": {"type": "number", "minimum": 0},
+    "receipt_id": {"type": "string", "pattern": "^receipt_[a-f0-9]{32,64}$"}
+  },
+  "additionalProperties": false
+}

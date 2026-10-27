@@ -1,0 +1,9 @@
+{
+  "assertions": [
+    {"id": "osm:node:123", "relation": "ORIGINAL", "parents": []},
+    {"id": "osm:node:123@7", "relation": "SAME_ARTIFACT", "parents": ["osm:node:123"]},
+    {"id": "osm:node:123@8", "relation": "SAME_ARTIFACT", "parents": ["osm:node:123"]}
+  ],
+  "query_assertions": ["osm:node:123@7", "osm:node:123@8"],
+  "expected_independence_bounds": {"lower": 1, "upper": 1}
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://flockoff.local/schemas/v1/adapter_health.schema.json",
+  "title": "FLOCK OFF adapter health/loss event",
+  "type": "object",
+  "required": ["schema_version", "health_id", "adapter_id", "receiver_id", "observed_at_utc", "state", "received_count", "accepted_count", "duplicate_count", "quarantined_count", "explicitly_lost_count", "reason_codes", "content_hash"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "health_id": {"type": "string", "pattern": "^health_[a-f0-9]{32,64}$"},
+    "adapter_id": {"type": "string"},
+    "receiver_id": {"type": "string"},
+    "observed_at_utc": {"type": "string", "format": "date-time"},
+    "state": {"enum": ["HEALTHY", "DEGRADED", "DISCONNECTED", "BACKPRESSURE", "DISK_FULL", "CLOCK_RESET", "CORRUPT_INPUT", "STOPPED"]},
+    "received_count": {"type": "integer", "minimum": 0},
+    "accepted_count": {"type": "integer", "minimum": 0},
+    "duplicate_count": {"type": "integer", "minimum": 0},
+    "quarantined_count": {"type": "integer", "minimum": 0},
+    "explicitly_lost_count": {"type": "integer", "minimum": 0},
+    "reason_codes": {"type": "array", "items": {"type": "string"}},
+    "content_hash": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"}
+  },
+  "additionalProperties": false
+}

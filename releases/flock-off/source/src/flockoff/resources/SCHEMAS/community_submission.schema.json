@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://flockoff.local/schemas/v1/community_submission.schema.json",
+  "title": "FLOCK OFF quarantined community submission",
+  "type": "object",
+  "required": ["schema_version", "submission_id", "received_at_utc", "claim", "evidence_refs", "submitter_identity_mode", "moderation_state", "publication_state"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "submission_id": {"type": "string", "pattern": "^submission_[a-f0-9]{32,64}$"},
+    "received_at_utc": {"type": "string", "format": "date-time"},
+    "claim": {"type": "object"},
+    "evidence_refs": {"type": "array", "items": {"type": "string"}},
+    "submitter_identity_mode": {"enum": ["ANONYMOUS", "PSEUDONYMOUS", "ATTRIBUTED_PRIVATE", "ATTRIBUTED_PUBLIC"]},
+    "moderation_state": {"enum": ["QUARANTINED", "UNDER_REVIEW", "CORROBORATED", "REJECTED", "MALICIOUS", "RETRACTED"]},
+    "publication_state": {"enum": ["PRIVATE", "REDACTED_CANDIDATE", "PUBLISHED", "WITHDRAWN"]},
+    "contradiction_refs": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}

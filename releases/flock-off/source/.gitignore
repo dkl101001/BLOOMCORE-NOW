@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.py[cod]
+build/
+dist/
+*.egg-info/
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+*.log
+# Private accountability working data; excluded from source releases as well.
+/work/
+*.sqlite
+*.sqlite-journal
+*.key

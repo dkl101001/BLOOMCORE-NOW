@@ -1,0 +1,394 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "serialNumber": "urn:uuid:2f9fe995-3a51-4060-8453-fe985c214948",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-10-27T21:40:47.939785+00:00",
+    "component": {
+      "type": "application",
+      "bom-ref": "flockoff-combined",
+      "name": "flockoff-observatory",
+      "version": "0.3.0+collaboration.1",
+      "authors": [
+        {
+          "name": "Frazer Σ Love ACO-Σ"
+        },
+        {
+          "name": "Sara ΣΩ ACO-Ω"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "AGPL-3.0-only"
+          }
+        }
+      ]
+    },
+    "properties": [
+      {
+        "name": "flockoff:scope",
+        "value": "Windows CPython 3.12 required runtime wheel artifacts; optional serial and external sensor firmware excluded"
+      }
+    ]
+  },
+  "components": [
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/certifi@2026.10.23",
+      "name": "certifi",
+      "version": "2026.10.23",
+      "purl": "pkg:pypi/certifi@2026.10.23",
+      "scope": "required",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "e9b54de76e530bb6cf0ccd036787103acb58fd42ba930ea8bf948ddbaa2f61d1"
+        }
+      ],
+      "properties": [
+        {
+          "name": "flockoff:hash-target",
+          "value": "certifi-2026.10.23-py3-none-any.whl"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)"
+          }
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/cffi@2.1.1",
+      "name": "cffi",
+      "version": "2.1.1",
+      "purl": "pkg:pypi/cffi@2.1.1",
+      "scope": "required",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "f53e442b08449d42821fa4a4fba000095af9f62742a500f978a9f557ec44339a"
+        }
+      ],
+      "properties": [
+        {
+          "name": "flockoff:hash-target",
+          "value": "cffi-2.1.1-cp312-cp312-win_amd64.whl"
+        }
+      ],
+      "licenses": [
+        {
+          "expression": "MIT-0"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/charset-normalizer@3.5.2",
+      "name": "charset-normalizer",
+      "version": "3.5.2",
+      "purl": "pkg:pypi/charset-normalizer@3.5.2",
+      "scope": "required",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "780fbe7cab297b81dad9fb8dc5eb003c0468ffb0d9e5f65068c53a34661a96bc"
+        }
+      ],
+      "properties": [
+        {
+          "name": "flockoff:hash-target",
+          "value": "charset_normalizer-3.5.2-cp312-cp312-win_amd64.whl"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/cryptography@46.0.0",
+      "name": "cryptography",
+      "version": "46.0.0",
+      "purl": "pkg:pypi/cryptography@46.0.0",
+      "scope": "required",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "bbaa5eef3c19c66613317dc61e211b48d5f550db009c45e1c28b59d5a9b7812a"
+        }
+      ],
+      "properties": [
+        {
+          "name": "flockoff:hash-target",
+          "value": "cryptography-46.0.0-cp311-abi3-win_amd64.whl"
+        }
+      ],
+      "licenses": [
+        {
+          "expression": "Apache-2.0 OR BSD-3-Clause"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/idna@3.20",
+      "name": "idna",
+      "version": "3.20",
+      "purl": "pkg:pypi/idna@3.20",
+      "scope": "required",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "ab7ae7122974553370f0bdb919e1a960b2cd1bc1ef0276416d896db81c14582c"
+        }
+      ],
+      "properties": [
+        {
+          "name": "flockoff:hash-target",
+          "value": "idna-3.20-py3-none-any.whl"
+        }
+      ],
+      "licenses": [
+        {
+          "expression": "BSD-3-Clause"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/numpy@2.5.4",
+      "name": "numpy",
+      "version": "2.5.4",
+      "purl": "pkg:pypi/numpy@2.5.4",
+      "scope": "required",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "a7b1b6353e36a7e50de2973a38d705c88ee93adcf120673cee7f45a4a3fa223a"
+        }
+      ],
+      "properties": [
+        {
+          "name": "flockoff:hash-target",
+          "value": "numpy-2.5.4-cp312-cp312-win_amd64.whl"
+        }
+      ],
+      "licenses": [
+        {
+          "expression": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/pycparser@2.23",
+      "name": "pycparser",
+      "version": "2.23",
+      "purl": "pkg:pypi/pycparser@2.23",
+      "scope": "required",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "e5c6e8d3fbad53479cab09ac03729e0a9faf2bee3db8208a550daf5af81a5934"
+        }
+      ],
+      "properties": [
+        {
+          "name": "flockoff:hash-target",
+          "value": "pycparser-2.23-py3-none-any.whl"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "License :: OSI Approved :: BSD License"
+          }
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/pynacl@1.6.2",
+      "name": "pynacl",
+      "version": "1.6.2",
+      "purl": "pkg:pypi/pynacl@1.6.2",
+      "scope": "required",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "62985f233210dee6548c223301b6c25440852e13d59a8b81490203c3227c5ba0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "flockoff:hash-target",
+          "value": "pynacl-1.6.2-cp38-abi3-win_amd64.whl"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "License :: OSI Approved :: Apache Software License"
+          }
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/pysocks@1.7.1",
+      "name": "pysocks",
+      "version": "1.7.1",
+      "purl": "pkg:pypi/pysocks@1.7.1",
+      "scope": "required",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "2725bd0a9925919b9b51739eea5f9e2bae91e83288108a9ad338b2e3a4435ee5"
+        }
+      ],
+      "properties": [
+        {
+          "name": "flockoff:hash-target",
+          "value": "PySocks-1.7.1-py3-none-any.whl"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD"
+          }
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/requests@2.34.2",
+      "name": "requests",
+      "version": "2.34.2",
+      "purl": "pkg:pypi/requests@2.34.2",
+      "scope": "required",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "2a0d60c172f83ac6ab31e4554906c0f3b3588d37b5cb939b1c061f4907e278e0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "flockoff:hash-target",
+          "value": "requests-2.34.2-py3-none-any.whl"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "License :: OSI Approved :: Apache Software License"
+          }
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/urllib3@2.8.0",
+      "name": "urllib3",
+      "version": "2.8.0",
+      "purl": "pkg:pypi/urllib3@2.8.0",
+      "scope": "required",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "0cf3cae568d36aa9576b28dfb35f11328f1cb974ca7647d9475ebb86c75ac6e3"
+        }
+      ],
+      "properties": [
+        {
+          "name": "flockoff:hash-target",
+          "value": "urllib3-2.8.0-py3-none-any.whl"
+        }
+      ],
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "pkg:pypi/certifi@2026.10.23",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/cffi@2.1.1",
+      "dependsOn": [
+        "pkg:pypi/pycparser@2.23"
+      ]
+    },
+    {
+      "ref": "pkg:pypi/charset-normalizer@3.5.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/cryptography@46.0.0",
+      "dependsOn": [
+        "pkg:pypi/cffi@2.1.1"
+      ]
+    },
+    {
+      "ref": "pkg:pypi/idna@3.20",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/numpy@2.5.4",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/pycparser@2.23",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/pynacl@1.6.2",
+      "dependsOn": [
+        "pkg:pypi/cffi@2.1.1"
+      ]
+    },
+    {
+      "ref": "pkg:pypi/pysocks@1.7.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/requests@2.34.2",
+      "dependsOn": [
+        "pkg:pypi/certifi@2026.10.23",
+        "pkg:pypi/charset-normalizer@3.5.2",
+        "pkg:pypi/idna@3.20",
+        "pkg:pypi/pysocks@1.7.1",
+        "pkg:pypi/urllib3@2.8.0"
+      ]
+    },
+    {
+      "ref": "pkg:pypi/urllib3@2.8.0",
+      "dependsOn": [
+        "pkg:pypi/pysocks@1.7.1"
+      ]
+    },
+    {
+      "ref": "flockoff-combined",
+      "dependsOn": [
+        "pkg:pypi/cryptography@46.0.0",
+        "pkg:pypi/pynacl@1.6.2",
+        "pkg:pypi/requests@2.34.2",
+        "pkg:pypi/numpy@2.5.4"
+      ]
+    }
+  ]
+}

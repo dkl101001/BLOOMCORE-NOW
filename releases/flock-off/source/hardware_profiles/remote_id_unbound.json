@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0.0",
+  "hardware_profile_id": "remote-id-unbound",
+  "status": "BLOCKED",
+  "receiver": {
+    "manufacturer": "UNSELECTED",
+    "model": "UNSELECTED",
+    "driver_or_firmware": "OpenDroneID reference only",
+    "revision": "4cfaaef82d3794a582ac3f7ab4e4f7d95551699b"
+  },
+  "capabilities": [],
+  "verification": {
+    "verified_at_utc": null,
+    "method": "No FLOCK OFF over-air receive-only verification completed.",
+    "evidence_refs": ["SRC-OPENDRONEID-RECEIVER", "SRC-OPENDRONEID-CORE"]
+  },
+  "limitations": [
+    "Live BLE, Wi-Fi Beacon, and Wi-Fi NAN reception is disabled until each transport emits zero FLOCK OFF-attributable frames in an over-air audit.",
+    "This legacy unbound profile remains blocked; v0.3 uses the separate declared external-decoder profile.",
+    "Parsed Remote ID is not authenticated identity unless authentication verification separately succeeds."
+  ]
+}

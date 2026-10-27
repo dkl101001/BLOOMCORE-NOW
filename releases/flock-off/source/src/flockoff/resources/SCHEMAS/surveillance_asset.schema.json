@@ -1,0 +1,24 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://flockoff.local/schemas/v1.1/surveillance_asset.schema.json",
+  "title":"FLOCK OFF adversarial surveillance asset profile",
+  "type":"object",
+  "required":["schema_version","asset_id","vendor","product_family","model_or_sku","hardware_revision","firmware_era","region","deployment_form","component_roles","emitter_surfaces","inheritance_policy","evidence_refs","status"],
+  "properties":{
+    "schema_version":{"const":"1.1.0"},
+    "asset_id":{"type":"string","pattern":"^[a-z0-9_.-]+$"},
+    "vendor":{"type":["string","null"]},
+    "product_family":{"type":["string","null"]},
+    "model_or_sku":{"type":["string","null"]},
+    "hardware_revision":{"type":["string","null"]},
+    "firmware_era":{"type":["string","null"]},
+    "region":{"type":["string","null"]},
+    "deployment_form":{"enum":["FIXED","MOBILE_VEHICLE","TRAILER","AIRBORNE","DISTRIBUTED","UNKNOWN"]},
+    "component_roles":{"type":"array","minItems":1,"uniqueItems":true,"items":{"enum":["PLATE_CAPTURE","VIDEO_CAPTURE","ALPR_RECOGNITION","VEHICLE_CLASSIFICATION","EDGE_COMPUTE","GATEWAY","BACKHAUL","SEARCH_OR_DATA_NETWORK","POWER_OR_AUXILIARY","UNKNOWN"]}},
+    "emitter_surfaces":{"type":"array","items":{"type":"object","required":["surface","state","evidence_refs"],"properties":{"surface":{"enum":["WIFI_2_4","WIFI_5","BLUETOOTH_LE","CELLULAR","SUB_GHZ","ETHERNET_WIRED","REMOTE_ID","OTHER_RF","UNKNOWN"]},"state":{"enum":["VERIFIED_PRESENT","VERIFIED_ABSENT_FOR_REVISION","NOT_OBSERVED","UNKNOWN","INTERMITTENT_OR_FIRMWARE_BOUND"]},"evidence_refs":{"type":"array","items":{"type":"string"},"uniqueItems":true}},"additionalProperties":false}},
+    "inheritance_policy":{"const":"NO_CROSS_PRODUCT_OR_REVISION_RF_INHERITANCE"},
+    "evidence_refs":{"type":"array","items":{"type":"string"},"uniqueItems":true},
+    "status":{"enum":["SEED","PARTIALLY_VERIFIED","VERIFIED","CONFLICTING_EVIDENCE","OBSOLETE"]}
+  },
+  "additionalProperties":false
+}

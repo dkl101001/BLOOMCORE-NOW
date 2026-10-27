@@ -1,0 +1,98 @@
+{
+  "schema_version": "1.0.0",
+  "signature_id": "FLOCK_YOU_WIFI_ASSERTION",
+  "version": "0.1.0",
+  "status": "CANDIDATE",
+  "vendor": "Flock Safety",
+  "model": null,
+  "protocol": "WIFI_80211",
+  "claim_ceiling": "RF_PATTERN",
+  "feature_gates": [
+    {
+      "feature_id": "sensor.protocol",
+      "operator": "EQUALS",
+      "expected": "WIFI_80211",
+      "required": true,
+      "explanation": "The pinned source reports Wi-Fi management-frame reception."
+    },
+    {
+      "feature_id": "sensor.band",
+      "operator": "EQUALS",
+      "expected": "2.4_GHZ",
+      "required": true,
+      "explanation": "The pinned XIAO ESP32-S3 sensor profile is 2.4 GHz only."
+    },
+    {
+      "feature_id": "upstream.method",
+      "operator": "EQUALS",
+      "expected": "wifi_wildcard_probe_ie_sig",
+      "required": true,
+      "explanation": "Preserves the source-reported detection method; FLOCK OFF cannot recompute the IE match from current JSON."
+    },
+    {
+      "feature_id": "upstream.tier",
+      "operator": "EQUALS",
+      "expected": 4,
+      "required": true,
+      "explanation": "Tier 4 is an upstream heuristic label, not FLOCK OFF probability or validation."
+    },
+    {
+      "feature_id": "upstream.observed_prefix",
+      "operator": "PREFIX_IN",
+      "expected": ["82:6b:f2"],
+      "required": false,
+      "explanation": "A source-researched locally administered prefix, not an IEEE-assigned OUI and not sufficient for vendor attribution."
+    }
+  ],
+  "validation": {
+    "calibration_state": "UNCALIBRATED",
+    "positive_physical_nodes": 0,
+    "negative_control_count": 0,
+    "false_positive_rate": null,
+    "false_negative_rate": null,
+    "false_positive_upper_95": null,
+    "leave_one_device_out": false,
+    "training_lineage_refs": [
+      "GainSec observations",
+      "nitekry curation",
+      "DeFlockJoplin observations"
+    ],
+    "validation_receipt_ref": null,
+    "field_validation_status": "UPSTREAM_REPORTED",
+    "contradictions": [
+      "Upstream README reports no false positives over extensive travel without a public labeled corpus.",
+      "DeFlockJoplin reports 11 of 12 target detections and two false positives without a public labeled corpus or denominator."
+    ]
+  },
+  "scope": {
+    "bands": ["2.4_GHZ"],
+    "geographies": [],
+    "hardware_generations": [],
+    "firmware_eras": ["source-commit-7e969663eade07833603bad86cb156338e895583"],
+    "valid_from": null,
+    "last_confirmed": null
+  },
+  "provenance": {
+    "authors_or_contributors": [
+      "Colonel Panic",
+      "DeFlock Joplin",
+      "OrdoOuroboros / nitekry",
+      "GainSec contributors"
+    ],
+    "source_refs": [
+      "SRC-FLOCK-YOU-MAIN",
+      "SRC-DEFLOCK-JOPLIN-FORK",
+      "SRC-NITE-OUI-COLLECTION",
+      "SRC-GAINSEC-TRAP-SHOOTER"
+    ],
+    "positive_capture_refs": [],
+    "negative_control_refs": [],
+    "extractor_version": "upstream-source-assertion-adapter-0.1.0",
+    "content_hash": "sha256:d5059a9dcb636dcb815001f6d8ae95014cea11454e5321c9a14761108468b6dc"
+  },
+  "retirement": {
+    "expiry_policy": "MANUAL_REVIEW",
+    "superseded_by": null,
+    "reason": "Must be retired or revised upon upstream method/firmware change, prefix drift, or a validated false-positive contradiction."
+  }
+}

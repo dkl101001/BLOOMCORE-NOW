@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://flockoff.local/schemas/v1/remote_id_snapshot.schema.json",
+  "title": "FLOCK OFF derived Remote ID snapshot (design-only producer)",
+  "type": "object",
+  "required": ["schema_version", "implementation_state", "snapshot_id", "member_message_refs", "member_ages_ms", "aircraft_semantics", "broadcast_position", "operator_position_semantics", "operator_position_restricted_ref", "completeness", "consistency", "receipt_id"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "implementation_state": {"const": "DESIGN_ONLY"},
+    "snapshot_id": {"type": "string", "pattern": "^ridsnap_[a-f0-9]{32,64}$"},
+    "member_message_refs": {"type": "array", "items": {"type": "string", "pattern": "^ridmsg_[a-f0-9]{32,64}$"}, "minItems": 1, "uniqueItems": true},
+    "member_ages_ms": {
+      "type": "object",
+      "propertyNames": {"pattern": "^ridmsg_[a-f0-9]{32,64}$"},
+      "additionalProperties": {"type": "integer", "minimum": 0}
+    },
+    "aircraft_semantics": {"enum": ["STANDARD_REMOTE_ID", "BROADCAST_MODULE", "UNKNOWN"]},
+    "broadcast_position": {
+      "anyOf": [
+        {"type": "null"},
+        {
+          "type": "object",
+          "required": ["latitude", "longitude", "altitude_m", "altitude_reference", "horizontal_accuracy_m", "vertical_accuracy_m", "basis"],
+          "properties": {
+            "latitude": {"type": "number", "minimum": -90, "maximum": 90},
+            "longitude": {"type": "number", "minimum": -180, "maximum": 180},
+            "altitude_m": {"type": ["number", "null"]},
+            "altitude_reference": {"enum": ["WGS84", "MSL", "AGL", "UNKNOWN"]},
+            "horizontal_accuracy_m": {"type": ["number", "null"], "minimum": 0},
+            "vertical_accuracy_m": {"type": ["number", "null"], "minimum": 0},
+            "basis": {"const": "BROADCAST_REMOTE_ID"}
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "operator_position_semantics": {"enum": ["CONTROL_STATION", "TAKEOFF_LOCATION", "NOT_PRESENT", "UNKNOWN"]},
+    "operator_position_restricted_ref": {
+      "anyOf": [
+        {"type": "null"},
+        {"type": "string", "pattern": "^ridrestricted_[a-f0-9]{32,64}$"}
+      ]
+    },
+    "completeness": {"enum": ["COMPLETE", "PARTIAL", "BASIC_ID_ONLY", "LOCATION_ONLY", "MALFORMED"]},
+    "consistency": {"enum": ["CONSISTENT", "CONTRADICTED", "NOT_EVALUABLE"]},
+    "receipt_id": {"type": "string", "pattern": "^receipt_[a-f0-9]{32,64}$"}
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,287 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://flockoff.local/schemas/v1/observation.schema.json",
+  "title": "FLOCK OFF normalized observation",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "observation_id",
+    "observed_at_utc",
+    "clock_uncertainty_ms",
+    "timing",
+    "measurement_lineage_id",
+    "receiver",
+    "sensor",
+    "measurement",
+    "privacy",
+    "provenance"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "observation_id": {"type": "string", "pattern": "^obs_[a-f0-9]{32,64}$"},
+    "observed_at_utc": {"type": "string", "format": "date-time"},
+    "clock_uncertainty_ms": {"type": "number", "minimum": 0},
+    "timing": {
+      "type": "object",
+      "required": ["host_received_at_utc", "host_monotonic_ns", "sensor_boot_id", "source_sequence", "source_time_state", "clock_epoch_id"],
+      "properties": {
+        "host_received_at_utc": {"type": "string", "format": "date-time"},
+        "host_monotonic_ns": {"type": ["integer", "null"], "minimum": 0},
+        "sensor_boot_id": {"type": ["string", "null"]},
+        "source_sequence": {"type": ["integer", "null"], "minimum": 0},
+        "source_time_state": {"enum": ["SOURCE_TIMESTAMPED", "HOST_RECEIPT_ONLY", "CLOCK_CONTRADICTED"]},
+        "clock_epoch_id": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "measurement_lineage_id": {"type": "string", "minLength": 8},
+    "receiver": {
+      "type": "object",
+      "required": ["receiver_id", "pose_ref"],
+      "properties": {
+        "receiver_id": {"type": "string", "minLength": 1},
+        "pose_ref": {"type": ["string", "null"], "pattern": "^pose_[a-f0-9]{32,64}$"},
+        "calibration_profile_id": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "sensor": {
+      "type": "object",
+      "required": ["adapter_id", "adapter_version", "hardware_profile_id", "protocol", "capabilities"],
+      "properties": {
+        "adapter_id": {"type": "string", "minLength": 1},
+        "adapter_version": {"type": "string", "minLength": 1},
+        "hardware_profile_id": {"type": "string", "minLength": 1},
+        "protocol": {"enum": ["WIFI_80211", "BLUETOOTH_LE", "REMOTE_ID", "GNSS", "BEARING", "TDOA", "SPECTRUM"]},
+        "band": {"type": ["string", "null"]},
+        "channel": {"type": ["integer", "null"], "minimum": 0},
+        "center_frequency_hz": {"type": ["integer", "null"], "minimum": 0},
+        "bandwidth_hz": {"type": ["integer", "null"], "minimum": 0},
+        "capabilities": {
+          "type": "array",
+          "items": {"type": "string"},
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "emitter": {
+      "type": "object",
+      "required": ["ephemeral_emitter_key", "identifier_retention"],
+      "properties": {
+        "ephemeral_emitter_key": {"type": ["string", "null"]},
+        "target_identifier": {"type": ["string", "null"]},
+        "identifier_type": {"type": ["string", "null"]},
+        "identifier_retention": {"enum": ["NONE", "ROTATING_HASH", "TARGET_RELEVANT", "RESEARCH_RAW"]},
+        "address_randomization_state": {"enum": ["UNKNOWN", "GLOBALLY_ADMINISTERED", "LOCALLY_ADMINISTERED", "ROTATING", "NOT_APPLICABLE"]}
+      },
+      "additionalProperties": false
+    },
+    "measurement": {
+      "type": "object",
+      "required": ["kind"],
+      "properties": {
+        "kind": {"enum": ["WIFI_DETECTION", "REMOTE_ID_BROADCAST", "RF_BEARING", "RF_TDOA", "SPECTRUM_FEATURE", "GNSS_FIX"]},
+        "rssi_dbm": {"type": ["number", "null"]},
+        "snr_db": {"type": ["number", "null"]},
+        "frame_type": {"type": ["string", "null"]},
+        "detection_method": {"type": ["string", "null"]},
+        "upstream_tier": {"type": ["integer", "null"], "minimum": 0},
+        "feature_hashes": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+        "payload_digest": {"type": ["string", "null"], "pattern": "^(sha256|hmac-sha256):[a-f0-9]{64}$"},
+        "bearing_deg": {"type": ["number", "null"], "minimum": 0, "exclusiveMaximum": 360},
+        "bearing_uncertainty_deg": {"type": ["number", "null"], "minimum": 0, "maximum": 180},
+        "tdoa_seconds": {"type": ["number", "null"]},
+        "tdoa_uncertainty_seconds": {"type": ["number", "null"], "minimum": 0},
+        "remote_id": {
+          "anyOf": [
+            {"type": "null"},
+            {
+              "type": "object",
+              "required": ["transport", "validity", "aircraft_position_source"],
+              "properties": {
+                "transport": {"enum": ["BLUETOOTH_LEGACY", "BLUETOOTH_5_LONG_RANGE", "WIFI_NAN", "WIFI_BEACON"]},
+                "validity": {"enum": ["VALID", "UNVERIFIED", "INCOMPLETE", "MALFORMED", "CONTRADICTED"]},
+                "uas_id_type": {"type": ["string", "null"]},
+                "uas_id": {"type": ["string", "null"]},
+                "aircraft_position_source": {"const": "BROADCAST_REMOTE_ID"},
+                "aircraft_position": {
+                  "anyOf": [
+                    {"type": "null"},
+                    {
+                      "type": "object",
+                      "required": ["latitude", "longitude", "altitude_m", "horizontal_accuracy_m"],
+                      "properties": {
+                        "latitude": {"type": "number", "minimum": -90, "maximum": 90},
+                        "longitude": {"type": "number", "minimum": -180, "maximum": 180},
+                        "altitude_m": {"type": ["number", "null"]},
+                        "horizontal_accuracy_m": {"type": ["number", "null"], "minimum": 0}
+                      },
+                      "additionalProperties": false
+                    }
+                  ]
+                },
+                "operator_or_takeoff_position": {
+                  "anyOf": [
+                    {"type": "null"},
+                    {
+                      "type": "object",
+                      "required": ["latitude", "longitude", "altitude_m", "horizontal_accuracy_m"],
+                      "properties": {
+                        "latitude": {"type": "number", "minimum": -90, "maximum": 90},
+                        "longitude": {"type": "number", "minimum": -180, "maximum": 180},
+                        "altitude_m": {"type": ["number", "null"]},
+                        "horizontal_accuracy_m": {"type": ["number", "null"], "minimum": 0}
+                      },
+                      "additionalProperties": false
+                    }
+                  ]
+                },
+                "speed_mps": {"type": ["number", "null"], "minimum": 0},
+                "heading_deg": {"type": ["number", "null"], "minimum": 0, "exclusiveMaximum": 360},
+                "height_m": {"type": ["number", "null"]},
+                "authentication_state": {"enum": ["NOT_PRESENT", "NOT_CHECKED"]}
+              },
+              "additionalProperties": false
+            }
+          ]
+        },
+        "extensions": {
+          "oneOf": [
+            {
+              "type": "object",
+              "maxProperties": 0,
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "required": ["upstream_assertion", "unavailable_for_host_reproduction"],
+              "properties": {
+                "upstream_assertion": {
+                  "type": "object",
+                  "required": ["method", "tier", "observed_prefix"],
+                  "properties": {
+                    "method": {"enum": ["wifi_wildcard_probe_ie_sig", "wifi_wildcard_probe", "wifi_oui_addr2", "wifi_oui_addr1", "wifi_oui_addr3", "wifi_ssid"]},
+                    "tier": {"type": "integer", "minimum": 0, "maximum": 4},
+                    "observed_prefix": {"type": "string", "pattern": "^[a-f0-9]{2}:[a-f0-9]{2}:[a-f0-9]{2}$"}
+                  },
+                  "additionalProperties": false
+                },
+                "unavailable_for_host_reproduction": {
+                  "type": "array",
+                  "items": {
+                    "enum": [
+                      "source_timestamp",
+                      "packet_bytes",
+                      "information_element_vector",
+                      "frame_sequence_number",
+                      "channel_scan_coverage"
+                    ]
+                  },
+                  "uniqueItems": true
+                }
+              },
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "required": ["decoder", "raw_identifier_minimized"],
+              "properties": {
+                "decoder": {"const": "opendroneid"},
+                "raw_identifier_minimized": {"type": "boolean"}
+              },
+              "additionalProperties": false
+            }
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "privacy": {
+      "type": "object",
+      "required": ["class", "raw_retained", "public_export_allowed"],
+      "properties": {
+        "class": {"enum": ["OPERATIONAL_MINIMIZED", "EPHEMERAL", "RESEARCH_RAW"]},
+        "raw_retained": {"type": "boolean"},
+        "public_export_allowed": {"const": false},
+        "rotation_epoch": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["adapter_source_ref", "adapter_commit_or_version", "raw_input_digest", "normalizer_version", "ingested_at_utc"],
+      "properties": {
+        "adapter_source_ref": {"type": "string", "minLength": 1},
+        "adapter_commit_or_version": {"type": "string", "minLength": 1},
+        "raw_input_digest": {"type": "string", "pattern": "^(sha256|hmac-sha256):[a-f0-9]{64}$"},
+        "normalizer_version": {"type": "string", "minLength": 1},
+        "ingested_at_utc": {"type": "string", "format": "date-time"},
+        "raw_capture_ref": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "required": ["privacy"],
+        "properties": {
+          "privacy": {
+            "required": ["class"],
+            "properties": {"class": {"const": "OPERATIONAL_MINIMIZED"}}
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "emitter": {
+            "properties": {
+              "ephemeral_emitter_key": {
+                "type": ["string", "null"],
+                "pattern": "^ephem:[a-f0-9]{64}$"
+              },
+              "target_identifier": {"type": "null"},
+              "identifier_retention": {"enum": ["NONE", "ROTATING_HASH"]}
+            }
+          },
+          "measurement": {
+            "properties": {
+              "payload_digest": {
+                "anyOf": [
+                  {"type": "null"},
+                  {"type": "string", "pattern": "^hmac-sha256:[a-f0-9]{64}$"}
+                ]
+              },
+              "remote_id": {
+                "anyOf": [
+                  {"type": "null"},
+                  {
+                    "type": "object",
+                    "properties": {
+                      "uas_id": {"type": "null"},
+                      "operator_or_takeoff_position": {"type": "null"}
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "privacy": {
+            "properties": {
+              "raw_retained": {"const": false},
+              "public_export_allowed": {"const": false}
+            }
+          },
+          "provenance": {
+            "properties": {
+              "raw_input_digest": {"type": "string", "pattern": "^hmac-sha256:[a-f0-9]{64}$"},
+              "raw_capture_ref": {"type": "null"}
+            }
+          }
+        }
+      }
+    }
+  ],
+  "additionalProperties": false
+}

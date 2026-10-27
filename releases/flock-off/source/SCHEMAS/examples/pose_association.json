@@ -1,0 +1,12 @@
+{
+  "association_id": "assoc_84b9a9a5e3645370d9b44f98cf38b8a25644713c",
+  "association_uncertainty_ms": 1010.0,
+  "method": "EXACT_TIMESTAMP",
+  "observation_ref": "obs_d7ad2e15f8e35cca428f90d53ff46c8643ffeaeb",
+  "pose_refs": [
+    "pose_0247ae3ab4d97427f633d92e0a1b6f89f03fe5ac"
+  ],
+  "receipt_id": "receipt_bde758bd9ddb422944c91e9cb202a552d188a77f",
+  "schema_version": "1.0.0",
+  "time_offset_ms": 0.0
+}

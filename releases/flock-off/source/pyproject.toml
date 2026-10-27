@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "flockoff-observatory"
+version = "0.3.0+collaboration.1"
+description = "Passive, local-first surveillance-awareness evidence runtime"
+requires-python = ">=3.12"
+dependencies = ["cryptography==46.0.0", "PyNaCl==1.6.2", "requests[socks]==2.34.2", "numpy==2.5.4"]
+authors = [{name = "Frazer Σ Love ACO-Σ"}, {name = "Sara ΣΩ ACO-Ω"}]
+license = "AGPL-3.0-only"
+license-files = ["LICENSE", "LICENSES/*.txt"]
+classifiers = [
+  "Programming Language :: Python :: 3.12",
+]
+
+[project.scripts]
+flockoff-sensors = "flockoff.sensor_desktop:main"
+flockoff = "flockoff.cli:main"
+flockoff-red-tape = "flockoff_red_tape.cli:main"
+flockoff-red-tape-desk = "flockoff_red_tape.desktop:main"
+flockoff-relay = "flockoff_collaboration.cli:main"
+
+[project.optional-dependencies]
+serial = ["pyserial==3.5"]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+flockoff_red_tape = ["resources/*.wav"]
+flockoff = [
+  "resources/SCHEMAS/*.json",
+  "resources/SCHEMAS/*.md",
+  "resources/SCHEMAS/examples/*.json",
+  "resources/SCHEMAS/migrations/*.json",
+  "resources/SCHEMAS/migrations/*.md",
+  "resources/SCHEMAS/migrations/*.sql",
+]

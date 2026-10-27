@@ -1,0 +1,49 @@
+{
+  "algorithm": {
+    "code_digest": "sha256:e38b95bc669b9980935ef794402657a950b6c84c6153d90fb2ce961043144b9a",
+    "code_revision": "flockoff-runtime-0.1.0",
+    "name": "declarative_feature_gate",
+    "version": "1.0.0"
+  },
+  "calibration_state": "UNCALIBRATED",
+  "claim_ceiling": "RF_PATTERN",
+  "feature_results": [
+    {
+      "explanation": "observed value satisfies EQUALS",
+      "feature_id": "sensor.protocol",
+      "state": "PASSED"
+    },
+    {
+      "explanation": "observed value satisfies EQUALS",
+      "feature_id": "sensor.band",
+      "state": "PASSED"
+    },
+    {
+      "explanation": "observed value satisfies EQUALS",
+      "feature_id": "upstream.method",
+      "state": "PASSED"
+    },
+    {
+      "explanation": "observed value satisfies EQUALS",
+      "feature_id": "upstream.tier",
+      "state": "PASSED"
+    },
+    {
+      "explanation": "observed value satisfies PREFIX_IN",
+      "feature_id": "upstream.observed_prefix",
+      "state": "PASSED"
+    }
+  ],
+  "match_id": "match_e05c449f256bfb1ca45c4fecc87c17e81ef16a7a",
+  "match_state": "MATCH",
+  "observation_refs": [
+    "obs_d7ad2e15f8e35cca428f90d53ff46c8643ffeaeb"
+  ],
+  "probability": null,
+  "schema_version": "1.0.0",
+  "signature_ref": {
+    "content_hash": "sha256:d5059a9dcb636dcb815001f6d8ae95014cea11454e5321c9a14761108468b6dc",
+    "signature_id": "FLOCK_YOU_WIFI_ASSERTION",
+    "version": "0.1.0"
+  }
+}

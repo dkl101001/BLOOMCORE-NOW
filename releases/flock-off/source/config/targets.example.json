@@ -1,0 +1,23 @@
+{
+  "targets": [
+    {
+      "schema_version": "1.2.0",
+      "target_asset_ref": "asset:example-known-fixed-node",
+      "signature_ref": "FLOCK_YOU_WIFI_ASSERTION@0.1.0",
+      "latitude": 36.000000,
+      "longitude": -86.000000,
+      "trigger_radius_m": 90,
+      "exit_radius_m": 130,
+      "target_evidence_refs": [
+        "replace-with-public-or-local-evidence-reference"
+      ],
+      "failed_assumption": "the current 2.4 GHz detector aperture is sufficient for this exact target profile",
+      "next_tests": [
+        "establish scan-completeness telemetry for the current receiver",
+        "characterize additional passive emission surfaces with matched controls"
+      ],
+      "minimum_pose_count": 2,
+      "cooldown_seconds": 60
+    }
+  ]
+}

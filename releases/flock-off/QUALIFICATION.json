@@ -1,0 +1,31 @@
+{
+  "spdx_license_identifier": "Apache-2.0",
+  "version": "0.3.0+collaboration.1",
+  "classification": "EXPERIMENTAL_PRERELEASE",
+  "production_qualified": false,
+  "builder_tests": 230,
+  "adversarial_tests_included": 18,
+  "new_regressions_included": 6,
+  "test_skips": 0,
+  "native_harnesses_revision01": [
+    "records desk",
+    "sensors",
+    "Hounds",
+    "simulator",
+    "workspace paths",
+    "research UI"
+  ],
+  "native_harnesses_rerun_after_repairs": [
+    "workspace paths",
+    "records desk"
+  ],
+  "installed_wheel_smoke": "PASS; six new regressions also pass against installed wheel",
+  "independent_review": "PARTIAL; post-fix and wider coverage incomplete after tool-access restriction; no independent security pass",
+  "live_tor": "NOT_RUN",
+  "hardware": "NOT_VALIDATED",
+  "source_zip_sha256": "0ccd669042798a6ea66455c1a29fe9ec6b07c2138c8efd5898f0a0ee5b0a900f",
+  "source_files": 282,
+  "publication_authorization": "Human approved experimental prerelease classification with prominent limitations; not production or operational anonymity approval",
+  "repository_aggregate": "Unchanged W42 Windows expected-error wording assertion fails; FLOCK tests are separate",
+  "artwork": "Exact approved SVG v1; no PNG reference required"
+}

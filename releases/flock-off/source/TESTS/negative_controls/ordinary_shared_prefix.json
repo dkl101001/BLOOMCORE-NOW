@@ -1,0 +1,18 @@
+{
+  "purpose": "prefix-only source assertion must not satisfy candidate signature",
+  "payload": {
+    "event": "detection",
+    "detection_method": "wifi_oui_addr2",
+    "detection_tier": 2,
+    "protocol": "wifi_2_4ghz",
+    "mac_address": "82:6b:f2:00:00:01",
+    "oui": "82:6b:f2",
+    "device_name": "",
+    "rssi": -44,
+    "channel": 1,
+    "frequency": 2412,
+    "ssid": ""
+  },
+  "expected_match_state": "NO_MATCH",
+  "maximum_claim": "RF_ACTIVITY_PRESENT"
+}

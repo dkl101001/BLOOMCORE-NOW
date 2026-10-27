@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://flockoff.local/schemas/v1/signature.schema.json",
+  "title": "FLOCK OFF versioned signature",
+  "type": "object",
+  "required": ["schema_version", "signature_id", "version", "status", "protocol", "claim_ceiling", "feature_gates", "validation", "scope", "provenance", "retirement"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "signature_id": {"type": "string", "pattern": "^[A-Z0-9_]+$"},
+    "version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+    "status": {"enum": ["CANDIDATE", "FIELD_TESTING", "VALIDATED", "ACTIVE", "DEGRADED", "RETIRED"]},
+    "vendor": {"type": ["string", "null"]},
+    "model": {"type": ["string", "null"]},
+    "protocol": {"enum": ["WIFI_80211", "BLUETOOTH_LE", "REMOTE_ID", "SPECTRUM"]},
+    "claim_ceiling": {"enum": ["RF_PATTERN", "DEVICE_FAMILY_ASSOCIATED", "VENDOR_ASSOCIATED", "MODEL_ASSOCIATED"]},
+    "feature_gates": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["feature_id", "operator", "expected", "required", "explanation"],
+        "properties": {
+          "feature_id": {"type": "string"},
+          "operator": {"enum": ["EQUALS", "IN", "PREFIX_IN", "PRESENT", "ABSENT", "RANGE", "HASH_EQUALS"]},
+          "expected": {},
+          "required": {"type": "boolean"},
+          "explanation": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "validation": {
+      "type": "object",
+      "required": ["calibration_state", "positive_physical_nodes", "negative_control_count", "false_positive_rate", "false_negative_rate", "false_positive_upper_95", "leave_one_device_out", "training_lineage_refs", "validation_receipt_ref", "field_validation_status", "contradictions"],
+      "properties": {
+        "calibration_state": {"enum": ["UNCALIBRATED", "INTERNALLY_CALIBRATED", "EXTERNALLY_VALIDATED"]},
+        "positive_physical_nodes": {"type": "integer", "minimum": 0},
+        "negative_control_count": {"type": "integer", "minimum": 0},
+        "false_positive_rate": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+        "false_negative_rate": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+        "false_positive_upper_95": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+        "leave_one_device_out": {"type": "boolean"},
+        "training_lineage_refs": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+        "validation_receipt_ref": {"type": ["string", "null"], "pattern": "^receipt_[a-f0-9]{32,64}$"},
+        "field_validation_status": {"enum": ["NONE", "UPSTREAM_REPORTED", "FLOCK_OFF_INTERNAL", "INDEPENDENT_EXTERNAL"]},
+        "contradictions": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "scope": {
+      "type": "object",
+      "required": ["bands", "geographies", "hardware_generations", "firmware_eras", "valid_from", "last_confirmed"],
+      "properties": {
+        "bands": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "geographies": {"type": "array", "items": {"type": "string"}},
+        "hardware_generations": {"type": "array", "items": {"type": "string"}},
+        "firmware_eras": {"type": "array", "items": {"type": "string"}},
+        "valid_from": {"type": ["string", "null"], "format": "date-time"},
+        "last_confirmed": {"type": ["string", "null"], "format": "date-time"}
+      },
+      "additionalProperties": false
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["authors_or_contributors", "source_refs", "positive_capture_refs", "negative_control_refs", "extractor_version", "content_hash"],
+      "properties": {
+        "authors_or_contributors": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "source_refs": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "positive_capture_refs": {"type": "array", "items": {"type": "string"}},
+        "negative_control_refs": {"type": "array", "items": {"type": "string"}},
+        "extractor_version": {"type": "string"},
+        "content_hash": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"}
+      },
+      "additionalProperties": false
+    },
+    "retirement": {
+      "type": "object",
+      "required": ["expiry_policy", "superseded_by", "reason"],
+      "properties": {
+        "expiry_policy": {"enum": ["MANUAL_REVIEW", "LAST_CONFIRMED_AGE", "FIRMWARE_BOUND", "REVOKED"]},
+        "superseded_by": {"type": ["string", "null"]},
+        "reason": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    }
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"status": {"const": "ACTIVE"}}},
+      "then": {
+        "properties": {
+          "validation": {
+            "properties": {
+              "calibration_state": {"enum": ["INTERNALLY_CALIBRATED", "EXTERNALLY_VALIDATED"]},
+              "positive_physical_nodes": {"type": "integer", "minimum": 2},
+              "negative_control_count": {"type": "integer", "minimum": 300},
+              "false_positive_upper_95": {"type": "number", "minimum": 0, "maximum": 0.01},
+              "leave_one_device_out": {"const": true},
+              "validation_receipt_ref": {"type": "string", "pattern": "^receipt_[a-f0-9]{32,64}$"}
+            }
+          }
+        }
+      }
+    }
+  ],
+  "additionalProperties": false
+}
